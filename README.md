@@ -3,6 +3,4 @@
 
 Discente do curso de Análise e Desenvolvimento de Sistemas
 
-|Nome						|RA<br/>
------------------------------------------------------------<br/>
-Osvaldo Gusmão					|601986<br/>
+* Osvaldo Gusmão - RA : 601986
