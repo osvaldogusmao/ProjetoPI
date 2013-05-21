@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
 <title>Hello World</title>
 </head>
 <body>
 
 	<h1>Projeto Interdisciplinar</h1>
+	
+
+	
 </body>
 </html>
