@@ -1,0 +1,1 @@
+-- Alterações do Banco de Dados.
