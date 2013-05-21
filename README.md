@@ -7,3 +7,4 @@ Discente do curso de Análise e Desenvolvimento de Sistemas
 * Rafael de Pádua - RA : 605515
 * Ivan Simionato - RA : 604981
 * Vanessa Rossi - RA:605329
+* Larissa Machado - RA:605043
