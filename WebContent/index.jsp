@@ -5,13 +5,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<title>Hello World</title>
+<title>Identificação do Usuário</title>
 </head>
 <body>
-
-	<h1>Projeto Interdisciplinar</h1>
-	
-
-	
+	<form id="Login" method="post" action="${pageContext.request.contextPath}/LoginController">
+		<fieldset>
+		<legend>Identificação do Usuário</legend>
+			<label>
+			Usuário:
+			<input type="text" name="usuario" size="20"/>
+			</label>
+			<label>
+			Senha:
+			<input type="password" name="senha" size="20" />
+			</label>			
+			<input type="hidden" name="logica" value="entrar"/>
+			<input type="submit" value="Entrar"/>	
+		</fieldset>
+	</form>
 </body>
 </html>
