@@ -34,13 +34,13 @@ public class INSSController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	INSS inss = new INSS();
-	inss.setAnoRereferente(2012);
-	inss.setPercentualFaixaDois(4f);
-	inss.setPercentualFaixaTres(1f);
-	inss.setPercentualFaixaUm(2f);
-	inss.setValorLimiteFaixaDois(342423f);
-	inss.setValorLimiteFaixaTres(545353f);
-	inss.setValorLimiteFaixaUm(42343f);
+	inss.setAnoRereferente(2014);
+	inss.setPercentualFaixaDois(41f);
+	inss.setPercentualFaixaTres(12f);
+	inss.setPercentualFaixaUm(23f);
+	inss.setValorLimiteFaixaDois(3412423f);
+	inss.setValorLimiteFaixaTres(6666353f);
+	inss.setValorLimiteFaixaUm(999f);
 	dao.salvar(inss);
 	}
 

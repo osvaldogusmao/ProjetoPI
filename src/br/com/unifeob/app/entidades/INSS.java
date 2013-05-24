@@ -13,6 +13,7 @@ public class INSS {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
+
 	private Integer anoRereferente;
 	private Float valorLimiteFaixaUm;
 	private Float percentualFaixaUm;
