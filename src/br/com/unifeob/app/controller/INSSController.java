@@ -30,14 +30,26 @@ public class INSSController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		INSS inss = new INSS();
-		inss.setAnoRereferente(2014);
-		inss.setPercentualFaixaDois(41f);
-		inss.setPercentualFaixaTres(12f);
-		inss.setPercentualFaixaUm(23f);
-		inss.setValorLimiteFaixaDois(3412423f);
-		inss.setValorLimiteFaixaTres(6666353f);
-		inss.setValorLimiteFaixaUm(999f);
-		dao.salvar(inss);
+	
+		String logica = request.getParameter("logica");
+		
+		
+		if ("salvar".equals(logica)) {
+			INSS inss = new INSS();
+			inss.setAnoRereferente(Integer.parseInt(request.getParameter("anoreferencia")));
+			
+			inss.setValorLimiteFaixaUm(Float.parseFloat(request.getParameter("valorLimiteFaixaUm")));
+			inss.setPercentualFaixaUm(Float.parseFloat(request.getParameter("percentualFaixaUm")));
+			
+			inss.setValorLimiteFaixaDois(Float.parseFloat(request.getParameter("valorLimiteFaixaDois")));
+			inss.setPercentualFaixaDois(Float.parseFloat(request.getParameter("percentualFaixaDois")));
+			
+			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
+			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
+			
+			dao.salvar(inss);
+		}
+		
+		
 	}
 }
