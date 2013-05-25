@@ -40,5 +40,4 @@ public class INSSController extends HttpServlet {
 		inss.setValorLimiteFaixaUm(999f);
 		dao.salvar(inss);
 	}
-
 }
