@@ -4,6 +4,7 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     
     <class>br.com.unifeob.app.entidades.INSS</class>
+    <class>br.com.unifeob.app.entidades.IRRF</class>
     
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

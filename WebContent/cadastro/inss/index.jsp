@@ -44,7 +44,7 @@
 		</tr>
 			<tr>
 			<td><input type="text" required=""/></td>
-			<td><input type="text" required="valorLimiteFaixaTres" name=""/></td>
+			<td><input type="text" required="" name="valorLimiteFaixaTres"/></td>
 			<td><input type="text" required="" name="percentualFaixaTres"/></td>
 		</tr>
 	</table>
