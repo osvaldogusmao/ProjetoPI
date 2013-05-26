@@ -1,7 +1,6 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -11,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.LoginDao;
-import br.com.unifeob.app.entidades.Login;
+import br.com.unifeob.app.util.SenhaMD5;
 
 
 @WebServlet("/LoginController")
@@ -20,6 +19,7 @@ public class LoginController extends HttpServlet {
    
 	@Inject
 	private LoginDao loginDao;
+	SenhaMD5 converteSenha = new SenhaMD5();
    
     public LoginController() {
         super();
@@ -38,7 +38,8 @@ public class LoginController extends HttpServlet {
 		 if (logica.equals("entrar")) {
 		 //criando variaveis e dando seus valores conforme o que foi digitado no form
 			String usuario = request.getParameter("usuario");
-			String senha = request.getParameter("senha");
+		//convertendo senha para md5
+			String senha = converteSenha.transformarParaMd5(request.getParameter("senha"));
 		//string boolean resultado pega o resultado do DAO
 			Boolean resultado = loginDao.vetificaLogin(usuario, senha);
 		//virifica se o resultado é true ou false 
@@ -46,7 +47,7 @@ public class LoginController extends HttpServlet {
 				request.getRequestDispatcher("/paginaInicial/index.jsp").forward(request, response);
 				
 			} else {
-				request.setAttribute("msg", "Login desconhecido!");
+				request.setAttribute("msg", "USUARIO OU SENHA INVALIDO");
 				request.getRequestDispatcher("/").forward(request, response);	
 			}
 				

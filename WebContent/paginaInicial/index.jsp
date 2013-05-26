@@ -11,16 +11,29 @@
 	<h1>Pagina Inicial do Sistema</h1>
 		<nav>
 			<ul>
-				<li><a href="ex01.html">01</a></li>
-				<li><a href="ex02.html">02</a></li>
-				<li><a href="ex03.html">03</a></li>
-				<li><a href="ex04.html">04</a></li>
-				<li><a href="ex05.html">05</a></li>
-				<li><a href="ex06.html">06</a></li>
-				<li><a href="ex07.html">07</a></li>
-				<li><a href="ex08.html">08</a></li>
-				<li><a href="ex09.html">09</a></li>
-				<li><a href="ex010.html">10</a></li>
+				<li>Cadstro
+					<ul>
+						<li><a href="/ProjetoPI/cadastro/pessoa/index.jsp">Cadstro de Pessoa</a></li>
+						<li><a href="">Cadstro de Cargo</a></li>
+						<li><a href="">Cadstro de Empresa</a></li>
+						<li><a href="">Cadstro de INSS</a></li>
+						<li><a href="">Cadstro de IRRF</a></li>
+						<li><a href="">Cadstro de Mês Vigente</a></li>
+						<li><a href="">Cadstro de Verbas</a></li>
+						<li><a href="">Cadstro de Funcionário Empresa e Cargo</a></li>
+					</ul>
+				</li>
+				<li>Lançamento
+					<ul>
+						<li><a href="">Fazer Lançamento</a></li>
+					</ul>
+				</li>
+				<li>Impressã0
+					<ul>
+						<li><a href="">Impressão de Recibo de Pagamento</a></li>
+						<li><a href="">Impressão da Folha de Pagamento</a></li>
+					</ul>
+				</li>
 			</ul>
 	</nav>
 </body>
