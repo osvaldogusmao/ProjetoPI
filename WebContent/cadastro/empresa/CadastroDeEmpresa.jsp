@@ -20,7 +20,7 @@
                 	<label>Inscrição Estadual:</label>
                 	<input type="text" name="inscricaoestadual" size="20"/>
                 	<label>Inscrição Municipal:</label>
-                	<input type="text" name="inscricaoMunicipal" size="20"/>
+                	<input type="text" name="inscricaomunicipal" size="20"/>
             </fieldset>
             <fieldset>
             	<legend>Endereço</legend>

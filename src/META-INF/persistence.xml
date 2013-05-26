@@ -4,11 +4,8 @@
     <provider>org.hibernate.ejb.HibernatePersistence</provider>
     
     <class>br.com.unifeob.app.entidades.INSS</class>
-<<<<<<< HEAD
     <class>br.com.unifeob.app.entidades.Empresa</class>
-=======
     <class>br.com.unifeob.app.entidades.IRRF</class>
->>>>>>> 6dc8256c818b2c6c4a4faf97b0cc994d7c596a86
     
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

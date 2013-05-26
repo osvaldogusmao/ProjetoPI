@@ -2,6 +2,7 @@ package br.com.unifeob.app.controller;
 
 import java.io.IOException;
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,8 +35,8 @@ public class EmpresaController extends HttpServlet {
         	empresa.setRazaoSocial(req.getParameter("razaosocial"));
         	empresa.setNomeFantasia(req.getParameter("nomefantasia"));
         	empresa.setCnpj(req.getParameter("cnpj"));
-        	empresa.setInscricaoEstadual(req.getParameter("inscricaoEstadual"));
-        	empresa.setInscricaoMuncipa(req.getParameter("inscricaoMuncipal"));
+        	empresa.setInscricaoEstadual(req.getParameter("inscricaoestadual"));
+        	empresa.setInscricaoMuncipa(req.getParameter("inscricaomunicipal"));
         	empresa.setLogradouro(req.getParameter("logradouro"));
         	empresa.setNumero(Integer.parseInt(req.getParameter("numero")));
         	empresa.setComplemento(req.getParameter("complemento"));
@@ -49,6 +50,10 @@ public class EmpresaController extends HttpServlet {
         	empresa.setEmail(req.getParameter("email"));
         	empresa.setSite(req.getParameter("site"));
         	dao.salvar(empresa);
+        	
+        	req.setAttribute("sucesso", "Cliente cadastrado com sucesso!");
+            RequestDispatcher dispacher = req.getRequestDispatcher("/sucesso.jsp");
+            dispacher.forward(req, resp);
         	
         }
 	}
