@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.LoginDao;
-import br.com.unifeob.app.util.SenhaMD5;
+import br.com.unifeob.app.util.Util;
 
 
 @WebServlet("/LoginController")
@@ -19,7 +19,7 @@ public class LoginController extends HttpServlet {
    
 	@Inject
 	private LoginDao loginDao;
-	SenhaMD5 converteSenha = new SenhaMD5();
+	Util util = new Util();
    
     public LoginController() {
         super();
@@ -39,7 +39,7 @@ public class LoginController extends HttpServlet {
 		 //criando variaveis e dando seus valores conforme o que foi digitado no form
 			String usuario = request.getParameter("usuario");
 		//convertendo senha para md5
-			String senha = converteSenha.transformarParaMd5(request.getParameter("senha"));
+			String senha = util.converterSenhaParaMd5(request.getParameter("senha"));
 		//string boolean resultado pega o resultado do DAO
 			Boolean resultado = loginDao.vetificaLogin(usuario, senha);
 		//virifica se o resultado é true ou false 
