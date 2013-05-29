@@ -53,9 +53,10 @@
             		<input type="text" name="site" size="20"/>
             </fieldset>
             <input type="hidden" name="logica" value="salvar"/>
-            
-                <input type="submit" value="Salvar"/>
+            <input type="submit" value="Salvar"/>
             </form>
+            
+            <form action="${pageContext.request.contextPath}/EmpresaController"></form>
                
 </body>
 </html>
