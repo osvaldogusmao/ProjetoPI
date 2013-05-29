@@ -13,14 +13,15 @@
 			<ul>
 				<li>Cadstro
 					<ul>
-						<li><a href="/ProjetoPI/cadastro/pessoa/index.jsp">Cadstro de Pessoa</a></li>
-						<li><a href="">Cadstro de Cargo</a></li>
-						<li><a href="">Cadstro de Empresa</a></li>
-						<li><a href="">Cadstro de INSS</a></li>
-						<li><a href="">Cadstro de IRRF</a></li>
-						<li><a href="">Cadstro de Mês Vigente</a></li>
-						<li><a href="">Cadstro de Verbas</a></li>
-						<li><a href="">Cadstro de Funcionário Empresa e Cargo</a></li>
+						<li><a href="/ProjetoPI/cadastro/pessoa/index.jsp">Cadastro de Pessoa</a></li>
+						<li><a href="">Cadastro de Cargo</a></li>
+						<li><a href="/ProjetoPI/cadastro/empresa/CadastroDeEmpresa.jsp">Cadastro de Empresa</a></li>
+						<li><a href="/ProjetoPI/cadastro/inss/index.jsp">Cadstro de INSS</a></li>
+						<li><a href="/ProjetoPI/cadastro/irrf/index.jsp">Cadstro de IRRF</a></li>
+						<li><a href="">Cadastro de Mês Vigente</a></li>
+						<li><a href="">Cadastro de Verbas</a></li>
+						<li><a href="">Cadastro de Funcionário Empresa e Cargo</a></li>
+
 					</ul>
 				</li>
 				<li>Lançamento
@@ -28,7 +29,7 @@
 						<li><a href="">Fazer Lançamento</a></li>
 					</ul>
 				</li>
-				<li>Impressã0
+				<li>Impressão
 					<ul>
 						<li><a href="">Impressão de Recibo de Pagamento</a></li>
 						<li><a href="">Impressão da Folha de Pagamento</a></li>
