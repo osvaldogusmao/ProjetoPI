@@ -4,17 +4,17 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
-import br.com.unifeob.app.entidades.Empresa;
+import br.com.unifeob.app.entidades.Cargo;
 
 @RequestScoped
-public class EmpresaDao {
+public class CargoDao {
 	
 	@Inject
 	private EntityManager manager;
 	
-	public void salvar(Empresa empresa){
+	public void salvar(Cargo cargo){
 		manager.getTransaction().begin();
-		manager.persist(empresa);
+		manager.persist(cargo);
 		manager.getTransaction().commit();	
 	}
 }

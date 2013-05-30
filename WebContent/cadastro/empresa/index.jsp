@@ -8,7 +8,7 @@
 <title>Cadastro de Empresas</title>
 </head>
 <body>
-        <form method="post" action="${pageContext.request.contextPath}/EmpresaController">
+        <form action="${pageContext.request.contextPath}/EmpresaController" method="post">
             <fieldset>
             	<legend>Cadastro de Empresas</legend>
                 	<label>Razão Social:</label>
