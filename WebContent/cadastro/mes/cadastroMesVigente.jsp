@@ -1,21 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style>
-body
-{
- font-family:Verdana, Arial, Helvetica, sans-serif
-}
-.dsb
-{
- background-color:#EEEEEE
-}
-</style>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de Mês Vigente</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
+<title>Cadastro de Mes Vigente</title>
 </head>
+
+
 <body>
 <%@ page  language="java" import="java.util.*,java.text.*"%>
 <%!
@@ -67,7 +60,7 @@ function goTo()
 
 <form name="frm" method="post">
 <div align="center">
-<h3>Cadastro de Mês Vigente</h3>
+<h1>Cadastro de MÃªs Vigente</h1>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td width="25%">&nbsp;</td>
@@ -102,8 +95,8 @@ function goTo()
         }
        %>
         </select></td>
-        <td width="73%" align="center" style="color:#4E96DE"><h3><%=new SimpleDateFormat("MMMM").format(new Date(2008,iMonth,01))%> <%=iYear%></h3></td>
-        <td width="6%">Mês</td>
+        <td width="73%" align="center" style="color:#4E96DE"><h3><%=new SimpleDateFormat("MMMM").format(new Date(2013,iMonth,01))%> <%=iYear%></h3></td>
+        <td width="6%">MÃªs</td>
         <td width="8%">
         <select name="iMonth" onChange="goTo()">
         <%
@@ -113,7 +106,7 @@ function goTo()
           if(im==iMonth)
           {
          %>
-          <option value="<%=im%>" selected="selected"><%=new SimpleDateFormat("MMMM").format(new Date(2008,im,01))%></option>
+          <option value="<%=im%>" selected="selected"><%=new SimpleDateFormat("MMMM").format(new Date(2013,im,01))%></option>
           <%
           }
           else
