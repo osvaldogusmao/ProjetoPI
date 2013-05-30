@@ -3,6 +3,10 @@ package br.com.unifeob.app.util;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Util {
 
@@ -24,4 +28,16 @@ public class Util {
 		return retorno;
 
 		}
+	
+	public static Date  converterStringParaData(String data){		
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date date = null;
+		try {
+			date = dateFormat.parse(data);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+	
 }

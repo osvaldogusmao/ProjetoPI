@@ -8,20 +8,21 @@
 <title>Cadastro de Pessoa</title>
 </head>
 <body>
-	<form id="Login" method="post" action="${pageContext.request.contextPath}/CadastroDePessoaController">
+<h1>Cadastro de Pessoa</h1>
+	<form id="login" method="post" action="${pageContext.request.contextPath}/PessoaController">
 		<fieldset>
 		<legend>Dados Pessoais</legend>
 		<label>
 			Nome:
-			<input type="text" name="nome" size="30"/>
+			<input type="text" name="nome" />
 		</label>
 		<label>
 			RG:
-			<input type="text" name="rg" size="10" />
+			<input type="text" name="rg" />
 		</label>	
 		<label>
 			Orgão Expeditor:
-				<select>
+				<select  name="orgaoExpeditor">
 					<option value=" ">Selecione</option>
   					<option value="IFP">IFP</option>
   					<option value="IPF">IPF</option>
@@ -41,15 +42,15 @@
 		</label>
 		<label>
 			CPF:
-			<input type="text" name="cpf" size="12" />
+			<input type="text" name="cpf" />
 		</label>
 			<label>
 			Data de Nascimento:
-			<input type="text" name="dataNascimento" size="10" />
+			<input type="text" name="dataNascimento"/>
 		</label>	
 		<label>
 			Estado Civil:
-				<select name="estado_civil">
+				<select name="estadoCivil">
 					<option value=" ">Selecione</option>
   					<option value="solteiro">Solteiro(a)</option>
   					<option value="casado">Casado(a)</option>
@@ -60,8 +61,8 @@
 		</label>
 		<label>
 			Deficiente Fisico:
-			<input type="checkbox"/>Sim
-			<input type="checkbox"/>Não
+			<input type="checkbox"  name="deficienteFisico" value="sim"/>Sim
+			<input type="checkbox" name="deficienteFisico" value="nao"/>Não
 		</label>
 			<label>
 			CNH:
@@ -77,47 +78,27 @@
 		</label>
 		<label>
 			Nome da mãe:
-			<input type="text" name="nomeDaMae" size="30/">
+			<input type="text" name="nomeDaMae" /">
 		</label>			
 		</fieldset>
-		
-		<fieldset>
-			<legend>Dependentes</legend>
-			 <table>
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-            </tr>
-            <tr>
-                 <td>Vanessa</td>
-                 <td>20 </td>
-                 <td>deletar</td>
-                 <td>alterar</td>
-            </tr>
-        </table>
-			<form id="dependente" method="post" action="${pageContext.request.contextPath}/CadastroDePessoaController">
-				<input type="hidden" name="logica" value="adicionar"/>
-				<input type="submit" value="Adicionar">
-			</form>
-		</fieldset>
-		
+				
 		<fieldset>
 			<legend>Endereço</legend>
 			<label>
 			Logradouro:
-				<input type="text" name="logradouro" size="50"/>
+				<input type="text" name="logradouro"/>
 			</label>
 			<label>
 			Numero:
-				<input type="text" name="numero" size="5"/>
+				<input type="text" name="numero"/>
 			</label>
 			<label>
 			Bairro:
-				<input type="text" name="bairro" size="30"/>
+				<input type="text" name="bairro"/>
 			</label>
 			<label>
 			Estado:
-				<select name="estado">
+				<select name="uf">
 					<option value=""> Selecione </option>
  					<option value="AC">Acre</option>
 					 <option value="AL">Alagoas</option>
@@ -150,14 +131,13 @@
 			</label>
 			<label>
 				Cidade:
-				<input type="text" name="cidade" size="30"/>
+				<input type="text" name="cidade"/>
 			</label>
 			<label>
 				CEP:
-				<input type="text" name="cep" size="10"/>
+				<input type="text" name="cep"/>
 			</label>	
-			
-		</fieldset>
+		</fieldset>	
 		<input type="hidden" name="logica" value="cadastrar"/>
 		<input type="submit" value="Cadastrar">
 	</form>

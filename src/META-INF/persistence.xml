@@ -6,8 +6,9 @@
     <class>br.com.unifeob.app.entidades.INSS</class>
     <class>br.com.unifeob.app.entidades.Empresa</class>
     <class>br.com.unifeob.app.entidades.IRRF</class>
+    <class>br.com.unifeob.app.entidades.Pessoa</class>
+    <class>br.com.unifeob.app.entidades.Dependente</class>
     
-
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/projetopi"/>
