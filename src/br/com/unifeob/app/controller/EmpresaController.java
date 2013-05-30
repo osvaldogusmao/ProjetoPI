@@ -50,11 +50,6 @@ public class EmpresaController extends HttpServlet {
         	empresa.setEmail(req.getParameter("email"));
         	empresa.setSite(req.getParameter("site"));
         	dao.salvar(empresa);
-        	
-        	req.setAttribute("sucesso", "Cliente cadastrado com sucesso!");
-            RequestDispatcher dispacher = req.getRequestDispatcher("/sucesso.jsp");
-            dispacher.forward(req, resp);
-        	
         }
 	}
 

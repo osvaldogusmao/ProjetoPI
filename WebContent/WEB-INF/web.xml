@@ -7,12 +7,10 @@
   <listener>
     <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
   </listener>
-  
   <error-page>
-  	<error-code>404</error-code>
-  	<location>/erro/404.jsp</location>
+    <error-code>404</error-code>
+    <location>/erro/404.jsp</location>
   </error-page>
-  
   <resource-env-ref>
     <resource-env-ref-name>BeanManager</resource-env-ref-name>
     <resource-env-ref-type>
