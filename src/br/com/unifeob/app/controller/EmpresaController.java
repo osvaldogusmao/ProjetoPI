@@ -28,39 +28,49 @@ public class EmpresaController extends HttpServlet {
     }
     
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String logica = req.getParameter("logica"); 
+		String logica = request.getParameter("logica");
+		
+		if(logica.equals("listar")){
+        	List<Empresa> listaEmpresas = dao.listarEmpresas();
+        	
+        	request.setAttribute("listaEmpresas", listaEmpresas);
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
+        	dispatcher.forward(request, response);
+        }
+		
+	}
+    
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String logica = request.getParameter("logica"); 
         
         if(logica.equals("salvar")){
             
         	Empresa empresa = new Empresa();
-        	empresa.setRazaoSocial(req.getParameter("razaosocial"));
-        	empresa.setNomeFantasia(req.getParameter("nomefantasia"));
-        	empresa.setCnpj(req.getParameter("cnpj"));
-        	empresa.setInscricaoEstadual(req.getParameter("inscricaoestadual"));
-        	empresa.setInscricaoMuncipa(req.getParameter("inscricaomunicipal"));
-        	empresa.setLogradouro(req.getParameter("logradouro"));
-        	empresa.setNumero(Integer.parseInt(req.getParameter("numero")));
-        	empresa.setComplemento(req.getParameter("complemento"));
-        	empresa.setBairro(req.getParameter("bairro"));
-        	empresa.setCep(req.getParameter("cep"));
-        	empresa.setUf(req.getParameter("uf"));
-        	empresa.setCidade(req.getParameter("cidade"));
-        	empresa.setTelefone1(req.getParameter("telefone1"));
-        	empresa.setTelefone2(req.getParameter("telefone2"));
-        	empresa.setTelefone3(req.getParameter("telefone3"));
-        	empresa.setEmail(req.getParameter("email"));
-        	empresa.setSite(req.getParameter("site"));
+        	empresa.setRazaoSocial(request.getParameter("razaosocial"));
+        	empresa.setNomeFantasia(request.getParameter("nomefantasia"));
+        	empresa.setCnpj(request.getParameter("cnpj"));
+        	empresa.setInscricaoEstadual(request.getParameter("inscricaoestadual"));
+        	empresa.setInscricaoMuncipa(request.getParameter("inscricaomunicipal"));
+        	empresa.setLogradouro(request.getParameter("logradouro"));
+        	empresa.setNumero(Integer.parseInt(request.getParameter("numero")));
+        	empresa.setComplemento(request.getParameter("complemento"));
+        	empresa.setBairro(request.getParameter("bairro"));
+        	empresa.setCep(request.getParameter("cep"));
+        	empresa.setUf(request.getParameter("uf"));
+        	empresa.setCidade(request.getParameter("cidade"));
+        	empresa.setTelefone1(request.getParameter("telefone1"));
+        	empresa.setTelefone2(request.getParameter("telefone2"));
+        	empresa.setTelefone3(request.getParameter("telefone3"));
+        	empresa.setEmail(request.getParameter("email"));
+        	empresa.setSite(request.getParameter("site"));
         	dao.salvar(empresa);
         }
-   
-	}
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
 	}
 }
 

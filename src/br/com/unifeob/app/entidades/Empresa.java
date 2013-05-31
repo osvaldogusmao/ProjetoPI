@@ -19,7 +19,7 @@ public class Empresa {
 	private String cnpj;
 	private String inscricaoEstadual;
 	private String inscricaoMuncipal;
-	private String Logradouro;
+	private String logradouro;
 	private Integer numero;
 	private String complemento;
 	private String bairro;
@@ -69,10 +69,10 @@ public class Empresa {
 		this.inscricaoMuncipal = inscricaoMuncipal;
 	}
 	public String getLogradouro() {
-		return Logradouro;
+		return logradouro;
 	}
 	public void setLogradouro(String logradouro) {
-		Logradouro = logradouro;
+		this.logradouro = logradouro;
 	}
 	public Integer getNumero() {
 		return numero;

@@ -14,8 +14,8 @@
 				<li>Cadastro
 					<ul>
 						<li><a href="/ProjetoPI/pessoa/index.jsp">Cadastro de Pessoa</a></li>
-						<li><a href="">Cadastro de Cargo</a></li>
-						<li><a href="/ProjetoPI/cadastro/empresa/CadastroDeEmpresa.jsp">Cadastro de Empresa</a></li>
+						<li><a href="/ProjetoPI/cadastro/cargo/index.jsp">Cadastro de Cargo</a></li>
+						<li><a href="/ProjetoPI/cadastro/empresa/index.jsp">Cadastro de Empresa</a></li>
 						<li><a href="/ProjetoPI/cadastro/inss/index.jsp">Cadastro de INSS</a></li>
 						<li><a href="/ProjetoPI/cadastro/irrf/index.jsp">Cadastro de IRRF</a></li>
 						<li><a href="/ProjetoPI/cadastro/mes/CadastroMesVigente.jsp">Cadastro de Mês Vigente</a></li>
@@ -29,6 +29,7 @@
 					<ul>
 						<li><a href="/ProjetoPI/INSSController?logica=listar">Visualizar parametros INSS cadastrados</a></li>
 						<li><a href="/ProjetoPI/IRRFController?logica=listar">Visualizar parametros IRRF cadastrados</a></li>
+						<li><a href="/ProjetoPI/EmpresaController?logica=listar">Visualizar Empresas Cadastradas</a></li>
 					</ul>
 				</li>
 				
