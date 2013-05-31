@@ -9,6 +9,13 @@
 <body>
 
 <h1>Modulo Cadastro</h1>
+<form action="${pageContext.request.contextPath}/cadastro/empresa" method="post">
+	<input type="submit" value="Cadastrar Empresas"/>
+</form>
+
+<form action="${pageContext.request.contextPath}/cadastro/cargo" method="post">
+	<input type="submit" value="Cadastrar Cargos"/>
+</form>
 
 </body>
 </html>

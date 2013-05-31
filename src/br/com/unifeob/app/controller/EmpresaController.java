@@ -1,6 +1,8 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.EmpresaDao;
+import br.com.unifeob.app.dao.EstadosDao;
 import br.com.unifeob.app.entidades.Empresa;
+import br.com.unifeob.app.entidades.Estado;
 
 @WebServlet("/EmpresaController")
 public class EmpresaController extends HttpServlet {
@@ -18,6 +22,9 @@ public class EmpresaController extends HttpServlet {
 	
 	@Inject
 	private EmpresaDao dao;
+	
+	@Inject
+	private EstadosDao daoe;
 	
     public EmpresaController() {
         super();
@@ -50,6 +57,15 @@ public class EmpresaController extends HttpServlet {
         	empresa.setEmail(req.getParameter("email"));
         	empresa.setSite(req.getParameter("site"));
         	dao.salvar(empresa);
+        }
+        
+        if(logica.equals("listar")){
+        	
+        	List<Estado> listaEstados = daoe.listar();
+    		
+    		req.setAttribute("listaEstados", listaEstados);
+    		RequestDispatcher dispatcher = req.getRequestDispatcher("/cadastro/empresa/index.jsp");
+    		dispatcher.forward(req, resp);
         }
 	}
 

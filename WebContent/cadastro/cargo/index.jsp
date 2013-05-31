@@ -11,7 +11,6 @@
 
 $(document).ready(function(){
 	
-	//document.getElementById()
 	$("#txtinsalu").hide();
 	$("#porcinsalu").hide();
 
@@ -38,8 +37,6 @@ $(document).ready(function(){
 			$("#txtperic").fadeOut("middle");
 		}
 	});
-	
-
 });
 
 
