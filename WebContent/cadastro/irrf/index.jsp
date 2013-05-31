@@ -38,21 +38,21 @@
 			</tr>
 			
 			<tr>
-				<td><input type="text" required="" /></td>
+				<td><input type="text" required="" name="valorFaixaUm" /></td>
 				<td><input type="text" required="" name="valorLimiteFaixaUm" /></td>
 				<td><input type="text" required="" name="percentualFaixaUm" /></td>
 				<td><input type="text" required="" name="deducaoFaixaUm" /></td>
 			</tr>
 			
 			<tr>
-				<td><input type="text" required="" /></td>
+				<td><input type="text" required="" name="valorFaixaDois" /></td>
 				<td><input type="text" required="" name="valorLimiteFaixaDois" /></td>
 				<td><input type="text" required="" name="percentualFaixaDois" /></td>
 				<td><input type="text" required="" name="deducaoFaixaDois" /></td>
 			</tr>
 			
 			<tr>
-				<td><input type="text" required="" /></td>
+				<td><input type="text" required="" name="valorFaixaTres" /></td>
 				<td><input type="text" required="" name="valorLimiteFaixaTres" /></td>
 				<td><input type="text" required="" name="percentualFaixaTres" /></td>
 				<td><input type="text" required="" name="deducaoFaixaTres" /></td>

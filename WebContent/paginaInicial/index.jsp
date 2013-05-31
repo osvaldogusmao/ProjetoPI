@@ -28,6 +28,7 @@
 				<li>Visualizar:
 					<ul>
 						<li><a href="/ProjetoPI/INSSController?logica=listar">Visualizar parametros INSS cadastrados</a></li>
+						<li><a href="/ProjetoPI/IRRFController?logica=listar">Visualizar parametros IRRF cadastrados</a></li>
 					</ul>
 				</li>
 				

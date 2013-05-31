@@ -1,8 +1,10 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +29,20 @@ public class IRRFController extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		String logica = request.getParameter("logica");
+		
+		if("listar".equals(logica)){
+			
+			List<IRRF> lista = dao.listar();
+			
+			request.setAttribute("lista", lista);
+			RequestDispatcher rd = request.getRequestDispatcher("/visualizar/irrf/index.jsp");
+			rd.forward(request, response);
+			
+		}
+	
+	
 	}
 
 
@@ -39,14 +55,17 @@ public class IRRFController extends HttpServlet {
 			IRRF irrf = new IRRF();
 			irrf.setAnoReferente(Integer.parseInt(request.getParameter("anoreferencia")));
 			
+			irrf.setValorFaixaUm(Float.parseFloat(request.getParameter("valorFaixaUm")));
 			irrf.setValorLimiteFaixaUm(Float.parseFloat(request.getParameter("valorLimiteFaixaUm")));
 			irrf.setPercentualFaixaUm(Float.parseFloat(request.getParameter("percentualFaixaUm")));
 			irrf.setDeducaoFaixaUm(Float.parseFloat(request.getParameter("deducaoFaixaUm")));
 			
+			irrf.setValorFaixaDois(Float.parseFloat(request.getParameter("valorFaixaDois")));
 			irrf.setValorLimiteFaixaDois(Float.parseFloat(request.getParameter("valorLimiteFaixaDois")));
 			irrf.setPercentualFaixaDois(Float.parseFloat(request.getParameter("percentualFaixaDois")));
 			irrf.setDeducaoFaixaDois(Float.parseFloat(request.getParameter("deducaoFaixaDois")));
 			
+			irrf.setValorFaixaTres(Float.parseFloat(request.getParameter("valorFaixaTres")));
 			irrf.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
 			irrf.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
 			irrf.setDeducaoFaixaTres(Float.parseFloat(request.getParameter("deducaoFaixaTres")));
