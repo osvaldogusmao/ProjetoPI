@@ -16,3 +16,4 @@ public class MesVigenteDao {
 		manager.getTransaction().commit();	
 	}
 }
+

@@ -13,7 +13,7 @@
 			<ul>
 				<li>Cadstro
 					<ul>
-						<li><a href="/ProjetoPI/cadastro/pessoa/index.jsp">Cadastro de Pessoa</a></li>
+						<li><a href="/ProjetoPI/pessoa/index.jsp">Cadastro de Pessoa</a></li>
 						<li><a href="">Cadastro de Cargo</a></li>
 						<li><a href="/ProjetoPI/cadastro/empresa/CadastroDeEmpresa.jsp">Cadastro de Empresa</a></li>
 						<li><a href="/ProjetoPI/cadastro/inss/index.jsp">Cadstro de INSS</a></li>
