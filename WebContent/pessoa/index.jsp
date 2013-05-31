@@ -14,15 +14,15 @@
 		<legend>Dados Pessoais</legend>
 		<label>
 			Nome:
-			<input type="text" name="nome" />
+			<input type="text" name="nomePessoa" />
 		</label>
 		<label>
 			RG:
-			<input type="text" name="rg" />
+			<input type="text" name="rgPessoa"/>
 		</label>	
 		<label>
 			Orgão Expeditor:
-				<select  name="orgaoExpeditor">
+				<select  name="orgaoExpeditorPessoa">
 					<option value=" ">Selecione</option>
   					<option value="IFP">IFP</option>
   					<option value="IPF">IPF</option>
@@ -42,15 +42,15 @@
 		</label>
 		<label>
 			CPF:
-			<input type="text" name="cpf" />
+			<input type="text" name="cpfPessoa"/>
 		</label>
 			<label>
 			Data de Nascimento:
-			<input type="text" name="dataNascimento"/>
+			<input type="text" name="dataNascimentoPessoa"/>
 		</label>	
 		<label>
 			Estado Civil:
-				<select name="estadoCivil">
+				<select name="estadoCivilPessoa">
 					<option value=" ">Selecione</option>
   					<option value="solteiro">Solteiro(a)</option>
   					<option value="casado">Casado(a)</option>
@@ -61,12 +61,12 @@
 		</label>
 		<label>
 			Deficiente Fisico:
-			<input type="checkbox"  name="deficienteFisico" value="sim"/>Sim
-			<input type="checkbox" name="deficienteFisico" value="nao"/>Não
+			<input type="checkbox"  name="deficienteFisicoPessoa" value="sim"/>Sim
+			<input type="checkbox" name="deficienteFisicoPessoa" value="nao"/>Não
 		</label>
 			<label>
 			CNH:
-				<select name="cnh">
+				<select name="cnhPessoa">
 					<option value=" ">Selecione</option>
 					<option value="">Não Possui</option>
   					<option value="categoria A">Categoria A</option>

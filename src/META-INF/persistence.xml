@@ -6,9 +6,9 @@
     <class>br.com.unifeob.app.entidades.INSS</class>
     <class>br.com.unifeob.app.entidades.Empresa</class>
     <class>br.com.unifeob.app.entidades.IRRF</class>
-    <class>br.com.unifeob.app.entidades.Pessoa</class>
     <class>br.com.unifeob.app.entidades.Dependente</class>
     <class>br.com.unifeob.app.entidades.Cargo</class>
+    <class>br.com.unifeob.app.entidades.Pessoa</class>
 
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

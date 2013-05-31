@@ -14,20 +14,20 @@
 		<legend>Dados Pessoais</legend>
 				<label>
 				Pessoa:
-			<input type="text" name="nomeDaPessoa" value="<%=request.getParameter("nome") %>" readonly="true" />
-			<input type="hidden" name="cpfPessoa" value="<%=request.getParameter("cpf") %>">
+			<input type="text" name="nomeDaPessoa" value="<%=request.getParameter("cpfPessoa") %>" readonly="true" />
+			<input type="hidden" name="cpfPessoa" value="<%=request.getParameter("cpfPessoa")  %>"/>
 		</label>
 		<label>
 			Nome do Dependente:
-			<input type="text" name="nome" />
+			<input type="text" name="nomeDependente" />
 		</label>
 		<label>
 			RG:
-			<input type="text" name="rg" />
+			<input type="text" name="rgDependente" />
 		</label>	
 		<label>
 			Orgão Expeditor:
-				<select  name="orgaoExpeditor">
+				<select  name="orgaoExpeditorDependente">
 					<option value=" ">Selecione</option>
   					<option value="IFP">IFP</option>
   					<option value="IPF">IPF</option>
@@ -47,11 +47,11 @@
 		</label>
 		<label>
 			CPF:
-			<input type="text" name="cpf" />
+			<input type="text" name="cpfDependente" />
 		</label>
 			<label>
 			Data de Nascimento:
-			<input type="text" name="dataNascimento"/>
+			<input type="text" name="dataNascimentoDependente"/>
 		</label>			
 		</fieldset>
 		<input type="hidden" name="logica" value="adicionar"/>

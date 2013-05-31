@@ -38,14 +38,14 @@ public class PessoaController extends HttpServlet {
 		
 		String logica = request.getParameter("logica");
 		if (logica.equals("cadastrar")) {
-			String nome = request.getParameter("nome");
-			String rg = request.getParameter("rg");
-			String orgaoExpeditor = request.getParameter("orgaoExpeditor");
-			String cpf = request.getParameter("cpf");
-			String dataNascimento = request.getParameter("dataNascimento");
-			String estadoCivil = request.getParameter("estadoCivil");
-			String deficienteFisico = request.getParameter("deficienteFisico");
-			String cnh = request.getParameter("cnh");
+			String nome = request.getParameter("nomePessoa");
+			String rg = request.getParameter("rgPessoa");
+			String orgaoExpeditor = request.getParameter("orgaoExpeditorPessoa");
+			String cpf = request.getParameter("cpfPessoa");
+			String dataNascimento = request.getParameter("dataNascimentoPessoa");
+			String estadoCivil = request.getParameter("estadoCivilPessoa");
+			String deficienteFisico = request.getParameter("deficienteFisicoPessoa");
+			String cnh = request.getParameter("cnhPessoa");
 			String nomeDaMae = request.getParameter("nomeDaMae");
 			String logradouro = request.getParameter("logradouro");
 			Integer numero = Integer.parseInt(request.getParameter("numero"));

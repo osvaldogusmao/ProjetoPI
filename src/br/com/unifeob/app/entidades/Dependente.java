@@ -1,6 +1,7 @@
 package br.com.unifeob.app.entidades;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 		@Entity
 		@Table(name="dependente")
@@ -18,6 +21,7 @@ import javax.persistence.Table;
 			private Long codigo;
 			
 			private String nome;
+			@Temporal(TemporalType.DATE)
 			private Date dataNascimento;
 			private String rg;
 			private String orgaoExpeditor;
