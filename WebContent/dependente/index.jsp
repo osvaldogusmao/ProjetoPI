@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +16,7 @@
 		<legend>Dados Pessoais</legend>
 				<label>
 				Pessoa:
-			<input type="text" name="nomeDaPessoa" value="<%=request.getParameter("cpfPessoa") %>" readonly="true" />
+			<input type="text" name="nomeDaPessoa" value="<%=request.getParameter("nomePessoa") %>" readonly="true" />
 			<input type="hidden" name="cpfPessoa" value="<%=request.getParameter("cpfPessoa")  %>"/>
 		</label>
 		<label>
@@ -56,6 +58,25 @@
 		</fieldset>
 		<input type="hidden" name="logica" value="adicionar"/>
 		<input type="submit" value="Adicionar">
+		<br>
+		<br>
+		<fieldset>
+			<legend>Dependentes Cadastrados</legend>
+				<table>
+            <tr>
+                <th>Nome Pessoa</th>
+                <th>Nome do Dependente</th>
+                <th>Data Nascimento</th>
+            </tr>
+            <c:forEach items="${dependentes}" var="dependente">
+                <tr>
+                    <td>${dependente.pessoa.nome}</td>
+                    <td>${dependente.nome}</td>
+                    <td>${dependente.dataNascimento}</td>
+                </tr>
+            </c:forEach>
+        </table>
+		</fieldset>
 	</form>
 </body>
 </html>

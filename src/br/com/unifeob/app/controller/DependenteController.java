@@ -1,6 +1,7 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -60,6 +61,8 @@ public class DependenteController extends HttpServlet {
 			dependente.setPessoa(pessoa);
 			
 			dependenteDao.salvar(dependente);
+			List<Dependente> listaDeDependentes = dependenteDao.listarDependenteDePessoa(pessoa); 
+            request.setAttribute("dependentes", listaDeDependentes);
 			request.getRequestDispatcher("/dependente/index.jsp").forward(request, response);
 			
 			
