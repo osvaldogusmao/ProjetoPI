@@ -6,6 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Cadastro de IRRF</title>
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
+<style type="text/css">
+	body {
+	padding: 20px 20px 20px 20px;
+}
+</style>
 </head>
 <body>
 
@@ -61,14 +66,14 @@
 			</tr>
 		</table>
 		
-		<label>
-			Dedução por dependente:
+		<br>
+		
+		<label>Dedução por dependente:
 			<input type="text" required="" name="deducaoPorDependente" />
 		</label>
 		
-		
 		<input type="hidden" name="logica" value="salvar"/>
-		<input type="submit" value="Salvar"/>
+		<input type="submit" value="Salvar" class="btn btn-primary"/>
 
 	</form>
 

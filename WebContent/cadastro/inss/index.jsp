@@ -6,6 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
 <title>Cadastro INSS</title>
+<style type="text/css">
+	body {
+	padding: 20px 20px 20px 20px;
+}
+</style>
 </head>
 <body>
 	
@@ -50,7 +55,7 @@
 	</table>
 	
 	<input type="hidden" name="logica" value="salvar"/>
-	<input type="submit" value="Salvar"/>
+	<input type="submit" value="Salvar" class="btn btn-primary"/>
 	
 	</form>
 

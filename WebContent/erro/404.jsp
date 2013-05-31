@@ -9,8 +9,9 @@
 </head>
 <body>
 
+	<div class="hero-unit center">
 	<h1>404!</h1>
 	<h1>Página não encontrada!</h1>
-
+	</div>
 </body>
 </html>
