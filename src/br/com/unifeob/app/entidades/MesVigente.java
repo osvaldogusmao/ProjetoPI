@@ -25,13 +25,6 @@ public void setId(Integer idMes) {
 	this.idMes = idMes;
 } 
 
-public String getMes() {
-	return mes;
-}
-public void setMes(String mes) {
-	this.mes = mes;
-}
-
 public Integer getAno() {
 	return ano;
 }
