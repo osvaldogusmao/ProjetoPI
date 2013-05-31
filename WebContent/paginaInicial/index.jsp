@@ -20,7 +20,7 @@
 						<li><a href="/ProjetoPI/cadastro/irrf/index.jsp">Cadastro de IRRF</a></li>
 						<li><a href="/ProjetoPI/cadastro/mes/CadastroMesVigente.jsp">Cadastro de Mês Vigente</a></li>
 						<li><a href="">Cadastro de Verbas</a></li>
-						<li><a href="">Cadastro de Funcionário Empresa e Cargo</a></li>
+						<li><a href="/ProjetoPI/cadastro/funcionarioEmpresa/funcionarioEmpresa.jsp">Cadastro de Funcionário Empresa e Cargo</a></li>
 
 					</ul>
 				</li>
