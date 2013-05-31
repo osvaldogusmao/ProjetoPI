@@ -11,7 +11,7 @@
 	<h1>Pagina Inicial do Sistema</h1>
 		<nav>
 			<ul>
-				<li>Cadstro
+				<li>Cadastro
 					<ul>
 						<li><a href="/ProjetoPI/pessoa/index.jsp">Cadastro de Pessoa</a></li>
 						<li><a href="">Cadastro de Cargo</a></li>
@@ -24,6 +24,13 @@
 
 					</ul>
 				</li>
+				
+				<li>Visualizar:
+					<ul>
+						<li><a href="/ProjetoPI/INSSController?logica=listar">Visualizar parametros INSS cadastrados</a></li>
+					</ul>
+				</li>
+				
 				<li>Lançamento
 					<ul>
 						<li><a href="">Fazer Lançamento</a></li>
