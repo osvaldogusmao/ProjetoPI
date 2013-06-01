@@ -1,8 +1,10 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.PessoaDao;
+import br.com.unifeob.app.entidades.IRRF;
 import br.com.unifeob.app.entidades.Pessoa;
 import br.com.unifeob.app.util.Util;
 
@@ -30,7 +33,15 @@ public class PessoaController extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
+		String logica = request.getParameter("logica");
 		
+		if(logica.equals("visualizar")){
+			
+			List<Pessoa> listaDePessoas = pessoaDao.listaPessoas();
+			
+			request.setAttribute("listaDePessoas", listaDePessoas);
+			request.getRequestDispatcher(("/visualizar/pessoa/index.jsp")).forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request,
@@ -71,9 +82,27 @@ public class PessoaController extends HttpServlet {
 			pessoa.setCep(cep);
 			
 			pessoaDao.salvar(pessoa);
-			request.getRequestDispatcher("/dependente/index.jsp").forward(request, response);
+			request.getRequestDispatcher("/cadastro/dependente/index.jsp").forward(request, response);
+				
+			}
+		
+		if (logica.equals("deletarPessoa")) {
+			Long codigo = Long.parseLong(request.getParameter("codigo"));
+			pessoaDao.deletar(codigo);
+			List<Pessoa> listaDePessoas = pessoaDao.listaPessoas();
+			request.setAttribute("listaDePessoas", listaDePessoas);
+			request.getRequestDispatcher(("/visualizar/pessoa/index.jsp")).forward(request, response);
+		}
+		
+		if (logica.equals("visualizarDetalhes")) {
+			Long codigo = Long.parseLong(request.getParameter("codigo"));
+			pessoa =  pessoaDao.buscaPessoa(codigo);
+			request.setAttribute("pessoa", pessoa);
+			request.getRequestDispatcher(("/visualizar/pessoa/pessoaCompleta/index.jsp")).forward(request, response);
 			
+			
+		}
+		
 		}
 	}
 
-}

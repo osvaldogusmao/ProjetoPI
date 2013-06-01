@@ -2,15 +2,18 @@ package br.com.unifeob.app.entidades;
 
 
 
+import java.util.Collection;
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 		@Entity
 		@Table(name="pessoa")
 		public class Pessoa {
@@ -36,6 +39,9 @@ import javax.persistence.TemporalType;
 		private String uf;
 		private String cidade;
 		private String cep;
+
+		@OneToMany(cascade = CascadeType.ALL)
+		private Collection<Dependente> dependenteCollection;
 		
 		
 		public Long getCodigo() {
@@ -134,8 +140,12 @@ import javax.persistence.TemporalType;
 		public void setCep(String cep) {
 			this.cep = cep;
 		}
-		
-		
+		public Collection<Dependente> getDependenteCollection() {
+			return dependenteCollection;
+		}
+		public void setDependenteCollection(Collection<Dependente> dependenteCollection) {
+			this.dependenteCollection = dependenteCollection;
+		}
 
 		
 		

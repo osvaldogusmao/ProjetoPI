@@ -1,9 +1,13 @@
 package br.com.unifeob.app.dao;
 
+import java.util.List;
+
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+
+import br.com.unifeob.app.entidades.INSS;
 import br.com.unifeob.app.entidades.Pessoa;
 
 @RequestScoped
@@ -27,7 +31,21 @@ public class PessoaDao {
         entityManager.getTransaction().commit();
         pessoa = (Pessoa) query.getSingleResult();
         return pessoa;
-    } 
+    }
+    public List<Pessoa> listaPessoas(){
+    	return entityManager.createQuery("from Pessoa").getResultList();
+    }
 
+    public void deletar(Long codigo) {
+        entityManager.getTransaction().begin();
+        Pessoa pessoa = entityManager.find(Pessoa.class, codigo);
+        entityManager.remove(pessoa);
+        entityManager.getTransaction().commit();
+
+    }
+    public Pessoa buscaPessoa(Long codigo){   	
+    	Pessoa pessoa = entityManager.find(Pessoa.class, codigo);
+    	return pessoa;
+    }
 	
 }
