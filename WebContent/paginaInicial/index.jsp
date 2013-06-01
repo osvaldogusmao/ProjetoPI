@@ -9,28 +9,36 @@
 </head>
 <body>
 	<h1>Pagina Inicial do Sistema</h1>
-		<nav>
+		<div id="menu">
 			<ul>
 				<li>Cadastro
 					<ul>
+<<<<<<< HEAD
 						<li><a href="/ProjetoPI/pessoa/index.jsp">Cadastro de Pessoa</a></li>
+=======
+						<li><a href="/ProjetoPI/cadastro/pessoa/index.jsp">Cadastro de Pessoa</a></li>
+>>>>>>> 1f23987453d2a7d7a87ce26b1ab53ffee99e6211
 						<li><a href="/ProjetoPI/cadastro/cargo/index.jsp">Cadastro de Cargo</a></li>
 						<li><a href="/ProjetoPI/cadastro/empresa/index.jsp">Cadastro de Empresa</a></li>
 						<li><a href="/ProjetoPI/cadastro/inss/index.jsp">Cadastro de INSS</a></li>
 						<li><a href="/ProjetoPI/cadastro/irrf/index.jsp">Cadastro de IRRF</a></li>
-						<li><a href="/ProjetoPI/cadastro/mes/CadastroMesVigente.jsp">Cadastro de Mês Vigente</a></li>
+						<li><a href="/ProjetoPI/cadastro/mes/cadastroMesVigente.jsp">Cadastro de Mês Vigente</a></li>
 						<li><a href="">Cadastro de Verbas</a></li>
 						<li><a href="/ProjetoPI/cadastro/funcionarioEmpresa/funcionarioEmpresa.jsp">Cadastro de Funcionário Empresa e Cargo</a></li>
 
 					</ul>
-				</li>
-				
+				</li>	
 				<li>Visualizar:
 					<ul>
 						<li><a href="/ProjetoPI/INSSController?logica=listar">Visualizar parametros INSS cadastrados</a></li>
 						<li><a href="/ProjetoPI/IRRFController?logica=listar">Visualizar parametros IRRF cadastrados</a></li>
+<<<<<<< HEAD
 						<li><a href="/ProjetoPI/EmpresaController?logica=listar">Visualizar Empresas Cadastradas</a></li>
 						<li><a href="/ProjetoPI/CargoController?logica=listar">Visualizar Cargos Cadastradas</a></li>
+=======
+						<li><a href="/ProjetoPI/PessoaController?logica=visualizar">Visualizar pessoas cadastrados</a></li>
+						
+>>>>>>> 1f23987453d2a7d7a87ce26b1ab53ffee99e6211
 					</ul>
 				</li>
 				
@@ -46,6 +54,6 @@
 					</ul>
 				</li>
 			</ul>
-	</nav>
+	</div>
 </body>
 </html>

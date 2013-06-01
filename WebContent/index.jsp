@@ -10,19 +10,19 @@
 <title>Identificação do Usuário</title>
 </head>
 <body>
-	<form id="Login" method="post" action="${pageContext.request.contextPath}/LoginController">
-		<fieldset>
+	<form  method="post" action="${pageContext.request.contextPath}/LoginController">
+		<fieldset class="control-group">
 		<legend>Identificação do Usuário</legend>
 			<label>
-			Usuário:
-			<input type="text" name="usuario" size="20"/>
+				Usuário:
+				<input type="text" name="usuario" size="20"/>
 			</label>
 			<label>
-			Senha:
-			<input type="password" name="senha" size="20" />
+				Senha:
+				<input type="password" name="senha" size="20" />
 			</label>	 		
-			<input type="hidden" name="logica" value="entrar"/>
-			<input type="submit" value="Entrar"/>	
+				<input type="hidden" name="logica" value="entrar"/>
+				<input type="submit" value="Entrar"/>	
 		</fieldset>	
 	</form>
 	<c:out value="${msg}"/>
