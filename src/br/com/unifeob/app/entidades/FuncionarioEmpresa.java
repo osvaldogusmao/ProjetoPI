@@ -15,25 +15,23 @@ public class FuncionarioEmpresa {
 private Integer idFuncionario;
 private Integer idEmpresa;
 private Integer idCargo;
-
 public Integer getIdFuncionario() {
+	
 	return idFuncionario;
 }
-public void setId(Integer idFuncionario) {
+public void setIdFuncionario(Integer idFuncionario) {
 	this.idFuncionario = idFuncionario;
-} 
-
-public String getIdEmpresa() {
+}
+public Integer getIdEmpresa() {
 	return idEmpresa;
 }
-public void setIdEmpresa(String idEmpresa) {
+public void setIdEmpresa(Integer idEmpresa) {
 	this.idEmpresa = idEmpresa;
 }
-
-public String getIdCargo() {
+public Integer getIdCargo() {
 	return idCargo;
 }
-public void setIdCargo(String idCargo) {
+public void setIdCargo(Integer idCargo) {
 	this.idCargo = idCargo;
 }
 

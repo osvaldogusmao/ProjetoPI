@@ -2,7 +2,6 @@ package br.com.unifeob.app.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,10 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import br.com.unifeob.app.dao.EmpresaDao;
 import br.com.unifeob.app.entidades.Empresa;
-import br.com.unifeob.app.entidades.Estado;
 
 @WebServlet("/EmpresaController")
 public class EmpresaController extends HttpServlet {
@@ -36,7 +33,9 @@ public class EmpresaController extends HttpServlet {
 		if(logica.equals("listar")){
         	List<Empresa> listaEmpresas = dao.listarEmpresas();
         	
-        	request.setAttribute("listaEmpresas", listaEmpresas);
+        	
+        	
+        	request.setAttribute("listar", listaEmpresas);
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
         	dispatcher.forward(request, response);
         }
@@ -56,7 +55,7 @@ public class EmpresaController extends HttpServlet {
         	empresa.setNomeFantasia(request.getParameter("nomefantasia"));
         	empresa.setCnpj(request.getParameter("cnpj"));
         	empresa.setInscricaoEstadual(request.getParameter("inscricaoestadual"));
-        	empresa.setInscricaoMuncipa(request.getParameter("inscricaomunicipal"));
+        	empresa.setInscricaoMuncipal(request.getParameter("inscricaomunicipal"));
         	empresa.setLogradouro(request.getParameter("logradouro"));
         	empresa.setNumero(Integer.parseInt(request.getParameter("numero")));
         	empresa.setComplemento(request.getParameter("complemento"));
@@ -70,6 +69,10 @@ public class EmpresaController extends HttpServlet {
         	empresa.setEmail(request.getParameter("email"));
         	empresa.setSite(request.getParameter("site"));
         	dao.salvar(empresa);
+        	
+        	request.setAttribute("sucesso", "");
+            RequestDispatcher dispacher = request.getRequestDispatcher("/sucesso/index.jsp");
+            dispacher.forward(request, response);
         }
 	}
 }

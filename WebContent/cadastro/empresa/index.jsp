@@ -6,16 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
 <script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
-<script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/jquery.mask.js"></script>
-<script src="jquery.js" type="text/javascript"></script>
-<script src="jquery.maskedinput.js" type="text/javascript"></script>
 <title>Cadastro de Empresas</title>
-
-<script>
-$(document).ready(function(){
-$('.cep').mask('00.000.000/0000-00');});
-</script>
-
 </head>
 <body>
 	<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
@@ -31,10 +22,6 @@ $('.cep').mask('00.000.000/0000-00');});
 			
 			<label>CNPJ:
 			<input type="text" name="cnpj" class="cep"/>
-			<script>
-			$(document).ready(function(){
-				$('.campocnpj').mask('00.000.000/0000-00');});
-			</script>
 			</label>
 			
 			<label>Inscrição Estadual:

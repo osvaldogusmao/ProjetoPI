@@ -94,8 +94,5 @@ public class INSS {
 	public void setValorFaixaTres(Float valorFaixaTres) {
 		this.valorFaixaTres = valorFaixaTres;
 	}
-	
-	
-	
 
 }

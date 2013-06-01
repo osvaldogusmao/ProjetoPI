@@ -31,7 +31,6 @@ public class Empresa {
 	private String telefone3;
 	private String email;
 	private String site;
-	
 	public Integer getId() {
 		return id;
 	}
@@ -65,7 +64,7 @@ public class Empresa {
 	public String getInscricaoMuncipal() {
 		return inscricaoMuncipal;
 	}
-	public void setInscricaoMuncipa(String inscricaoMuncipal) {
+	public void setInscricaoMuncipal(String inscricaoMuncipal) {
 		this.inscricaoMuncipal = inscricaoMuncipal;
 	}
 	public String getLogradouro() {

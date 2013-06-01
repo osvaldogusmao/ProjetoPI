@@ -10,7 +10,6 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 <h1>Empresas Cadastradas</h1>
-<c:forEach var="empresa" items="${listaEmpresas}">
 <fieldset>
 	<table class="table table-bordered">
 		<tr>
@@ -33,7 +32,8 @@ pageEncoding="UTF-8"%>
 			<th>E-MAIL</th>
 			<th>SITE</th>
 		</tr>
-		<tr>
+		<c:forEach var="empresa" items="${listar}">
+			<tr>
 			<td>${empresa.id}</td>
 			<td>${empresa.razaoSocial}</td>
 			<td>${empresa.nomeFantasia}</td>
@@ -52,9 +52,10 @@ pageEncoding="UTF-8"%>
 			<td>${empresa.telefone3}</td>
 			<td>${empresa.email}</td>
 			<td>${empresa.site}</td>
-		</tr>
-	</table>
-</fieldset>
-</c:forEach>
+			</tr>
+			</c:forEach>
+		</table>
+		</fieldset>
+		
 </body>
 </html>
