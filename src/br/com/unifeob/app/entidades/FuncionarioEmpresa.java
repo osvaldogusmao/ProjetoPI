@@ -12,9 +12,17 @@ public class FuncionarioEmpresa {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
+private Integer idFuncEmpresa;	
 private Integer idFuncionario;
 private Integer idEmpresa;
 private Integer idCargo;
+
+public Integer getIdFuncEmpresa() {
+	return idFuncEmpresa;
+}
+public void setId(Integer idFuncEmpresa) {
+	this.idFuncEmpresa = idFuncEmpresa;
+} 
 
 public Integer getIdFuncionario() {
 	return idFuncionario;
