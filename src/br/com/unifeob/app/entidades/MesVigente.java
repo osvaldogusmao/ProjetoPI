@@ -26,12 +26,11 @@ public void setId(Integer idMes) {
 } 
 
 public String getMes() {
-	return mes;
+	return Mes;
 }
 public void setMes(String mes) {
 	this.mes = mes;
-}
-
+} 
 public Integer getAno() {
 	return ano;
 }
