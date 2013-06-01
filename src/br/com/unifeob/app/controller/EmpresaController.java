@@ -35,7 +35,7 @@ public class EmpresaController extends HttpServlet {
         	
         	
         	
-        	request.setAttribute("listar", listaEmpresas);
+        	request.setAttribute("lista", listaEmpresas);
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
         	dispatcher.forward(request, response);
         }

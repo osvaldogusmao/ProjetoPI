@@ -1,6 +1,7 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.RequestDispatcher;
@@ -13,6 +14,7 @@ import javax.swing.JOptionPane;
 
 import br.com.unifeob.app.dao.CargoDao;
 import br.com.unifeob.app.entidades.Cargo;
+import br.com.unifeob.app.entidades.INSS;
 
 @WebServlet("/CargoController")
 public class CargoController extends HttpServlet {
@@ -26,6 +28,17 @@ public class CargoController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String logica = request.getParameter("logica");
+		
+		if(logica.equals("listar")){
+			
+			List<Cargo> lista = dao.listar();
+			
+			request.setAttribute("lista", lista);
+			RequestDispatcher dp = request.getRequestDispatcher("/visualizar/cargo/index.jsp");
+			dp.forward(request, response);
+		}
 	}
 
 	@Override

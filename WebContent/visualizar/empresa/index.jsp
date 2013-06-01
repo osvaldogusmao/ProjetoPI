@@ -32,7 +32,7 @@ pageEncoding="UTF-8"%>
 			<th>E-MAIL</th>
 			<th>SITE</th>
 		</tr>
-		<c:forEach var="empresa" items="${listar}">
+		<c:forEach var="empresa" items="${lista}">
 			<tr>
 			<td>${empresa.id}</td>
 			<td>${empresa.razaoSocial}</td>
@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%>
 			<td>${empresa.cnpj}</td>
 			<td>${empresa.inscricaoEstadual}</td>
 			<td>${empresa.inscricaoMuncipal}</td>
-			<td>${empresa.Logradouro}</td>
+			<td>${empresa.logradouro}</td>
 			<td>${empresa.numero}</td>
 			<td>${empresa.complemento}</td>
 			<td>${empresa.bairro}</td>
@@ -56,6 +56,6 @@ pageEncoding="UTF-8"%>
 			</c:forEach>
 		</table>
 		</fieldset>
-		
+		<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
 </body>
 </html>

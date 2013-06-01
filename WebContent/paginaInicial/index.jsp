@@ -30,6 +30,7 @@
 						<li><a href="/ProjetoPI/INSSController?logica=listar">Visualizar parametros INSS cadastrados</a></li>
 						<li><a href="/ProjetoPI/IRRFController?logica=listar">Visualizar parametros IRRF cadastrados</a></li>
 						<li><a href="/ProjetoPI/EmpresaController?logica=listar">Visualizar Empresas Cadastradas</a></li>
+						<li><a href="/ProjetoPI/CargoController?logica=listar">Visualizar Cargos Cadastradas</a></li>
 					</ul>
 				</li>
 				
