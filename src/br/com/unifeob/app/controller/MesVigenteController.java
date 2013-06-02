@@ -35,7 +35,7 @@ public class MesVigenteController extends HttpServlet {
 		
 		if ("salvar".equals(logica)) {
 			MesVigente mesvigente = new MesVigente();
-			mesvigente.setIdMes(Integer.parseInt(request.getParameter("IdMes")));
+			mesvigente.setId(Integer.parseInt(request.getParameter("IdMes")));
 			mesvigente.setMes(request.getParameter("Mes").toString());
 			mesvigente.setAno(Integer.parseInt(request.getParameter("Ano")));
 			mesvigente.setDiasUteis(Integer.parseInt(request.getParameter("DiasUteis")));

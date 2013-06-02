@@ -1,17 +1,13 @@
 package br.com.unifeob.app.controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.inject.Inject;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import br.com.unifeob.app.dao.FuncionarioEmpresaDao;
+import br.com.unifeob.app.dao.FuncionarioEmpresaDAO;
 import br.com.unifeob.app.entidades.FuncionarioEmpresa;
 
 @WebServlet("/FuncionarioEmpresaController")
@@ -20,7 +16,7 @@ public class FuncionarioEmpresaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@Inject
-	private FuncionarioEmpresaDao dao;
+	private FuncionarioEmpresaDAO dao;
 
 	public FuncionarioEmpresaController() {
 

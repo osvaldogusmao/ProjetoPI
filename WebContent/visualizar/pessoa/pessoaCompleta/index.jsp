@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,23 +9,23 @@
 <title>Visualizar Pessoa</title>
 </head>
 <body>
-	<form class="cadastros" method="post"
+	<form method="post"
 		action="${pageContext.request.contextPath}/PessoaController">
-			<h1>Cadastro de Pessoa</h1>
+			<h1 align="center">Cadastro de Pessoa Completo</h1>
 		<fieldset>
 			<legend>Dados Pessoais</legend>
 				<label> 
 					Nome: 
-					<input class="span5" type="text" name="nomePessoa" value="${pessoa.nome }">
+					<input class="span5" type="text" name="nomePessoa" value="${pessoa.nome}"/>
 				</label> 
 				<label> 
 					RG: 
-					<input class="span3" type="text" name="rgPessoa" />
+					<input class="span3" type="text" name="rgPessoa" value="${pessoa.rg }"/>
 				</label> 
 				<label> 
 					Orgão Expeditor: 
 					<select class="span2" name="orgaoExpeditorPessoa">
-						<option value=" ">Selecione</option>
+						<option value="${pessoa.orgaoExpeditor}">${pessoa.orgaoExpeditor }</option>
 						<option value="IFP">IFP</option>
 						<option value="IPF">IPF</option>
 						<option value="SSP">SSP</option>
@@ -43,21 +44,21 @@
 				</label> 
 				<label> 
 					CPF: 
-					<input class="span3" type="text" name="cpfPessoa" />
+					<input class="span3" type="text" name="cpfPessoa" value="${pessoa.cpf }" />
 				</label> 
 				<label> 
 					Data de Nascimento: 
-					<input class="span2" type="text" name="dataNascimentoPessoa" />
+					<input class="span2" type="text" name="dataNascimentoPessoa" value="${pessoa.dataNascimento }" />
 				</label> 
 				<label> 
 					Estado Civil: 
 					<select class="span2" name="estadoCivilPessoa">
-						<option value=" ">Selecione</option>
-						<option value="solteiro">Solteiro(a)</option>
-						<option value="casado">Casado(a)</option>
-						<option value="separado">Separado(a)</option>
-						<option value="divorciado">Divorciado(a)</option>
-						<option value="viuvo">Viúvo(a)</option>
+						<option value="${pessoa.orgaoExpeditor }">${pessoa.estadoCivil}</option>
+						<option value="solteiro(a)">Solteiro(a)</option>
+						<option value="casado(a)">Casado(a)</option>
+						<option value="separado(a)">Separado(a)</option>
+						<option value="divorciado(a)">Divorciado(a)</option>
+						<option value="viuvo(a)">Viúvo(a)</option>
 					</select>
 				</label> 
 				<label> 
@@ -68,8 +69,8 @@
 				<label> 
 					CNH: 
 					<select class="span2" name="cnhPessoa">
-						<option value=" ">Selecione</option>
-						<option value="">Não Possui</option>
+						<option value="${pessoa.cnh }">${pessoa.cnh}</option>
+						<option value="nao possui">Não Possui</option>
 						<option value="categoria A">Categoria A</option>
 						<option value="categoria B">Categoria B</option>
 						<option value="categoria C">Categoria C</option>
@@ -79,51 +80,51 @@
 				</label>
 				<label>
 					Nome da mãe:
-					<input class="span5" type="text" name="nomeDaMae" />
+					<input class="span5" type="text" name="nomeDaMae" value="${pessoa.nomeMae }"/>
 				</label>
 		</fieldset>
 		<fieldset>
 			<legend>Endereço</legend>
 			<label> 
 				Logradouro: 
-				<input class="span5" type="text"name="logradouro" />
+				<input class="span5" type="text"name="logradouro" value="${pessoa.logradouro}" />
 			</label>
 			<label> 
 				Numero: 
-				<input class="span2" type="text" name="numero" />
+				<input class="span2" type="text" name="numero" value="${pessoa.numero}" />
 			</label>
 			<label> 
 				Bairro:
-				<input class="span5" type="text" name="bairro" />
+				<input class="span5" type="text" name="bairro" value="${pessoa.bairro}"/>
 			</label>
 			<label> 
 				Estado: 
 				<select class="span3" name="uf">
-					<option value="">Selecione</option>
+					<option value="${pessoa.uf}">${pessoa.uf}</option>
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
-					<option value="AP">Amapá</option>
+					<option value="AP">Amapa</option>
 					<option value="AM">Amazonas</option>
 					<option value="BA">Bahia</option>
-					<option value="CE">Ceará</option>
+					<option value="CE">Ceara</option>
 					<option value="DF">Distrito Federal</option>
-					<option value="GO">Goiás</option>
+					<option value="GO">Goias</option>
 					<option value="ES">Espírito Santo</option>
-					<option value="MA">Maranhão</option>
+					<option value="MA">Maranhao</option>
 					<option value="MT">Mato Grosso</option>
 					<option value="MS">Mato Grosso do Sul</option>
 					<option value="MG">Minas Gerais</option>
-					<option value="PA">Pará</option>
+					<option value="PA">Para</option>
 					<option value="PB">Paraiba</option>
-					<option value="PR">Paraná</option>
+					<option value="PR">Parana</option>
 					<option value="PE">Pernambuco</option>
-					<option value="PI">Piauí­</option>
+					<option value="PI">Piaui</option>
 					<option value="RJ">Rio de Janeiro</option>
 					<option value="RN">Rio Grande do Norte</option>
 					<option value="RS">Rio Grande do Sul</option>
-					<option value="RO">Rondônia</option>
+					<option value="RO">Rondonia</option>
 					<option value="RR">Roraima</option>
-					<option value="SP">São Paulo</option>
+					<option value="SP">Sao Paulo</option>
 					<option value="SC">Santa Catarina</option>
 					<option value="SE">Sergipe</option>
 					<option value="TO">Tocantins</option>
@@ -131,17 +132,50 @@
 			</label>
 			<label> 
 				Cidade: 
-				<input class="span4" type="text"name="cidade" />
+				<input class="span4" type="text"name="cidade" value="${pessoa.cidade}" />
 			</label> 
 			<label> 
 				CEP: 
-				<input class="span3" type="text" name="cep" />
+				<input class="span3" type="text" name="cep" value="${pessoa.cep}" />
 			</label>
 		</fieldset>
 		<br>
-		<input type="hidden" name="logica" value="cadastrar" /> 
-		<input type="submit" value="Cadastrar" class="btn btn-primary">
+		<input type="hidden" name="logica" value="alterar" /> 
+		<input type="hidden" name="codigo" value="${pessoa.codigo}">
+		<input type="submit" value="Alterar" class="btn btn-primary">
+			</form>
+		<br><br>
+		<fieldset>
+			<legend>Dependentes</legend>
+					<table class="table table-hover">
+					<tr>
+						<th>Nome do Dependente</th>
+						<th>Data de Nascimento</th>
+					</tr>
+				<c:forEach items="${dependentes}" var="dependente">
+					<tr>
+						<td>${dependente.nome}</td>
+						<td>${dependente.dataNascimento}</td>
+						<td>			
+							<form action="${pageContext.request.contextPath}/DependenteController" method="post">
+								<input type="hidden" name="logica" value="visualizarDetalhesDependente" /> 
+								<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
+								<input type="hidden" name="codigoDependente" value="${dependente.codigo}"/>
+								<input type="submit" value="Visualizar Detalhes" class="btn-mini">
+							</form>
+						</td>
+						<td>
+							<form action="${pageContext.request.contextPath}/DependenteController" method="post">
+								<input type="hidden" name="logica" value="deletarDependente" /> 
+								<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
+								<input type="hidden" name="codigoDependente" value="${dependente.codigo}"/>
+								<input type="submit" value="Deletar" class="btn-mini btn btn-danger">
+							</form>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</fieldset>
 		<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Pagina Inicial </a>
-	</form>
 </body>
 </html>

@@ -9,7 +9,7 @@ import javax.persistence.EntityManager;
 import br.com.unifeob.app.entidades.FuncionarioEmpresa;
 
 @RequestScoped
-public class FuncionarioEmpresaDao {
+public class FuncionarioEmpresaDAO {
 	
 	@Inject
 	private EntityManager manager;

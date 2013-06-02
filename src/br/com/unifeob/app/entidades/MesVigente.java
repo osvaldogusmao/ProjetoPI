@@ -26,7 +26,7 @@ public void setId(Integer idMes) {
 } 
 
 public String getMes() {
-	return Mes;
+	return mes;
 }
 public void setMes(String mes) {
 	this.mes = mes;

@@ -8,19 +8,21 @@
 <title>Cadastro de Pessoa</title>
 </head>
 <body>
-	<form class="cadastros" method="post"
+	<form method="post"
 		action="${pageContext.request.contextPath}/PessoaController">
-			<h1>Cadastro de Pessoa</h1>
 		<fieldset>
-			<legend>Dados Pessoais</legend>
+			<h1 align="center">Cadastro de Pessoa</h1>
+			<legend >Dados Pessoais</legend>
 				<label> 
 					Nome: 
 					<input class="span5" type="text" name="nomePessoa" />
 				</label> 
+				
 				<label> 
 					RG: 
 					<input class="span3" type="text" name="rgPessoa" />
 				</label> 
+				
 				<label> 
 					Orgão Expeditor: 
 					<select class="span2" name="orgaoExpeditorPessoa">
@@ -41,14 +43,17 @@
 						<option value="CRF">CRF</option>
 					</select>
 				</label> 
+				
 				<label> 
 					CPF: 
 					<input class="span3" type="text" name="cpfPessoa" />
 				</label> 
+				
 				<label> 
 					Data de Nascimento: 
 					<input class="span2" type="text" name="dataNascimentoPessoa" />
 				</label> 
+				
 				<label> 
 					Estado Civil: 
 					<select class="span2" name="estadoCivilPessoa">
@@ -60,11 +65,13 @@
 						<option value="viuvo">Viúvo(a)</option>
 					</select>
 				</label> 
+				
 				<label> 
 					Deficiente Fisico: 
 					<input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="sim" />Sim 
 					<input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="nao" />Não
 				</label>
+				
 				<label> 
 					CNH: 
 					<select class="span2" name="cnhPessoa">
@@ -77,25 +84,30 @@
 						<option value="categoria E">Categoria E</option>
 					</select>
 				</label>
+				
 				<label>
 					Nome da mãe:
 					<input class="span5" type="text" name="nomeDaMae" />
 				</label>
 		</fieldset>
+		
 		<fieldset>
 			<legend>Endereço</legend>
 			<label> 
 				Logradouro: 
 				<input class="span5" type="text"name="logradouro" />
 			</label>
+			
 			<label> 
 				Numero: 
 				<input class="span2" type="text" name="numero" />
 			</label>
+			
 			<label> 
 				Bairro:
 				<input class="span5" type="text" name="bairro" />
 			</label>
+			
 			<label> 
 				Estado: 
 				<select class="span3" name="uf">
@@ -129,15 +141,18 @@
 					<option value="TO">Tocantins</option>
 				</select>
 			</label>
+			
 			<label> 
 				Cidade: 
 				<input class="span4" type="text"name="cidade" />
 			</label> 
+			
 			<label> 
 				CEP: 
 				<input class="span3" type="text" name="cep" />
 			</label>
 		</fieldset>
+		
 		<br>
 		<input type="hidden" name="logica" value="cadastrar" /> 
 		<input type="submit" value="Cadastrar" class="btn btn-primary">

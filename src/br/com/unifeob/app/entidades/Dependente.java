@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -20,16 +19,13 @@ import javax.persistence.TemporalType;
 			@Id
 			@GeneratedValue(strategy=GenerationType.AUTO)
 			private Long codigo;
-			
 			private String nome;
 			@Temporal(TemporalType.DATE)
 			private Date dataNascimento;
 			private String rg;
 			private String orgaoExpeditor;
 			private String cpf;
-			
 			@ManyToOne
-			@JoinColumn(name="codigo_pessoa")
 			private Pessoa pessoa;
 			
 

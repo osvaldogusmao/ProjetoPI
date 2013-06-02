@@ -9,8 +9,8 @@
 <title>Pessoa</title>
 </head>
 <body>
-		<fieldset class="cadastros">
-			<legend>Pessoas Cadastradas</legend>
+		<fieldset>
+			<h1 align="center">Pessoas Cadastradas</h1>
 				<table class="table table-bordered">
 					<tr>
 						<th>Nome Pessoa</th>
@@ -30,21 +30,14 @@
 							<form action="${pageContext.request.contextPath}/PessoaController" method="post">
 								<input type="hidden" name="logica" value="visualizarDetalhes" /> 
 								<input type="hidden" name="codigo" value="${pessoa.codigo}"/>
-								<input type="submit" value="Visualizar Detalhes" class="btn btn-info btn btn-mini">
+								<input type="submit" value="Visualizar Detalhes" class="btn-mini btn">
 							</form>
-							
 						</td>
 						<td>
 							<form action="${pageContext.request.contextPath}/PessoaController" method="post">
 								<input type="hidden" name="logica" value="deletarPessoa" /> 
 								<input type="hidden" name="codigo" value="${pessoa.codigo}"/>
-								<input type="submit" value="Deletar" class="btn btn-danger btn btn-mini">
-							</form>
-						</td>
-						<td>
-							<form action="${pageContext.request.contextPath}/PessoaController" method="post">
-								<input type="hidden" name="logica" value="alterarPessoa" /> 
-								<input type="submit" value="Alterar" class="btn btn-primary btn btn-mini">
+								<input type="submit" value="Deletar" class="btn-mini btn btn-danger">
 							</form>
 						</td>
 					</tr>

@@ -15,11 +15,11 @@
 		<legend>Identificação do Usuário</legend>
 			<label>
 				Usuário:
-				<input type="text" name="usuario" size="20"/>
+				<input type="text" name="usuario"/>
 			</label>
 			<label>
 				Senha:
-				<input type="password" name="senha" size="20" />
+				<input type="password" name="senha"/>
 			</label>	 		
 				<input type="hidden" name="logica" value="entrar"/>
 				<input type="submit" value="Entrar"/>	

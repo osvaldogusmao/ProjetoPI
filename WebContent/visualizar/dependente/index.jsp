@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro de Dependente</title>
+<title>Dependentes Cadastrados</title>
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css" />
 </head>
 <body>
 	<form method="post"
 		action="${pageContext.request.contextPath}/DependenteController">
 		
-			<h1 align="center">Cadastro de Dependente</h1>
+			<h1 align="center">Dependente Cadastrado</h1>
 			<fieldset>
 				<legend>Dados Pessoais</legend>
 				<label> 
@@ -22,16 +22,16 @@
 				</label> 
 				<label> 
 					Nome do Dependente: 
-						<input type="text" name="nomeDependente" />
+						<input type="text" name="nomeDependente" value="${dependente.nome}" />
 				</label> 
 				<label> 
 					RG: 
-						<input type="text" name="rgDependente" />
+						<input type="text" name="rgDependente" value="${dependente.rg}" />
 				</label>
 				<label> 
 					Orgão Expeditor: 
 				<select name="orgaoExpeditorDependente">
-					<option value=" ">Selecione</option>
+					<option value="${dependente.orgaoExpeditor}">${dependente.orgaoExpeditor}</option>
 					<option value="IFP">IFP</option>
 					<option value="IPF">IPF</option>
 					<option value="SSP">SSP</option>
@@ -50,27 +50,28 @@
 				</label> 
 				<label> 
 					CPF: 
-						<input type="text" name="cpfDependente" />
+						<input type="text" name="cpfDependente" value="${dependente.cpf}" />
 				</label> 
 				<label> 
 					Data de Nascimento: 
-					<input type="text" name="dataNascimentoDependente" />
+					<input type="text" name="dataNascimentoDependente" value="${dependente.dataNascimento}" />
 				</label>
-						</fieldset>
-				<input type="hidden" name="logica" value="adicionar" /> 
-				<input type="submit" value="Adicionar" class="btn btn-primary"> <br> <br>
-			</form>
+		</fieldset>
+				<input type="hidden" name="logica" value="editar" /> 
+				<input type="hidden" name="codigoDependente" value="${dependente.codigo}">
+				<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
+				<input type="submit" value="Editar"> <br> <br>
+	</form>
+	<br><br>
 		<fieldset>
-			<legend>Dependentes Cadastrados</legend>
+			<legend>Dependentes</legend>
 					<table class="table table-hover">
 					<tr>
-						<th>Nome Pessoa</th>
 						<th>Nome do Dependente</th>
 						<th>Data de Nascimento</th>
 					</tr>
 				<c:forEach items="${dependentes}" var="dependente">
 					<tr>
-						<td>${dependente.pessoa.nome}</td>
 						<td>${dependente.nome}</td>
 						<td>${dependente.dataNascimento}</td>
 						<td>			
@@ -93,6 +94,6 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-		<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
+		<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Pagina Inicial </a>
 </body>
 </html>
