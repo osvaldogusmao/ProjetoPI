@@ -13,7 +13,6 @@ pageEncoding="UTF-8"%>
 <fieldset>
 	<table class="table table-bordered">
 		<tr>
-			<th>ID</th>
 			<th>RAZÃO SOCIAL</th>
 			<th>NOME FANTASIA</th>
 			<th>CNPJ</th>
@@ -31,10 +30,11 @@ pageEncoding="UTF-8"%>
 			<th>TELEFONE 3</th>
 			<th>E-MAIL</th>
 			<th>SITE</th>
+			<th></th>
+			<th></th>
 		</tr>
 		<c:forEach var="empresa" items="${lista}">
 			<tr>
-			<td>${empresa.id}</td>
 			<td>${empresa.razaoSocial}</td>
 			<td>${empresa.nomeFantasia}</td>
 			<td>${empresa.cnpj}</td>
@@ -51,7 +51,10 @@ pageEncoding="UTF-8"%>
 			<td>${empresa.telefone2}</td>
 			<td>${empresa.telefone3}</td>
 			<td>${empresa.email}</td>
-			<td>${empresa.site}</td>
+			<td>${empresa.site}</td>			
+			<td>
+			<a href="/ProjetoPI/EmpresaController?logica=deletar">DELETAR</a>
+			</td>
 			</tr>
 			</c:forEach>
 		</table>

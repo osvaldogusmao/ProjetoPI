@@ -9,8 +9,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
+
 import br.com.unifeob.app.dao.EmpresaDao;
 import br.com.unifeob.app.entidades.Empresa;
+import br.com.unifeob.app.entidades.Pessoa;
 
 @WebServlet("/EmpresaController")
 public class EmpresaController extends HttpServlet {
@@ -32,14 +35,10 @@ public class EmpresaController extends HttpServlet {
 		
 		if(logica.equals("listar")){
         	List<Empresa> listaEmpresas = dao.listarEmpresas();
-        	
-        	
-        	
         	request.setAttribute("lista", listaEmpresas);
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
         	dispatcher.forward(request, response);
         }
-		
 	}
     
 	@Override

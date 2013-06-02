@@ -44,6 +44,4 @@ public Integer getIdCargo() {
 public void setIdCargo(Integer idCargo) {
 	this.idCargo = idCargo;
 }
-
-
 }

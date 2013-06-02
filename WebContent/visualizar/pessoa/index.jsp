@@ -35,7 +35,7 @@
 						</td>
 						<td>
 							<form action="${pageContext.request.contextPath}/PessoaController" method="post">
-								<input type="hidden" name="logica" value="deletarPessoa" /> 
+								<input type="hidden" name="logica" value="deletar" /> 
 								<input type="hidden" name="codigo" value="${pessoa.codigo}"/>
 								<input type="submit" value="Deletar" class="btn-mini btn btn-danger">
 							</form>
