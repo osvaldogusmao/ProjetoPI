@@ -40,4 +40,10 @@ public class Util {
 		return date;
 	}
 	
+	public static String converterDateParaString(Date date){
+		
+		
+		return null; 
+	}
+	
 }

@@ -176,6 +176,9 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-		<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Pagina Inicial </a>
+		<form action="${pageContext.request.contextPath}/PessoaController" method="post">
+						<input type="hidden" name="logica" value="paginaInicial" /> 
+						<input type="submit" value="Pagina Inicial" class="btn-mini">
+		</form>
 </body>
 </html>

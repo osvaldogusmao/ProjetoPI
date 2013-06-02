@@ -44,7 +44,14 @@ public class DependenteController extends HttpServlet {
 		
 		 String logica = request.getParameter("logica");
 		 String cpfPessoa = request.getParameter("cpfPessoa");
-		 
+		  
+		 if (logica.equals("paginaInicial")) {
+			 Pessoa pessoa = new Pessoa();
+			 Dependente dependente = new Dependente();
+			 request.setAttribute("pessoa", pessoa);
+			 request.setAttribute("dependente", dependente);
+			 request.getRequestDispatcher("/paginaInicial/index.jsp").forward(request, response);
+			}
 		if (logica.equals("adicionar")) {
 			pessoa = pessoaDao.buscarPessoaCPF(cpfPessoa);
 			String nome = request.getParameter("nomeDependente");

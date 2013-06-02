@@ -11,7 +11,7 @@
 <body>
 		<fieldset>
 			<h1 align="center">Pessoas Cadastradas</h1>
-				<table class="table table-bordered">
+				<table class="table table-hover">
 					<tr>
 						<th>Nome Pessoa</th>
 						<th>Data de Nascimento</th>
@@ -45,7 +45,10 @@
 			</table>
 				<br>
 				<br>
-			<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
+			<form action="${pageContext.request.contextPath}/PessoaController" method="post">
+						<input type="hidden" name="logica" value="paginaInicial" /> 
+						<input type="submit" value="Pagina Inicial" class="btn-mini">
+			</form>
 		</fieldset>			
 </body>
 </html>

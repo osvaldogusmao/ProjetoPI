@@ -60,7 +60,7 @@
 				<input type="hidden" name="logica" value="editar" /> 
 				<input type="hidden" name="codigoDependente" value="${dependente.codigo}">
 				<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
-				<input type="submit" value="Editar"> <br> <br>
+				<input type="submit" value="Editar" class="btn btn-primary"> <br> <br>
 	</form>
 	<br><br>
 		<fieldset>
@@ -94,6 +94,9 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-		<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Pagina Inicial </a>
+		<form action="${pageContext.request.contextPath}/DependenteController" method="post">
+						<input type="hidden" name="logica" value="paginaInicial" /> 
+						<input type="submit" value="Pagina Inicial" class="btn-mini">
+		</form>
 </body>
 </html>

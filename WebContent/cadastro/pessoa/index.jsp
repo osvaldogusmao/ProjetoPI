@@ -156,7 +156,10 @@
 		<br>
 		<input type="hidden" name="logica" value="cadastrar" /> 
 		<input type="submit" value="Cadastrar" class="btn btn-primary">
-		<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Pagina Inicial </a>
 	</form>
+		<form action="${pageContext.request.contextPath}/PessoaController" method="post">
+				<input type="hidden" name="logica" value="paginaInicial" /> 
+				<input type="submit" value="Pagina Inicial" class="btn-mini">
+		</form>
 </body>
 </html>

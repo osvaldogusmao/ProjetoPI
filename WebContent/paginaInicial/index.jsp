@@ -13,7 +13,7 @@
 			<ul>
 				<li>Cadastro
 					<ul>
-						<li><a href="/ProjetoPI/cadastro/pessoa/index.jsp">Cadastro de Pessoa</a></li>
+						<li><a href="/ProjetoPI/PessoaController?logica=cadastrarPessoa">Cadastro de Pessoa</a></li>
 						<li><a href="/ProjetoPI/cadastro/cargo/index.jsp">Cadastro de Cargo</a></li>
 						<li><a href="/ProjetoPI/cadastro/empresa/index.jsp">Cadastro de Empresa</a></li>
 						<li><a href="/ProjetoPI/cadastro/inss/index.jsp">Cadastro de INSS</a></li>
@@ -30,7 +30,7 @@
 						<li><a href="/ProjetoPI/IRRFController?logica=listar">Visualizar parametros IRRF cadastrados</a></li>
 						<li><a href="/ProjetoPI/EmpresaController?logica=listar">Visualizar Empresas Cadastradas</a></li>
 						<li><a href="/ProjetoPI/CargoController?logica=listar">Visualizar Cargos Cadastradas</a></li>
-						<li><a href="/ProjetoPI/PessoaController?logica=visualizar">Visualizar pessoas cadastrados</a></li>
+						<li><a href="/ProjetoPI/PessoaController?logica=visualizar">Visualizar Pessoas Cadastradas</a></li>
 					</ul>
 				</li>
 				

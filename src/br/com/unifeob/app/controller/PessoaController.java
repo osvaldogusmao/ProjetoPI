@@ -2,9 +2,7 @@ package br.com.unifeob.app.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.inject.Inject;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.unifeob.app.dao.DependenteDao;
 import br.com.unifeob.app.dao.PessoaDao;
 import br.com.unifeob.app.entidades.Dependente;
-import br.com.unifeob.app.entidades.IRRF;
 import br.com.unifeob.app.entidades.Pessoa;
 import br.com.unifeob.app.util.Util;
 
@@ -42,7 +39,16 @@ public class PessoaController extends HttpServlet {
 		if(logica.equals("visualizar")){
 			List<Pessoa> listaDePessoas = pessoaDao.listaPessoas();
 			request.setAttribute("listaDePessoas", listaDePessoas);
-			request.getRequestDispatcher(("/visualizar/pessoa/index.jsp")).forward(request, response);
+			request.getRequestDispatcher("/visualizar/pessoa/index.jsp").forward(request, response);
+		}
+		
+		if (logica.equals("cadastrarPessoa")) {
+			 Pessoa pessoa = new Pessoa();
+			 pessoa.setCodigo(null);
+			 Dependente dependente = new Dependente();
+			 request.setAttribute("pessoa", pessoa);
+			 request.setAttribute("dependente", dependente);
+			 request.getRequestDispatcher("/cadastro/pessoa/index.jsp").forward(request, response);
 		}
 	}
 
@@ -50,6 +56,16 @@ public class PessoaController extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		String logica = request.getParameter("logica");
+		
+		if (logica.equals("paginaInicial")) {
+			Pessoa pessoa = new Pessoa();
+			pessoa.setCodigo(null);
+			 Dependente dependente = new Dependente();
+			 request.setAttribute("pessoa", pessoa);
+			 request.setAttribute("dependente", dependente);
+			
+			 request.getRequestDispatcher("/paginaInicial/index.jsp").forward(request, response);
+			}
 		
 		if (logica.equals("cadastrar")) {
 			String nome = request.getParameter("nomePessoa");
@@ -127,14 +143,14 @@ public class PessoaController extends HttpServlet {
 			
 			pessoaDao.editar(pessoa);
 			pessoa = pessoaDao.buscaPessoa(Long.parseLong(codigo));
-			List<Dependente> listaDeDependentes = dependenteDao.listarDependenteDePessoa(pessoa); 
+			List<Dependente> listaDeDependentes = dependenteDao.listarDependenteDePessoa(pessoa);
 			request.setAttribute("pessoa", pessoa);
             request.setAttribute("dependentes", listaDeDependentes);
 			request.getRequestDispatcher("/cadastro/dependente/index.jsp").forward(request, response);
 				
 		}
 			
-		if (logica.equals("deletarPessoa")) {
+		if (logica.equals("deletar")) {
 			Long codigo = Long.parseLong(request.getParameter("codigo"));
 			pessoaDao.deletar(codigo);
 			List<Pessoa> listaDePessoas = pessoaDao.listaPessoas();
