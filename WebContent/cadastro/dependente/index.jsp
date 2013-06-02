@@ -93,6 +93,6 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-		<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
+		<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
 </body>
 </html>

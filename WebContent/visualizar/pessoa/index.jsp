@@ -45,7 +45,7 @@
 			</table>
 				<br>
 				<br>
-			<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
+			<a class="btn btn-link" href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
 		</fieldset>			
 </body>
 </html>
