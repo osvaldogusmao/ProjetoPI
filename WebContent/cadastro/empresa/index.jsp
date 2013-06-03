@@ -1,17 +1,12 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"/>
-<script language="JavaScript" type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
-<title>Cadastro de Empresas</title>
-</head>
-<body>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:import url="/layout/header.jsp"></c:import>
+
 	<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
+			<h1 align="center">Cadastro de Empresas</h1>
 		<fieldset>
-			<legend>Cadastro de Empresas</legend>
+			<legend>Dados da Empresa</legend>
 			<label>Razão Social:
 			<input type="text" name="razaosocial" />
 			</label>
@@ -95,6 +90,7 @@
 		
 		<input type="hidden" name="logica" value="salvar"/>
 		<input type="submit" value="Salvar" class="btn btn-primary"/>
-	</form>             
-</body>
-</html>
+	</form>   
+	<a href="/ProjetoPI/paginaInicial/index.jsp"><input type="submit" value="Voltar" class="btn"></a>          
+
+<c:import url="/layout/footer.jsp"></c:import>	

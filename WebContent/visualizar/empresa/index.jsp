@@ -1,3 +1,4 @@
+<%@page import="javax.swing.JOptionPane"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" 
 pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -53,7 +54,11 @@ pageEncoding="UTF-8"%>
 			<td>${empresa.email}</td>
 			<td>${empresa.site}</td>			
 			<td>
-			<a href="/ProjetoPI/EmpresaController?logica=deletar">DELETAR</a>
+			<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
+			<input type="hidden" name="logica" value="deletar">
+			<input type="hidden" name="codigo" value="${empresa.id}">
+			<input type="submit" value="Deletar">
+			</form>
 			</td>
 			</tr>
 			</c:forEach>

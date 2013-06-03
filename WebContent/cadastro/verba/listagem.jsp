@@ -39,24 +39,12 @@
 			</form>
 			<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
 	  </div>
-
-
-
+	  
 <script type="text/javascript">
-
-$(document).ready(function(){
-	
-	window.setTimeout(function(){
-		$('.alert').fadeOut('middle');
-	},2000);
-	
 	$('.delete').click(function(){
 		$('#verba_id').val($(this).parent().attr('id'));
 	});
-	
-	
-});
-
-</script>
+</script>	 
+	  
 
 <c:import url="/layout/footer.jsp"></c:import>

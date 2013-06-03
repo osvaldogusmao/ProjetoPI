@@ -32,6 +32,8 @@
 						</li>
 						<li>
 							<a href="${pageContext.request.contextPath }/cadastro/verba">Verbas</a>
+							<a href="${pageContext.request.contextPath }/cadastro/cargo">Cargos</a>
+							<a href="${pageContext.request.contextPath }/cadastro/empresa">Empresa</a>
 						</li>
 						<li>
 							<a href="${pageContext.request.contextPath }/cadastro/funcionarioEmpresa/funcionarioEmpresa.jsp">Funcionário Empresa e Cargo</a>
