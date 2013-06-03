@@ -11,6 +11,12 @@
     <error-code>404</error-code>
     <location>/erro/404.jsp</location>
   </error-page>
+  
+  <error-page>
+	<exception-type>java.lang.Exception</exception-type>
+	<location>/erro/erro.jsp</location>
+  </error-page>
+  
   <resource-env-ref>
     <resource-env-ref-name>BeanManager</resource-env-ref-name>
     <resource-env-ref-type>

@@ -51,7 +51,7 @@ public class IRRFController extends HttpServlet {
 		String logica = request.getParameter("logica");
 		
 		if ("salvar".equals(logica)) {
-			
+			try{
 			IRRF irrf = new IRRF();
 			irrf.setAnoReferente(Integer.parseInt(request.getParameter("anoreferencia")));
 			
@@ -77,10 +77,31 @@ public class IRRFController extends HttpServlet {
 			irrf.setDeducaoPorDependente(Float.parseFloat(request.getParameter("deducaoPorDependente")));
 			
 			dao.salvar(irrf);
+			
+			request.setAttribute("sucesso", "IRRF cadastrado com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+				
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+				
+			}
 		}
 		
 		if("apagar".equals(logica)){
+			try{
 			dao.apagar(Long.parseLong(request.getParameter("id")));
+			request.setAttribute("sucesso", "IRRF removido com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			}catch(Exception ex){
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+			}
 		}
 		
 		if("alterar".equals(logica)){
@@ -92,6 +113,7 @@ public class IRRFController extends HttpServlet {
 		
 		if("update".equals(logica)){
 			
+			try{
 			IRRF irrf = new IRRF();
 			
 			irrf.setId(Long.parseLong(request.getParameter("id")));
@@ -120,6 +142,18 @@ public class IRRFController extends HttpServlet {
 			irrf.setDeducaoPorDependente(Float.parseFloat(request.getParameter("deducaoPorDependente")));
 			
 			dao.alterar(irrf);
+			
+			request.setAttribute("sucesso", "IRRF alterado com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+				
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+				
+			}
 			
 		}
 		

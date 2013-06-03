@@ -50,6 +50,7 @@ public class INSSController extends HttpServlet {
 		
 		
 		if ("salvar".equals(logica)) {
+			try{
 			INSS inss = new INSS();
 			inss.setAnoRereferente(Integer.parseInt(request.getParameter("anoreferencia")));
 			
@@ -66,6 +67,16 @@ public class INSSController extends HttpServlet {
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
 			
 			dao.salvar(inss);
+			
+			request.setAttribute("sucesso", "INSS cadastrado com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+			request.setAttribute("erro", ex);
+			RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+			dp.forward(request, response);
+			}
 		}
 		
 		if("listar".equals(logica)){
@@ -79,7 +90,18 @@ public class INSSController extends HttpServlet {
 		}
 		
 		if("apagar".equals(logica)){
+			try{
 			dao.apagar(Long.parseLong(request.getParameter("id")));
+			
+			request.setAttribute("sucesso", "INSS removido com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+			}
 		}
 		
 		if("alterar".equals(logica)){
@@ -91,6 +113,7 @@ public class INSSController extends HttpServlet {
 		
 		if("update".equals(logica)){
 			
+			try{
 			INSS inss = new INSS();
 			
 			inss.setId(Long.parseLong(request.getParameter("id")));
@@ -110,6 +133,16 @@ public class INSSController extends HttpServlet {
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
 			
 			dao.alterar(inss);
+			
+			request.setAttribute("sucesso", "INSS alterado com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+			}
 			
 		}
 		

@@ -5,16 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>404</title>
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
+<title>ERRO!</title>
 </head>
 <body>
-
+	
 	<div class="hero-unit center">
-	<h1>404!</h1>
-	<h1>Página não encontrada!</h1>
-	<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
+		<h1>Erro ocorrido durante a execução!</h1>
+		<h3>${erro}</h3>
+		<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
 	</div>
-	<c:import url="/layout/footer.jsp"></c:import>
+
+<c:import url="/layout/footer.jsp"></c:import>
 </body>
 </html>
