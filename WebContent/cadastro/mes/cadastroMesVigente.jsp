@@ -173,7 +173,8 @@ function goTo()
     <td>&nbsp;</td>
   </tr>
 </table>
-<input type="submit" name="calcular" value="Calcular Folha de Pagamento">
+<input type="submit" name="selecionar" value="Selecionar este mês"><p>
+<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
 </div>
 </form>
 </body>

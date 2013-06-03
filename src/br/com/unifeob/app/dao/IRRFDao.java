@@ -38,8 +38,8 @@ public class IRRFDao {
 	}
 	
 	public void apagar(Long id){
-		manager.getTransaction().begin();
 		IRRF irrf = recuperarInstancia(id);
+		manager.getTransaction().begin();
 		manager.remove(irrf);
 		manager.getTransaction().commit();
 	}

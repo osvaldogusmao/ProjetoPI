@@ -50,6 +50,27 @@
 				<td>${irrf.percentualFaixaQuatro}</td>
 				<td>${irrf.deducaoFaixaQuatro}</td>
 			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				
+				<td>
+					<form action="${pageContext.request.contextPath}/IRRFController" method="post">
+						<input type="hidden" name="logica" value="alterar">
+						<input type="hidden" value="${irrf.id}" name="id">
+						<input type="submit" value="Alterar" class="btn btn-warning">
+					</form>				
+				</td>
+					
+				<td>
+					<form action="${pageContext.request.contextPath}/IRRFController" method="post">
+						<input type="hidden" name="logica" value="apagar">
+						<input type="hidden" value="${irrf.id}" name="id">
+						<input type="submit" value="Apagar" class="btn btn-danger">
+					</form>
+				</td>
+				
+			</tr>
 		</table>
 		<p>Dedução por dependente: ${irrf.deducaoPorDependente}</p>
 	</fieldset>

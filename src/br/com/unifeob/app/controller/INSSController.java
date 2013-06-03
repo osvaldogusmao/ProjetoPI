@@ -50,6 +50,7 @@ public class INSSController extends HttpServlet {
 		
 		
 		if ("salvar".equals(logica)) {
+			try{
 			INSS inss = new INSS();
 			inss.setAnoRereferente(Integer.parseInt(request.getParameter("anoreferencia")));
 			
@@ -66,6 +67,16 @@ public class INSSController extends HttpServlet {
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
 			
 			dao.salvar(inss);
+			
+			request.setAttribute("sucesso", "INSS cadastrado com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+			request.setAttribute("erro", ex);
+			RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+			dp.forward(request, response);
+			}
 		}
 		
 		if("listar".equals(logica)){
@@ -77,5 +88,63 @@ public class INSSController extends HttpServlet {
 		dp.forward(request, response);
 		
 		}
+		
+		if("apagar".equals(logica)){
+			try{
+			dao.apagar(Long.parseLong(request.getParameter("id")));
+			
+			request.setAttribute("sucesso", "INSS removido com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+			}
+		}
+		
+		if("alterar".equals(logica)){
+			INSS inss = dao.recuperarInstancia(Long.parseLong(request.getParameter("id")));
+			request.setAttribute("inss", inss);
+			RequestDispatcher rd = request.getRequestDispatcher("/alterar/inss/index.jsp");
+			rd.forward(request, response);
+		}
+		
+		if("update".equals(logica)){
+			
+			try{
+			INSS inss = new INSS();
+			
+			inss.setId(Long.parseLong(request.getParameter("id")));
+			
+			inss.setAnoRereferente(Integer.parseInt(request.getParameter("anoreferencia")));
+			
+			inss.setValorFaixaUm(Float.parseFloat(request.getParameter("valorFaixaUm")));
+			inss.setValorLimiteFaixaUm(Float.parseFloat(request.getParameter("valorLimiteFaixaUm")));
+			inss.setPercentualFaixaUm(Float.parseFloat(request.getParameter("percentualFaixaUm")));
+			
+			inss.setValorFaixaDois(Float.parseFloat(request.getParameter("valorFaixaDois")));
+			inss.setValorLimiteFaixaDois(Float.parseFloat(request.getParameter("valorLimiteFaixaDois")));
+			inss.setPercentualFaixaDois(Float.parseFloat(request.getParameter("percentualFaixaDois")));
+			
+			inss.setValorFaixaTres(Float.parseFloat(request.getParameter("valorFaixaTres")));
+			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
+			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
+			
+			dao.alterar(inss);
+			
+			request.setAttribute("sucesso", "INSS alterado com sucesso!");
+			RequestDispatcher dp = request.getRequestDispatcher("/sucesso/index.jsp");
+			dp.forward(request, response);
+			
+			}catch(Exception ex){
+				request.setAttribute("erro", ex);
+				RequestDispatcher dp = request.getRequestDispatcher("/erro/erro.jsp");
+				dp.forward(request, response);
+			}
+			
+		}
+		
 	}
 }
