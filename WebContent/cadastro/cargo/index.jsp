@@ -66,7 +66,7 @@ $(document).ready(function(){
 			<input type="text" id="txtperic" name="txtpericulosidade">
 			<br>
 			<input type="hidden" name="logica" value="salvar">
-			<input type="submit" value="Salvar">
+			<input type="submit" value="Salvar" class="btn btn-primary">
 		</fieldset>
 	</form>
 </body>

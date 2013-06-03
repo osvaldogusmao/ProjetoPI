@@ -30,8 +30,7 @@ public String getMes() {
 }
 public void setMes(String mes) {
 	this.mes = mes;
-}
-
+} 
 public Integer getAno() {
 	return ano;
 }

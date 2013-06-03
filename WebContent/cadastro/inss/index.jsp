@@ -6,6 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
 <title>Cadastro INSS</title>
+<style type="text/css">
+	body {
+	padding: 20px 20px 20px 20px;
+}
+</style>
 </head>
 <body>
 	
@@ -33,24 +38,24 @@
 		</tr>
 		
 		<tr>
-			<td><input type="text" required="" /></td>
+			<td><input type="text" required="" name="valorFaixaUm" /></td>
 			<td><input type="text" required="" name="valorLimiteFaixaUm"/></td>
 			<td><input type="text" required="" name="percentualFaixaUm"/></td>
 		</tr>
 			<tr>
-			<td><input type="text" required=""/></td>
+			<td><input type="text" required="" name="valorFaixaDois"/></td>
 			<td><input type="text" required="" name="valorLimiteFaixaDois"/></td>
 			<td><input type="text" required="" name="percentualFaixaDois"/></td>
 		</tr>
 			<tr>
-			<td><input type="text" required=""/></td>
+			<td><input type="text" required="" name="valorFaixaTres"/></td>
 			<td><input type="text" required="" name="valorLimiteFaixaTres"/></td>
 			<td><input type="text" required="" name="percentualFaixaTres"/></td>
 		</tr>
 	</table>
 	
 	<input type="hidden" name="logica" value="salvar"/>
-	<input type="submit" value="Salvar"/>
+	<input type="submit" value="Salvar" class="btn btn-primary"/>
 	
 	</form>
 

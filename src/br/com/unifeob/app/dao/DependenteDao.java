@@ -17,18 +17,31 @@ public class DependenteDao {
 	@Inject
 	private EntityManager entityManager;
 	
-	public void salvar(Dependente dependente){
-		
-		entityManager.getTransaction().begin();
-		entityManager.merge(dependente);
-		entityManager.getTransaction().commit();
-	}
 	
 	public List<Dependente> listarDependenteDePessoa(Pessoa pessoa){
 		Query query = entityManager.createQuery("from Dependente d join fetch d.pessoa p  where d.pessoa = :pessoa");
         query.setParameter("pessoa", pessoa);
         List<Dependente> listaDeDependente = query.getResultList();
         return  listaDeDependente;
-
 	}
+    public Dependente buscaDependente(Long codigo){   	
+    	Dependente dependente = entityManager.find(Dependente.class, codigo);
+    	return dependente;
+    }
+	public void salvar(Dependente dependente){
+		entityManager.getTransaction().begin();
+		entityManager.merge(dependente);
+		entityManager.getTransaction().commit();
+	}
+	public void editar(Dependente dependente){
+		entityManager.getTransaction().begin();
+		entityManager.merge(dependente);
+		entityManager.getTransaction().commit();
+	}
+    public void deletar(Long codigo) {
+        entityManager.getTransaction().begin();
+        Dependente dependente = buscaDependente(codigo);
+        entityManager.remove(dependente);
+        entityManager.getTransaction().commit();
+    }
 }

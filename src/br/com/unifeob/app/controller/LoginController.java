@@ -32,17 +32,12 @@ public class LoginController extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//String logica que recebera o parametro do hidden
+
 		String logica = request.getParameter("logica");
-		 //verificando o valor de logica
 		 if (logica.equals("entrar")) {
-		 //criando variaveis e dando seus valores conforme o que foi digitado no form
 			String usuario = request.getParameter("usuario");
-		//convertendo senha para md5
 			String senha = util.converterSenhaParaMd5(request.getParameter("senha"));
-		//string boolean resultado pega o resultado do DAO
 			Boolean resultado = loginDao.vetificaLogin(usuario, senha);
-		//virifica se o resultado é true ou false 
 			if (resultado.equals(true)) {				
 				request.getRequestDispatcher("/paginaInicial/index.jsp").forward(request, response);
 				

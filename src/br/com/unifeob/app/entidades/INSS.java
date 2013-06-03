@@ -15,10 +15,16 @@ public class INSS {
 	private Long id;
 
 	private Integer anoReferente;
+	
+	private Float valorFaixaUm;
 	private Float valorLimiteFaixaUm;
 	private Float percentualFaixaUm;
+	
+	private Float valorFaixaDois;
 	private Float valorLimiteFaixaDois;
 	private Float percentualFaixaDois;
+	
+	private Float valorFaixaTres;
 	private Float valorLimiteFaixaTres;
 	private Float percentualFaixaTres;
 	
@@ -70,8 +76,23 @@ public class INSS {
 	public void setPercentualFaixaTres(Float percentualFaixaTres) {
 		this.percentualFaixaTres = percentualFaixaTres;
 	}
-	
-	
-	
+	public Float getValorFaixaUm() {
+		return valorFaixaUm;
+	}
+	public void setValorFaixaUm(Float valorFaixaUm) {
+		this.valorFaixaUm = valorFaixaUm;
+	}
+	public Float getValorFaixaDois() {
+		return valorFaixaDois;
+	}
+	public void setValorFaixaDois(Float valorFaixaDois) {
+		this.valorFaixaDois = valorFaixaDois;
+	}
+	public Float getValorFaixaTres() {
+		return valorFaixaTres;
+	}
+	public void setValorFaixaTres(Float valorFaixaTres) {
+		this.valorFaixaTres = valorFaixaTres;
+	}
 
 }

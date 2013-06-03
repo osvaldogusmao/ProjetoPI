@@ -16,14 +16,17 @@ public class IRRF {
 	
 	private Integer anoReferente;
 	
+	private Float valorFaixaUm;
 	private Float valorLimiteFaixaUm;
 	private Float percentualFaixaUm;
 	private Float deducaoFaixaUm;
 	
+	private Float valorFaixaDois;
 	private Float valorLimiteFaixaDois;
 	private Float percentualFaixaDois;
 	private Float deducaoFaixaDois;
 	
+	private Float valorFaixaTres;
 	private Float valorLimiteFaixaTres;
 	private Float percentualFaixaTres;
 	private Float deducaoFaixaTres;
@@ -153,6 +156,32 @@ public class IRRF {
 	public void setDeducaoPorDependente(Float deducaoPorDependente) {
 		this.deducaoPorDependente = deducaoPorDependente;
 	}
+
+	public Float getValorFaixaUm() {
+		return valorFaixaUm;
+	}
+
+	public void setValorFaixaUm(Float valorFaixaUm) {
+		this.valorFaixaUm = valorFaixaUm;
+	}
+
+	public Float getValorFaixaDois() {
+		return valorFaixaDois;
+	}
+
+	public void setValorFaixaDois(Float valorFaixaDois) {
+		this.valorFaixaDois = valorFaixaDois;
+	}
+
+	public Float getValorFaixaTres() {
+		return valorFaixaTres;
+	}
+
+	public void setValorFaixaTres(Float valorFaixaTres) {
+		this.valorFaixaTres = valorFaixaTres;
+	}
+	
+	
 	
 
 }
