@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <c:import url="/layout/header.jsp"></c:import>
+		
 		<fieldset>
 			<h1 align="center">Pessoas Cadastradas</h1>
 				<table class="table table-condensed table-hover table-bordered">
@@ -38,4 +39,5 @@
 			</table>
 				<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
 		</fieldset>	
-		<c:import url="/layout/footer.jsp"></c:import>		
+		
+<c:import url="/layout/footer.jsp"></c:import>		

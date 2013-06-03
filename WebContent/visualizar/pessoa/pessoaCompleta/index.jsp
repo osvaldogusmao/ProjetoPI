@@ -4,9 +4,8 @@
 <c:import url="/layout/header.jsp"></c:import>
 	<form method="post"
 		action="${pageContext.request.contextPath}/PessoaController">
-		
-		<fieldset>
-			
+	
+		<fieldset>			
 			<legend >Dados Pessoais</legend>
 			
 			<div class="controls controls-row">
@@ -167,4 +166,4 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-		<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>

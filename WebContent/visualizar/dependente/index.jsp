@@ -86,5 +86,3 @@
 			</table>
 		</fieldset>
 		<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
-</body>
-</html>

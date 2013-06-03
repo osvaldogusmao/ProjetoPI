@@ -6,7 +6,7 @@
 	<form method="post"
 		action="${pageContext.request.contextPath}/PessoaController">
 		<fieldset>
-			
+					
 			<legend >Dados Pessoais</legend>
 			
 			<div class="controls controls-row">
@@ -136,4 +136,5 @@
 			<input type="hidden" name="logica" value="cadastrar" /> 
 			<input type="submit" value="Cadastrar" class="btn btn-primary">
 	</form>
+	
 <c:import url="/layout/footer.jsp"></c:import>
