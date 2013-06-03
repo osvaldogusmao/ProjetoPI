@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<script type="text/javascript" src="/ProjetoPI/bootstrap/js/jquery.min.js"></script>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"/>
+<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap/js/jquery.min.js"></script>
 <title>Cadastro de Cargos</title>
 <script> 
 
