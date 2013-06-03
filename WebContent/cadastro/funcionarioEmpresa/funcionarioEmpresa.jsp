@@ -92,6 +92,7 @@
 
 
 </table>
+<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
 </div>
 
 
