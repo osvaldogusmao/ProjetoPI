@@ -41,31 +41,12 @@ public class PessoaController extends HttpServlet {
 			request.setAttribute("listaDePessoas", listaDePessoas);
 			request.getRequestDispatcher("/visualizar/pessoa/index.jsp").forward(request, response);
 		}
-		
-		if (logica.equals("cadastrarPessoa")) {
-			 Pessoa pessoa = new Pessoa();
-			 pessoa.setCodigo(null);
-			 Dependente dependente = new Dependente();
-			 request.setAttribute("pessoa", pessoa);
-			 request.setAttribute("dependente", dependente);
-			 request.getRequestDispatcher("/cadastro/pessoa/index.jsp").forward(request, response);
-		}
 	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		
 		String logica = request.getParameter("logica");
-		
-		if (logica.equals("paginaInicial")) {
-			Pessoa pessoa = new Pessoa();
-			pessoa.setCodigo(null);
-			 Dependente dependente = new Dependente();
-			 request.setAttribute("pessoa", pessoa);
-			 request.setAttribute("dependente", dependente);
-			
-			 request.getRequestDispatcher("/paginaInicial/index.jsp").forward(request, response);
-			}
 		
 		if (logica.equals("cadastrar")) {
 			String nome = request.getParameter("nomePessoa");

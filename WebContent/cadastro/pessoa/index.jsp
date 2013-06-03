@@ -1,80 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css" />
-<title>Cadastro de Pessoa</title>
-</head>
-<body>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:import url="/layout/header.jsp"></c:import>
+
 	<form method="post"
 		action="${pageContext.request.contextPath}/PessoaController">
 		<fieldset>
-			<h1 align="center">Cadastro de Pessoa</h1>
+			
 			<legend >Dados Pessoais</legend>
-				<label> 
-					Nome: 
-					<input class="span5" type="text" name="nomePessoa" />
-				</label> 
+			
+			<div class="controls controls-row">
+				<label class="span5" for="nome"> Nome: </label> 
+				<label class="span2" for="rg"> RG:  </label> 
+				<label class="span2" for="orgaoExpeditor"> Orgão Expeditor:</label> 
+				<label class="span2" for="cpf">CPF:</label> 
+			</div>
+			
+			<div class="controls controls-row">
+				<input class="span5" type="text" name="nomePessoa" id="nome" />
+				<input class="span2" type="text" name="rgPessoa" id="rg"/>
+				<select class="span2" name="orgaoExpeditorPessoa" id="orgaoExpeditor">
+					<option value=" ">Selecione</option>
+					<option value="IFP">IFP</option>
+					<option value="IPF">IPF</option>
+					<option value="SSP">SSP</option>
+					<option value="MA">MA</option>
+					<option value="MM">MM</option>
+					<option value="MT">MT</option>
+					<option value="OAB">OAB</option>
+					<option value="CREA">CREA</option>
+					<option value="CRM">CRM</option>
+					<option value="CRA">CRA</option>
+					<option value="ME">ME</option>
+					<option value="CBM">CBM</option>
+					<option value="CRO">CRO</option>
+					<option value="CRF">CRF</option>
+				</select>		
+				<input class="span2" type="text" name="cpfPessoa" id="cpf">
+			</div>
 				
-				<label> 
-					RG: 
-					<input class="span3" type="text" name="rgPessoa" />
-				</label> 
-				
-				<label> 
-					Orgão Expeditor: 
-					<select class="span2" name="orgaoExpeditorPessoa">
-						<option value=" ">Selecione</option>
-						<option value="IFP">IFP</option>
-						<option value="IPF">IPF</option>
-						<option value="SSP">SSP</option>
-						<option value="MA">MA</option>
-						<option value="MM">MM</option>
-						<option value="MT">MT</option>
-						<option value="OAB">OAB</option>
-						<option value="CREA">CREA</option>
-						<option value="CRM">CRM</option>
-						<option value="CRA">CRA</option>
-						<option value="ME">ME</option>
-						<option value="CBM">CBM</option>
-						<option value="CRO">CRO</option>
-						<option value="CRF">CRF</option>
-					</select>
-				</label> 
-				
-				<label> 
-					CPF: 
-					<input class="span3" type="text" name="cpfPessoa" />
-				</label> 
-				
-				<label> 
-					Data de Nascimento: 
-					<input class="span2" type="text" name="dataNascimentoPessoa" />
-				</label> 
-				
-				<label> 
-					Estado Civil: 
-					<select class="span2" name="estadoCivilPessoa">
-						<option value=" ">Selecione</option>
-						<option value="solteiro">Solteiro(a)</option>
-						<option value="casado">Casado(a)</option>
-						<option value="separado">Separado(a)</option>
-						<option value="divorciado">Divorciado(a)</option>
-						<option value="viuvo">Viúvo(a)</option>
-					</select>
-				</label> 
-				
-				<label> 
-					Deficiente Fisico: 
-					<input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="sim" />Sim 
-					<input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="nao" />Não
-				</label>
-				
-				<label> 
-					CNH: 
-					<select class="span2" name="cnhPessoa">
+			<div class="controls controls-row">
+				<label class="span2" for="dataNascimento">Data Nascimento:</label>
+				<label class="span2" for="estadoCivil">Estado Civil:</label> 
+				<label class="span2" for="cnh">CNH:</label>  
+				<label class="span5" for="nomeMae"> Nome da mãe: </label>	
+			</div>
+			<div class="controls controls-row">
+				<input class="span2" type="text" name="dataNascimentoPessoa" id="dataNascimento"/>
+				<select class="span2" name="estadoCivilPessoa" id="estadoCivil">
+					<option value=" ">Selecione</option>
+					<option value="solteiro">Solteiro(a)</option>
+					<option value="casado">Casado(a)</option>
+					<option value="separado">Separado(a)</option>
+					<option value="divorciado">Divorciado(a)</option>
+					<option value="viuvo">Viúvo(a)</option>
+				</select>
+				<select class="span2" name="cnhPessoa" id="cnh">
 						<option value=" ">Selecione</option>
 						<option value="">Não Possui</option>
 						<option value="categoria A">Categoria A</option>
@@ -82,35 +63,36 @@
 						<option value="categoria C">Categoria C</option>
 						<option value="categoria D">Categoria D</option>
 						<option value="categoria E">Categoria E</option>
-					</select>
+				</select>
+				<input class="span5" type="text" name="nomeDaMae" id="nomeMae"/>
+			</div>
+
+			<div class="controls controls-row">		
+				<label class="span3"> Deficiente Fisico:</label>
+			</div>
+				<label  class="checkbox">
+					Sim	<input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="nao" /> 
 				</label>
-				
-				<label>
-					Nome da mãe:
-					<input class="span5" type="text" name="nomeDaMae" />
+				<label  class="checkbox">
+					Não <input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="sim"> 
 				</label>
 		</fieldset>
 		
 		<fieldset>
 			<legend>Endereço</legend>
-			<label> 
-				Logradouro: 
-				<input class="span5" type="text"name="logradouro" />
-			</label>
 			
-			<label> 
-				Numero: 
-				<input class="span2" type="text" name="numero" />
-			</label>
+			<div class="controls controls-row">	
+				<label class="span4" for="logradouro"> Logradouro: </label> 
+				<label class="span2" for="numero"> Numero: </label> 
+				<label class="span4" for="bairro"> Bairro:</label>
+				<label class="span1" for="estado"> Estado:</label> 
+			</div>
 			
-			<label> 
-				Bairro:
-				<input class="span5" type="text" name="bairro" />
-			</label>
-			
-			<label> 
-				Estado: 
-				<select class="span3" name="uf">
+			<div class="controls controls-row">	
+				<input class="span4" type="text"name="logradouro" id="logradouro" />
+				<input class="span2" type="text" name="numero" id="numero"/>
+				<input class="span4" type="text" name="bairro" id="bairro"/>
+				<select class="span2" name="uf" id="estado">
 					<option value="">Selecione</option>
 					<option value="AC">Acre</option>
 					<option value="AL">Alagoas</option>
@@ -140,26 +122,18 @@
 					<option value="SE">Sergipe</option>
 					<option value="TO">Tocantins</option>
 				</select>
-			</label>
-			
-			<label> 
-				Cidade: 
-				<input class="span4" type="text"name="cidade" />
-			</label> 
-			
-			<label> 
-				CEP: 
-				<input class="span3" type="text" name="cep" />
-			</label>
+			</div>
+			<div class="controls controls-row">	
+				<label class="span4" for="cidade"> Cidade:</label>
+				<label class="span3" for="cep"> CEP:</label> 
+			</div>
+			<div class="controls controls-row">	
+				<input class="span4" type="text"name="cidade" id="cidade" />
+				<input class="span3" type="text" name="cep" id="cep"/>
+			</div>
 		</fieldset>
-		
-		<br>
-		<input type="hidden" name="logica" value="cadastrar" /> 
-		<input type="submit" value="Cadastrar" class="btn btn-primary">
+			<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+			<input type="hidden" name="logica" value="cadastrar" /> 
+			<input type="submit" value="Cadastrar" class="btn btn-primary">
 	</form>
-		<form action="${pageContext.request.contextPath}/PessoaController" method="post">
-				<input type="hidden" name="logica" value="paginaInicial" /> 
-				<input type="submit" value="Pagina Inicial" class="btn-mini">
-		</form>
-</body>
-</html>
+<c:import url="/layout/footer.jsp"></c:import>

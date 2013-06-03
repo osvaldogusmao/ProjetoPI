@@ -1,36 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Cadastro de Dependente</title>
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css" />
-</head>
-<body>
+<c:import url="/layout/header.jsp"></c:import>
 	<form method="post"
 		action="${pageContext.request.contextPath}/DependenteController">
-		
-			<h1 align="center">Cadastro de Dependente</h1>
 			<fieldset>
 				<legend>Dados Pessoais</legend>
-				<label> 
-					Pessoa: 
-						<input type="text" name="nomeDaPessoa" value="${pessoa.nome}" readonly="true" />
+			<div class="controls controls-row">
+				<label class="span4"> Nome da Pessoa: </label>
+			</div>
+			<div class="controls controls-row">
+						<input class="span4" type="text" name="nomeDaPessoa" value="${pessoa.nome}" readonly="true" />
 						<input type="hidden" name="cpfPessoa" value="${pessoa.cpf}" />
-				</label> 
-				<label> 
-					Nome do Dependente: 
-						<input type="text" name="nomeDependente" />
-				</label> 
-				<label> 
-					RG: 
-						<input type="text" name="rgDependente" />
-				</label>
-				<label> 
-					Orgão Expeditor: 
-				<select name="orgaoExpeditorDependente">
+			</div>
+			<div class="controls controls-row">
+				<label class="span4" for="nomeDependente" >Nome do Dependente:</label>
+				<label class="span2" for="rg">RG:</label> 
+				<label class="span2" for="orgaoExpeditor">Orgão Expeditor:</label>
+				<label class="span2" for="cpf">CPF:</label>  
+			</div>
+			<div class="controls controls-row">	
+				<input class="span4" type="text" name="nomeDependente" id="nomeDependente" />
+				<input class="span2" type="text" name="rgDependente" id="rg"/>
+				<select class="span2" name="orgaoExpeditorDependente" form="orgaoExpeditor">
 					<option value=" ">Selecione</option>
 					<option value="IFP">IFP</option>
 					<option value="IPF">IPF</option>
@@ -46,23 +38,22 @@
 					<option value="CBM">CBM</option>
 					<option value="CRO">CRO</option>
 					<option value="CRF">CRF</option>
-				</select>
-				</label> 
-				<label> 
-					CPF: 
-						<input type="text" name="cpfDependente" />
-				</label> 
-				<label> 
-					Data de Nascimento: 
-					<input type="text" name="dataNascimentoDependente" />
-				</label>
-						</fieldset>
+				</select> 
+				<input class="span2" type="text" name="cpfDependente" id="cpf" />
+			</div>
+			<div class="controls controls-row">
+				<label class="span2" for="dataNascimento">Data de Nascimento:</label>
+			</div>
+			<div class="controls controls-row">
+				<input class="span2" type="text" name="dataNascimentoDependente" id="dataNascimento" />
+			</div>
+		</fieldset>
 				<input type="hidden" name="logica" value="adicionar" /> 
 				<input type="submit" value="Adicionar" class="btn btn-primary"> <br> <br>
-			</form>
+	</form>
 		<fieldset>
 			<legend>Dependentes Cadastrados</legend>
-					<table class="table table-hover">
+					<table class="table table-condensed table-hover table-bordered">
 					<tr>
 						<th>Nome Pessoa</th>
 						<th>Nome do Dependente</th>
@@ -78,7 +69,7 @@
 								<input type="hidden" name="logica" value="visualizarDetalhesDependente" /> 
 								<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
 								<input type="hidden" name="codigoDependente" value="${dependente.codigo}"/>
-								<input type="submit" value="Visualizar Detalhes" class="btn-mini">
+								<input type="submit" value="Visualizar Detalhes" class="btn-mini btn btn-info">
 							</form>
 						</td>
 						<td>
@@ -93,9 +84,5 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-				<form action="${pageContext.request.contextPath}/DependenteController" method="post">
-					<input type="hidden" name="logica" value="paginaInicial" /> 
-					<input type="submit" value="Pagina Inicial" class="btn-mini">
-				</form>
-</body>
-</html>
+		<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+<c:import url="/layout/footer.jsp"></c:import>

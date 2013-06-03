@@ -1,36 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Dependentes Cadastrados</title>
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css" />
-</head>
-<body>
+<c:import url="/layout/header.jsp"></c:import>
 	<form method="post"
 		action="${pageContext.request.contextPath}/DependenteController">
-		
-			<h1 align="center">Dependente Cadastrado</h1>
-			<fieldset>
+			
+	<fieldset>
 				<legend>Dados Pessoais</legend>
-				<label> 
-					Pessoa: 
-						<input type="text" name="nomeDaPessoa" value="${pessoa.nome}" readonly="true" />
+			<div class="controls controls-row">
+				<label class="span4"> Nome da Pessoa: </label>
+			</div>
+			<div class="controls controls-row">
+						<input class="span4" type="text" name="nomeDaPessoa" value="${pessoa.nome}" readonly="true" />
 						<input type="hidden" name="cpfPessoa" value="${pessoa.cpf}" />
-				</label> 
-				<label> 
-					Nome do Dependente: 
-						<input type="text" name="nomeDependente" value="${dependente.nome}" />
-				</label> 
-				<label> 
-					RG: 
-						<input type="text" name="rgDependente" value="${dependente.rg}" />
-				</label>
-				<label> 
-					Orgão Expeditor: 
-				<select name="orgaoExpeditorDependente">
+			</div>
+			<div class="controls controls-row">
+				<label class="span4" for="nomeDependente" >Nome do Dependente:</label>
+				<label class="span2" for="rg">RG:</label> 
+				<label class="span2" for="orgaoExpeditor">Orgão Expeditor:</label>
+				<label class="span2" for="cpf">CPF:</label>  
+			</div>
+			<div class="controls controls-row">	
+				<input class="span4" type="text" name="nomeDependente" id="nomeDependente" value="${dependente.nome}" />
+				<input class="span2" type="text" name="rgDependente" id="rg" value="${dependente.rg}"/>
+				<select class="span2" name="orgaoExpeditorDependente" id="orgaoExpeditor">
 					<option value="${dependente.orgaoExpeditor}">${dependente.orgaoExpeditor}</option>
 					<option value="IFP">IFP</option>
 					<option value="IPF">IPF</option>
@@ -46,26 +39,24 @@
 					<option value="CBM">CBM</option>
 					<option value="CRO">CRO</option>
 					<option value="CRF">CRF</option>
-				</select>
-				</label> 
-				<label> 
-					CPF: 
-						<input type="text" name="cpfDependente" value="${dependente.cpf}" />
-				</label> 
-				<label> 
-					Data de Nascimento: 
-					<input type="text" name="dataNascimentoDependente" value="${dependente.dataNascimento}" />
-				</label>
-		</fieldset>
+				</select> 
+				<input class="span2" type="text" name="cpfDependente" id="cpf" value="${dependente.cpf}" />
+			</div>
+			<div class="controls controls-row">
+				<label class="span2" for="dataNascimento">Data de Nascimento:</label>
+			</div>
+			<div class="controls controls-row">
+				<input class="span2" type="text" name="dataNascimentoDependente" id="dataNascimento" value="${dependente.dataNascimento}" />
+			</div>
+	</fieldset>
 				<input type="hidden" name="logica" value="editar" /> 
 				<input type="hidden" name="codigoDependente" value="${dependente.codigo}">
 				<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
-				<input type="submit" value="Editar" class="btn btn-primary"> <br> <br>
+				<input type="submit" value="Editar" class="btn btn-primary">
 	</form>
-	<br><br>
-		<fieldset>
+	<fieldset>
 			<legend>Dependentes</legend>
-					<table class="table table-hover">
+					<table class="table table-condensed table-hover table-bordered">
 					<tr>
 						<th>Nome do Dependente</th>
 						<th>Data de Nascimento</th>
@@ -79,7 +70,7 @@
 								<input type="hidden" name="logica" value="visualizarDetalhesDependente" /> 
 								<input type="hidden" name="codigoPessoa" value="${pessoa.codigo}">
 								<input type="hidden" name="codigoDependente" value="${dependente.codigo}"/>
-								<input type="submit" value="Visualizar Detalhes" class="btn-mini">
+								<input type="submit" value="Visualizar Detalhes" class="btn-mini btn btn btn-info">
 							</form>
 						</td>
 						<td>
@@ -94,9 +85,6 @@
 				</c:forEach>
 			</table>
 		</fieldset>
-		<form action="${pageContext.request.contextPath}/DependenteController" method="post">
-						<input type="hidden" name="logica" value="paginaInicial" /> 
-						<input type="submit" value="Pagina Inicial" class="btn-mini">
-		</form>
+		<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
 </body>
 </html>

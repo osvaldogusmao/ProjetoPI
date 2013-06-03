@@ -1,17 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css" />
-<title>Pessoa</title>
-</head>
-<body>
+<c:import url="/layout/header.jsp"></c:import>
 		<fieldset>
 			<h1 align="center">Pessoas Cadastradas</h1>
-				<table class="table table-hover">
+				<table class="table table-condensed table-hover table-bordered">
 					<tr>
 						<th>Nome Pessoa</th>
 						<th>Data de Nascimento</th>
@@ -30,7 +23,7 @@
 							<form action="${pageContext.request.contextPath}/PessoaController" method="post">
 								<input type="hidden" name="logica" value="visualizarDetalhes" /> 
 								<input type="hidden" name="codigo" value="${pessoa.codigo}"/>
-								<input type="submit" value="Visualizar Detalhes" class="btn-mini btn">
+								<input type="submit" value="Visualizar Detalhes" class="btn-mini btn btn btn-info">
 							</form>
 						</td>
 						<td>
@@ -43,12 +36,6 @@
 					</tr>
 				</c:forEach>
 			</table>
-				<br>
-				<br>
-			<form action="${pageContext.request.contextPath}/PessoaController" method="post">
-						<input type="hidden" name="logica" value="paginaInicial" /> 
-						<input type="submit" value="Pagina Inicial" class="btn-mini">
-			</form>
-		</fieldset>			
-</body>
-</html>
+				<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+		</fieldset>	
+		<c:import url="/layout/footer.jsp"></c:import>		

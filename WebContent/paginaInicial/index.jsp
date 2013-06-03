@@ -1,51 +1,42 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<title>Pagina Inicial</title>
-</head>
-<body>
-	<h1>Pagina Inicial do Sistema</h1>
-		<div id="menu">
-			<ul>
-				<li>Cadastro
-					<ul>
-						<li><a href="/ProjetoPI/PessoaController?logica=cadastrarPessoa">Cadastro de Pessoa</a></li>
-						<li><a href="/ProjetoPI/cadastro/cargo/index.jsp">Cadastro de Cargo</a></li>
-						<li><a href="/ProjetoPI/cadastro/empresa/index.jsp">Cadastro de Empresa</a></li>
-						<li><a href="/ProjetoPI/cadastro/inss/index.jsp">Cadastro de INSS</a></li>
-						<li><a href="/ProjetoPI/cadastro/irrf/index.jsp">Cadastro de IRRF</a></li>
-						<li><a href="/ProjetoPI/cadastro/mes/cadastroMesVigente.jsp">Cadastro de Mês Vigente</a></li>
-						<li><a href="">Cadastro de Verbas</a></li>
-						<li><a href="/ProjetoPI/cadastro/funcionarioEmpresa/funcionarioEmpresa.jsp">Cadastro de Funcionário Empresa e Cargo</a></li>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:import url="/layout/header.jsp"></c:import>
 
-					</ul>
-				</li>	
-				<li>Visualizar:
-					<ul>
-						<li><a href="/ProjetoPI/INSSController?logica=listar">Visualizar parametros INSS cadastrados</a></li>
-						<li><a href="/ProjetoPI/IRRFController?logica=listar">Visualizar parametros IRRF cadastrados</a></li>
-						<li><a href="/ProjetoPI/EmpresaController?logica=listar">Visualizar Empresas Cadastradas</a></li>
-						<li><a href="/ProjetoPI/CargoController?logica=listar">Visualizar Cargos Cadastradas</a></li>
-						<li><a href="/ProjetoPI/PessoaController?logica=visualizar">Visualizar Pessoas Cadastradas</a></li>
-					</ul>
-				</li>
-				
-				<li>Lançamento
-					<ul>
-						<li><a href="">Fazer Lançamento</a></li>
-					</ul>
-				</li>
-				<li>Impressão
-					<ul>
-						<li><a href="">Impressão de Recibo de Pagamento</a></li>
-						<li><a href="">Impressão da Folha de Pagamento</a></li>
-					</ul>
-				</li>
-			</ul>
+	
+	<div class="controls controls-row">
+		<h1 align="center">Projeto Interdisciplinar - UniFEOB - 2013</h1>
 	</div>
-</body>
-</html>
+	
+	<div class="controls controls-row">
+		<h4 align="center">Discente do curso de Análise e Desenvolvimento de Sistemas</h4>
+	</div>
+	<br><br>
+	
+
+		<label > Osvaldo Gusmão - RA : 601986</label>
+
+
+		<label> Rafael de Pádua - RA : 605515</label>
+
+
+		<label> Ivan Simionato - RA : 604981</label>
+
+		<label> Vanessa Rossi - RA:605329</label>
+
+		<label> Larissa Machado - RA:605043</label>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<c:import url="/layout/footer.jsp"></c:import>
