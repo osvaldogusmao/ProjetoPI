@@ -10,8 +10,9 @@
 </head>
 <body>
 	<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
+			<h1 align="center">Cadastro de Empresas</h1>
 		<fieldset>
-			<legend>Cadastro de Empresas</legend>
+			<legend>Dados da Empresa</legend>
 			<label>Razão Social:
 			<input type="text" name="razaosocial" />
 			</label>
@@ -95,6 +96,7 @@
 		
 		<input type="hidden" name="logica" value="salvar"/>
 		<input type="submit" value="Salvar" class="btn btn-primary"/>
-	</form>             
+	</form>   
+	<a href="/ProjetoPI/paginaInicial/index.jsp"><input type="submit" value="Voltar"></a>          
 </body>
 </html>

@@ -69,10 +69,19 @@ public class EmpresaController extends HttpServlet {
         	empresa.setSite(request.getParameter("site"));
         	dao.salvar(empresa);
         	
-        	request.setAttribute("sucesso", "");
+        	request.setAttribute("sucesso", null);
             RequestDispatcher dispacher = request.getRequestDispatcher("/sucesso/index.jsp");
             dispacher.forward(request, response);
         }
+        
+        if (logica.equals("deletar")) {
+			dao.deletar(Integer.parseInt(request.getParameter("codigo")));
+			
+			List<Empresa> listaDeEmpresas = dao.listarEmpresas();
+			request.setAttribute("lista", listaDeEmpresas);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
+			dispatcher.forward(request, response);
+		}
 	}
 }
 
