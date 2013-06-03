@@ -1,4 +1,7 @@
 </div>
+<div style="height: 200px;">
+
+</div>
 <div class="footer">
 	<div class="footer-inner">
 		<blockquote class="pull-right">

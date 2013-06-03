@@ -131,9 +131,13 @@ public class CadastroVerbasController extends HttpServlet {
 
 		if (verbaDao.salva(verba).getId() > 0) {
 			request.setAttribute("msg", "Registro incluido com sucesso!");
+			request.setAttribute("titulo", "OK!");
+			request.setAttribute("tipoAlerta", "success");
 			lista();
 		} else {
 			request.setAttribute("msg", "Erro ao incluir");
+			request.setAttribute("titulo", "Atenção!");
+			request.setAttribute("tipoAlerta", "error");
 			request.setAttribute("verba", verba);
 			edita(0);
 		}

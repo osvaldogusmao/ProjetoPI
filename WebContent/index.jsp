@@ -1,30 +1,29 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
-   
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<title>Identificação do Usuário</title>
-</head>
-<body>
+
+<c:import url="/layout/header.jsp"></c:import>
+
+<br>
+<br>
+<br>
+
+<div class="well" style="width: 350px; margin: 0 auto; padding-left: 60px;">
 	<form  method="post" action="${pageContext.request.contextPath}/LoginController">
-		<fieldset class="control-group">
-		<legend>Identificação do Usuário</legend>
-			<label>
-				Usuário:
-				<input type="text" name="usuario"/>
-			</label>
-			<label>
-				Senha:
-				<input type="password" name="senha"/>
-			</label>	 		
-				<input type="hidden" name="logica" value="entrar"/>
-				<input type="submit" value="Entrar"/>	
+		<fieldset >
+			<legend>Identificação do Usuário</legend>
+		
+			<label>Usuário</label>
+			<input type="text" name="usuario" class="span4"/>
+				
+			<label>Senha</label>
+			<input type="password" name="senha" class="span4"/>	 		
+			<input type="hidden" name="logica" value="entrar"/>
+			<br>
+			<input type="submit" value="Entrar" class="btn btn-primary"/>
+			
 		</fieldset>	
 	</form>
-	<c:out value="${msg}"/>
-</body>
-</html>
+</div>
+
+<c:import url="/layout/footer.jsp"></c:import>

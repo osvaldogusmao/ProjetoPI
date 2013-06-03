@@ -1,13 +1,8 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css"/>
-<title>Cadastro de Empresas</title>
-</head>
-<body>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:import url="/layout/header.jsp"></c:import>
+
         <form method="post" action="${pageContext.request.contextPath}/EmpresaController">
             <fieldset>
             	<legend>Cadastro de Empresas</legend>
@@ -87,5 +82,4 @@
             
             <form action="${pageContext.request.contextPath}/EmpresaController"></form>
                
-</body>
-</html>
+<c:import url="/layout/footer.jsp"></c:import>

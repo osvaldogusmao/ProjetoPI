@@ -42,7 +42,9 @@ public class LoginController extends HttpServlet {
 				request.getRequestDispatcher("/paginaInicial/index.jsp").forward(request, response);
 				
 			} else {
-				request.setAttribute("msg", "USUARIO OU SENHA INVALIDO");
+				request.setAttribute("msg", "Usuário e/ou Senha inválido");
+				request.setAttribute("tipoAlerta", "error");
+				request.setAttribute("titulo", "Atenção!");
 				request.getRequestDispatcher("/").forward(request, response);	
 			}
 				
