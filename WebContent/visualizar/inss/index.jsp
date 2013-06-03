@@ -41,6 +41,26 @@
 					<td>${inss.valorLimiteFaixaTres}</td>
 					<td>${inss.percentualFaixaTres}</td>
 				</tr>
+				<tr>
+					<td></td>
+					
+					<td>
+						<form action="${pageContext.request.contextPath}/INSSController" method="post">
+							<input type="hidden" name="logica" value="alterar">
+							<input type="hidden" value="${inss.id}" name="id">
+							<input type="submit" value="Alterar" class="btn btn-warning">
+						</form>
+					</td>
+					
+					<td>
+						<form action="${pageContext.request.contextPath}/INSSController" method="post">
+							<input type="hidden" name="logica" value="apagar">
+							<input type="hidden" value="${inss.id}" name="id">
+							<input type="submit" value="Apagar" class="btn btn-danger">
+						</form>
+					</td>
+					
+				</tr>
 			</table>
 	</fieldset>
 </c:forEach>

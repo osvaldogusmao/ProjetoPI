@@ -14,9 +14,9 @@
 </head>
 <body>
 	
-	<form action="" method="post">
+	<form action="${pageContext.request.contextPath}/IRRFController" method="post">
 	
-	<h1>Alterar parametros irrf cadastrados</h1>
+	<h1>Alterar parametros IRRF cadastrados</h1>
 	
 	<table class="table table-bordered">
 			<tr>

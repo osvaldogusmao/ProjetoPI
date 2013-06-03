@@ -77,5 +77,41 @@ public class INSSController extends HttpServlet {
 		dp.forward(request, response);
 		
 		}
+		
+		if("apagar".equals(logica)){
+			dao.apagar(Long.parseLong(request.getParameter("id")));
+		}
+		
+		if("alterar".equals(logica)){
+			INSS inss = dao.recuperarInstancia(Long.parseLong(request.getParameter("id")));
+			request.setAttribute("inss", inss);
+			RequestDispatcher rd = request.getRequestDispatcher("/alterar/inss/index.jsp");
+			rd.forward(request, response);
+		}
+		
+		if("update".equals(logica)){
+			
+			INSS inss = new INSS();
+			
+			inss.setId(Long.parseLong(request.getParameter("id")));
+			
+			inss.setAnoRereferente(Integer.parseInt(request.getParameter("anoreferencia")));
+			
+			inss.setValorFaixaUm(Float.parseFloat(request.getParameter("valorFaixaUm")));
+			inss.setValorLimiteFaixaUm(Float.parseFloat(request.getParameter("valorLimiteFaixaUm")));
+			inss.setPercentualFaixaUm(Float.parseFloat(request.getParameter("percentualFaixaUm")));
+			
+			inss.setValorFaixaDois(Float.parseFloat(request.getParameter("valorFaixaDois")));
+			inss.setValorLimiteFaixaDois(Float.parseFloat(request.getParameter("valorLimiteFaixaDois")));
+			inss.setPercentualFaixaDois(Float.parseFloat(request.getParameter("percentualFaixaDois")));
+			
+			inss.setValorFaixaTres(Float.parseFloat(request.getParameter("valorFaixaTres")));
+			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
+			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
+			
+			dao.alterar(inss);
+			
+		}
+		
 	}
 }

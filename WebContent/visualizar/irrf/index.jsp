@@ -59,7 +59,8 @@
 						<input type="hidden" name="logica" value="alterar">
 						<input type="hidden" value="${irrf.id}" name="id">
 						<input type="submit" value="Alterar" class="btn btn-warning">
-					</form></td>
+					</form>				
+				</td>
 					
 				<td>
 					<form action="${pageContext.request.contextPath}/IRRFController" method="post">

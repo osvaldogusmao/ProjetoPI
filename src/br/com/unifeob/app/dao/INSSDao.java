@@ -38,8 +38,8 @@ public class INSSDao {
 	}
 	
 	public void apagar(Long id){
-		manager.getTransaction().begin();
 		INSS inss = recuperarInstancia(id);
+		manager.getTransaction().begin();
 		manager.remove(inss);
 		manager.getTransaction().commit();
 	}
