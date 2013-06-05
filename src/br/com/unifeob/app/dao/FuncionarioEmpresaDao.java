@@ -13,6 +13,7 @@ public class FuncionarioEmpresaDao {
 	
 	@Inject
 	private EntityManager manager;
+
 	
 	public void salvar(FuncionarioEmpresa funcionarioEmpresa){
 		manager.getTransaction().begin();

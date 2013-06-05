@@ -1,18 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Cadastro de IRRF</title>
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<style type="text/css">
-	body {
-	padding: 20px 20px 20px 20px;
-}
-</style>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:import url="/layout/header.jsp"></c:import>
 
 	<form action="${pageContext.request.contextPath}/IRRFController" method="post">
 
@@ -32,9 +21,9 @@
 		<table>
 			<tr>
 				<th>De</th>
-				<th>Até</th>
+				<th>AtÃ©</th>
 				<th>Porcentagem</th>
-				<th>Dedução</th>
+				<th>DeduÃ§Ã£o</th>
 			</tr>
 			
 			<tr>
@@ -68,7 +57,7 @@
 		
 		<br>
 		
-		<label>Dedução por dependente:
+		<label>DeduÃ§Ã£o por dependente:
 			<input type="text" required="" name="deducaoPorDependente" />
 		</label>
 		
@@ -77,5 +66,4 @@
 
 	</form>
 
-</body>
-</html>
+<c:import url="/layout/footer.jsp"></c:import>
