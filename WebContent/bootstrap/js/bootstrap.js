@@ -1717,7 +1717,8 @@
     $(this).tab('show')
   })
 
-}(window.jQuery);/* =============================================================
+}(window.jQuery);
+/* =============================================================
  * bootstrap-typeahead.js v2.2.2-j3
  * http://twitter.github.com/bootstrap/javascript.html#typeahead
  * =============================================================

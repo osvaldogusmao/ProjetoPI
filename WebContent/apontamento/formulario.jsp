@@ -25,8 +25,14 @@
 			<p>Funcionário</p>
 		</blockquote>
 		<div class="controls controls-row">
+			<label class="label-span1">Código</label>
+			<label class="label-span5">Descrição</label>
+			<label class="label-span2">Salário</label>
+		</div>
+		<div class="controls controls-row">
 			<input type="text" name="funcionario_id" id="funcionario_id" class="span1">
 			<input type="text" name="funcionario_nome" id="funcionario_nome" class="span5" placeholder="Digite parte do nome do funcionário">
+			<span id="funcionario_salario" class="uneditable-input span2"></span>
 		</div>
 
 		<blockquote>
@@ -35,20 +41,21 @@
 		<div class="controls controls-row">
 			<label class="label-span1">Código</label>
 			<label class="label-span4">Descrição</label>
-			<label class="label-span1">Qtd</label>
+			<label class="label-span1" style="margin-left: 75px;">Qtd</label>
 		</div>
 		
 		<div class="controls controls-row">
-			<span id="empresa_id" class="uneditable-input span1"></span>
-			<span id="empresa_descricao" class="uneditable-input span4"></span>
+			<span id="verba_id" class="uneditable-input span1"></span>
+			<span id="verba_descricao" class="uneditable-input span4"></span>
+			<a href="#modalPesquisaVerba" role="button" class="btn btn-inverse span1" data-toggle="modal"><i class="icon-search  icon-white"></i></a>
 			<input type="text" id="apontamento_qtd" name="apontamento_qtd" class="span1">
 			&nbsp;&nbsp;
-			<a href="#modalPesquisaVerba" role="button" class="btn btn-inverse" data-toggle="modal"><i class="icon-search  icon-white"></i></a>
-			&nbsp;
 			<button type="button" class="btn btn-success"><i class="icon-plus icon-white"></i></button>
 		</div>
 		
 		<hr />
+		
+		<i class="icon-"></i>
 		
 		<table class="table table-condensed table-bordered table-hover">
 			<thead>
@@ -77,7 +84,7 @@
 		<h3 id="myModalLabel">Pesquisa de Empresa</h3>
 	</div>
 	<div class="modal-body">
-		<table class="table table-condensed table-bordered table-hover">
+		<table class="table table-condensed table-bordered table-hover" id="tbEmpresas">
 			<thead>
 				<tr>
 					<th width="10%">Código</th>
@@ -85,25 +92,30 @@
 					<th width="30%">CNPJ</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody style="cursor: pointer;">
 				<c:if test="${empresas.size() < 0 || empresas == null }">
 					<tr>
 						<td colspan="3" style="text-align: center;"><strong>Não há empresas cadastradas!</strong></td>
 					</tr>
 				</c:if>
 				<c:forEach items="${empresas }" var="empresa">
-				<tr>
+				<tr id="${empresa.id }">
 					<td>${empresa.id }</td>
 					<td>${empresa.nomeFantasia }</td>
 					<td>${empresa.cnpj }</td>
 				</tr>
 				</c:forEach>
+				<tr id="15">
+					<td>15</td>
+					<td>Empresa Teste</td>
+					<td>11.111.111/0001-01</td>
+				</tr>
 			</tbody>
 		</table>
 	</div>
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-		<button class="btn btn-info">Selecionar</button>
+		<button class="btn btn-info" id="btnSelecionaEmpresa">Selecionar</button>
 	</div>
 </div>
 <!-- Fim Modal Pesquisa Empresa -->
@@ -123,14 +135,14 @@
 					<th width="20%">Tipo de Verba</th>
 				</tr>
 			</thead>
-			<tbody>
+			<tbody style="cursor: pointer;">
 				<c:if test="${verbas.size() < 0 || verbas == null }">
 					<tr>
 						<td colspan="3" style="text-align: center;"><strong>Não há verbas cadastradas!</strong></td>
 					</tr>
 				</c:if>
 				<c:forEach items="${verbas }" var="verba">
-				<tr>
+				<tr id="${verba.id}">
 					<td>${verba.id }</td>
 					<td>${verba.descricao }</td>
 					<td>${verba.tipoVerba }</td>
@@ -141,13 +153,70 @@
 	</div>
 	<div class="modal-footer">
 		<button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-		<button class="btn btn-info">Selecionar</button>
+		<button class="btn btn-info" id="btnSelecionaVerba">Selecionar</button>
 	</div>
 </div>
 <!-- Fim Modal Pesquisa Verbas -->
 <script type="text/javascript">
 	$(document).ready(function(){
 		
+		/*
+		* Ações em table
+		*/
+		$('#tbVerbas tbody tr').click(function(){
+			$('#tbVerbas tbody tr').each(function(){
+				$(this).removeClass('table-selected');	
+			});
+			$(this).addClass('table-selected');
+		});
+		
+		$('#tbEmpresas tbody tr').click(function(){
+			$('#tbEmpresas tbody tr').each(function(){
+				$(this).removeClass('table-selected');
+			});
+			$(this).addClass('table-selected');
+		});
+		
+		/*
+		* Ações em button
+		*/
+		$('#btnSelecionaVerba').click(function(){
+			var idVerba = $('#tbVerbas tbody tr.table-selected').attr('id');
+			var descricaoVerba = $($('#tbVerbas tbody tr.table-selected td')[1]).html();
+			
+			$('#verba_id').html(idVerba);
+			$('#verba_descricao').html(descricaoVerba);
+			
+			$('#modalPesquisaVerba').modal('hide');
+		});
+		
+		$('#btnSelecionaEmpresa').click(function(){
+			var idEmpresa = $('#tbEmpresas tbody tr.table-selected').attr('id');
+			var descricaoEmpresa = $($('#tbEmpresas tbody tr.table-selected td')[1]).html();
+			
+			$('#empresa_id').html(idEmpresa);
+			$('#empresa_descricao').html(descricaoEmpresa);
+			
+			$('#modalPesquisaEmpresa').modal('hide');
+		});
+		
+		/*
+		* Ações em input:text
+		*/
+		$('#funcionario_nome').typeahead({
+			source : function(query, process){
+				data = $.getJSON('bootstrap/data.json');
+				process(data);
+			},
+			items : 4,
+			minLength : 3,
+			updater : function(selectedName){
+				return selectedName;
+			},
+			highlighter : function(selectName){
+				return selectedName;
+			}
+		});
 		
 	});
 </script>
