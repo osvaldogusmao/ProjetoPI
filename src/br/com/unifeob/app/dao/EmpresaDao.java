@@ -31,4 +31,8 @@ public class EmpresaDao {
 	public List<Empresa> listarEmpresas(){
 		return manager.createQuery("from Empresa").getResultList();
 	}
+	
+	public void recuperarEstancia(){
+		
+	}
 }

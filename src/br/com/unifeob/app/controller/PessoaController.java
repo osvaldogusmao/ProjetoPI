@@ -23,8 +23,7 @@ public class PessoaController extends HttpServlet {
 	private PessoaDao pessoaDao;
 	@Inject
 	private DependenteDao dependenteDao;
-	Pessoa pessoa = new Pessoa();
-	Dependente dependente = new Dependente();
+	
 
 	
 	public PessoaController() {
@@ -65,6 +64,7 @@ public class PessoaController extends HttpServlet {
 			String cidade = request.getParameter("cidade");
 			String cep = request.getParameter("cep");
 			
+			Pessoa pessoa = new Pessoa();
 			pessoa.setNome(nome);
 			pessoa.setRg(rg);
 			pessoa.setOrgaoExpeditor(orgaoExpeditor);
@@ -105,6 +105,7 @@ public class PessoaController extends HttpServlet {
 			String cidade = request.getParameter("cidade");
 			String cep = request.getParameter("cep");
 			
+			Pessoa pessoa = new Pessoa();
 			pessoa.setCodigo(Long.parseLong(codigo));
 			pessoa.setNome(nome);
 			pessoa.setRg(rg);
@@ -140,6 +141,7 @@ public class PessoaController extends HttpServlet {
 		}
 		
 		if (logica.equals("visualizarDetalhes")) {
+			Pessoa pessoa = new Pessoa();
 			Long codigo = Long.parseLong(request.getParameter("codigo"));
 			pessoa =  pessoaDao.buscaPessoa(codigo);
 			List<Dependente> dependentes = dependenteDao.listarDependenteDePessoa(pessoa);
