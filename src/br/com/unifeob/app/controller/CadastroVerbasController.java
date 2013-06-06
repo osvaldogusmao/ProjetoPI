@@ -155,6 +155,8 @@ public class CadastroVerbasController extends HttpServlet {
 			lista();
 		} else {
 			request.setAttribute("msg", "Erro ao atualizar");
+			request.setAttribute("titulo", "OK!");
+			request.setAttribute("tipoAlerta", "success");
 			request.setAttribute("verba", verba);
 			edita(0);
 		}

@@ -23,7 +23,7 @@ $(document).ready(function(){
 </head>
 <body>
 	<div class="container">
-		<div class="alert alert-${tipoAlerta } alert-block" style='position:fixed; top : 0; width: 400px; left : 50%; margin-left:-200px;  <c:if test="${msg == null }">display:none;</c:if>'>
+		<div class="alert alert-${tipoAlerta } alert-block" style='position:fixed; top : 0; z-index:1; width: 400px; left : 50%; margin-left:-200px;  <c:if test="${msg == null }">display:none;</c:if>'>
 		  <button type="button" class="close" data-dismiss="alert">&times;</button>
 		  <strong>${titulo }</strong> &nbsp; ${msg }
 		</div>
