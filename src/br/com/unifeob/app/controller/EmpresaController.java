@@ -82,6 +82,10 @@ public class EmpresaController extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
 			dispatcher.forward(request, response);
 		}
+        
+        if(logica.equals("alterar")){
+        	
+        }
 	}
 }
 

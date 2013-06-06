@@ -12,13 +12,11 @@ pageEncoding="UTF-8"%>
 <body>
 <h1>Empresas Cadastradas</h1>
 <fieldset>
-	<table class="table table-bordered">
+	<table class="table table-striped">
 		<tr>
 			<th>RAZÃO SOCIAL</th>
 			<th>NOME FANTASIA</th>
 			<th>CNPJ</th>
-			<th>INSC. ESTADUAL</th>
-			<th>INSC. MUNICIPAL</th>
 			<th>LOGRADOURO</th>
 			<th>NUMERO</th>
 			<th>COMPLEMENTO</th>
@@ -27,10 +25,7 @@ pageEncoding="UTF-8"%>
 			<th>CEP</th>
 			<th>CIDADE</th>
 			<th>TELEFONE 1</th>
-			<th>TEFEFONE 2</th>
-			<th>TELEFONE 3</th>
 			<th>E-MAIL</th>
-			<th>SITE</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -39,8 +34,6 @@ pageEncoding="UTF-8"%>
 			<td>${empresa.razaoSocial}</td>
 			<td>${empresa.nomeFantasia}</td>
 			<td>${empresa.cnpj}</td>
-			<td>${empresa.inscricaoEstadual}</td>
-			<td>${empresa.inscricaoMuncipal}</td>
 			<td>${empresa.logradouro}</td>
 			<td>${empresa.numero}</td>
 			<td>${empresa.complemento}</td>
@@ -49,10 +42,16 @@ pageEncoding="UTF-8"%>
 			<td>${empresa.cep}</td>
 			<td>${empresa.cidade}</td>
 			<td>${empresa.telefone1}</td>
-			<td>${empresa.telefone2}</td>
-			<td>${empresa.telefone3}</td>
 			<td>${empresa.email}</td>
-			<td>${empresa.site}</td>			
+			
+			<td>
+			<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
+			<input type="hidden" name="logica" value="alterar">
+			<input type="hidden" name="codigo" value="${empresa.id}">
+			<input type="submit" value="Alterar" class="btn btn-warning">
+			</form>
+			</td>
+					
 			<td>
 			<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
 			<input type="hidden" name="logica" value="deletar">

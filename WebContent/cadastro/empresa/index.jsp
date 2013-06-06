@@ -2,66 +2,72 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/layout/header.jsp"></c:import>
-
+<script type="text/javascript" src="/ProjetoPI/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
 	<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
-			<h1 align="center">Cadastro de Empresas</h1>
+		<h1 align="center">Cadastro de Empresas</h1>
 		<fieldset>
-			<legend>Dados da Empresa</legend>
-			<label>Razão Social:
-			<input type="text" name="razaosocial" />
-			</label>
-			
-			<label>Nome Fantasia:
-			<input type="text" name="nomefantasia" />
-			</label>
-			
-			<label>CNPJ:
-			<input type="text" name="cnpj" class="cep"/>
-			</label>
-			
-			<label>Inscrição Estadual:
-			<input type="text" name="inscricaoestadual" />
-			</label>
-			
-			<label>Inscrição Municipal:
-			<input type="text" name="inscricaomunicipal" />
-			</label>
-			
+		<legend>Dados da Empresa</legend>
+		
+			<div class="controls controls-row">
+				<label class="span12"for="rs"> Razão Social: </label> 
+			</div>
+		
+			<div class="controls controls-row">
+				<input class="span12" type="text" name="razaosocial" id="rs" />
+			</div>
+		
+			<div class="controls controls-row">
+				<label class="span12" for="nf"> Nome Fantasia:  </label>	
+			</div>
+		
+			<div class="controls controls-row">
+				<input class="span12" type="text" name="nomefantasia" id="nf" />
+			</div>
+		
+			<div class="controls controls-row">
+				<label class="span4" for="cnpj"> CNPJ:</label> 
+				<label class="span4" for="ie">Inscrição Estadual:</label>
+				<label class="span4" for="im">Inscrição Municipal:</label> 
+			</div>
+		
+			<div class="controls controls-row">
+				<input class="span4" type="text" name="cnpj" id="cnpj"/>
+				<input class="span4" type="text" name="inscricaoestadual" id="ie" />
+				<input class="span4" type="text" name="inscricaomunicipal" id="im"/>
+			</div>
+		
 		</fieldset>
 		
 		<fieldset>
 			<legend>Endereço</legend>
-			<label>Logradouro:
-			<input type="text" name="logradouro" />
-			</label>
 			
-			<label>Número:
-			<input type="text" name="numero"/>
-			</label>
+			<div class="controls controls-row">
+				<label class="span7" for="log">Logradouro:</label>
+				<label class="span2" for="num">Número:</label>
+				<label class="span2" for="com">Complemeto:</label>
+			</div>
 			
-			<label>Complemento:
-			<input type="text" name="complemento" />
-			</label>
+			<div class="controls controls-row">
+				<input class="span7" type="text" name="logradouro" id="log" />
+				<input class="span2" type="text" name="numero" id="num">
+				<input class="span3" type="text" name="complemento" id="com">
+			</div>
 			
-			<label>Bairro:
-			<input type="text" name="bairro" />
-			</label>
+			<div class="controls controls-row">
+				<label class="span2" for="bai">Bairro:</label>
+				<label class="span2" for="cep">Cep:</label>
+				<label class="span3" for="estado1">Uf:</label>
+				<label class="span4" for="cid">Cidade:</label>
+				
+			</div>
 			
-			<label>CEP:
-			<input type="text" name="cep"/>
-			</label>
-			
-			<label>UF:
-			<select id="estado1" value="Selecione um estado" name="uf"></select>
-			</label>
-			
-			<label>Cidade:
-			<select id="cidade1" value="Selecione uma cidade" name="cidade"></select>
-			</label>
-			
-			<script type="text/javascript" charset="utf-8">
-			new dgCidadesEstados({cidade: document.getElementById('cidade1'),estado: document.getElementById('estado1')});
-			</script>
+			<div class="controls controls-row">
+				<input class="span2" type="text" name="bairro" id="bai">
+				<input class="span2" type="text" name="cep" id="cep">
+				<select class="span3" name="uf"  id="estado"></select>
+				<select class="span5" name="cidade"  id="cidade"></select>	
+			</div>
+	
 		</fieldset>
 		
 		<fieldset>
@@ -92,5 +98,16 @@
 		<input type="submit" value="Salvar" class="btn btn-primary"/>
 	</form>   
 	<a href="/ProjetoPI/paginaInicial/index.jsp"><input type="submit" value="Voltar" class="btn"></a>          
+
+		<script>
+		
+		window.onload = function() {
+			new dgCidadesEstados({
+				estado: document.getElementById('estado'),
+				cidade: document.getElementById('cidade')
+				});
+			};
+		</script>
+
 
 <c:import url="/layout/footer.jsp"></c:import>	
