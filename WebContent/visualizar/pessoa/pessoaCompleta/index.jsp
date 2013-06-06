@@ -65,16 +65,20 @@
 				</select>
 				<input class="span5" type="text" name="nomeDaMae" id="nomeMae" value="${pessoa.nomeMae}"/>
 			</div>
-
 			<div class="controls controls-row">		
-				<label class="span3"> Deficiente Fisico:</label>
+				<label for="deficiencia" class="span2"> Tipo de deficiência:</label>
 			</div>
-				<label  class="checkbox">
-					Sim	<input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="nao" /> 
-				</label>
-				<label  class="checkbox">
-					Não <input class="span1" type="checkbox" name="deficienteFisicoPessoa" value="sim"> 
-				</label>
+			<div>
+						<select class="span2" name="deficienteFisicoPessoa" id="deficiencia">
+						<option value="${pessoa.deficienteFisico }">${pessoa.deficienteFisico}</option>
+						<option value="">Não tem</option>
+						<option value="fisica">Fisica</option>
+						<option value="auditiva">Auditiva</option>
+						<option value="visual">Visual</option>
+						<option value="mental">Mental</option>
+						<option value="multipla">Multipla</option>
+				</select>
+			</div>
 		</fieldset>
 		
 		<fieldset>
@@ -167,3 +171,4 @@
 			</table>
 		</fieldset>
 <a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+<c:import url="/layout/footer.jsp"></c:import>	

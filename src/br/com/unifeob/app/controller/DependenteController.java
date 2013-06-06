@@ -28,8 +28,6 @@ public class DependenteController extends HttpServlet {
 	@Inject
 	PessoaDao pessoaDao;
 	
-	Pessoa pessoa = new Pessoa();
-	Dependente dependente = new Dependente();
 	
     public DependenteController() {
         super();
@@ -42,16 +40,20 @@ public class DependenteController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+			
 		 String logica = request.getParameter("logica");
 		 String cpfPessoa = request.getParameter("cpfPessoa");
 
 		if (logica.equals("adicionar")) {
+			Pessoa pessoa = new Pessoa();
 			pessoa = pessoaDao.buscarPessoaCPF(cpfPessoa);
 			String nome = request.getParameter("nomeDependente");
 			String rg = request.getParameter("rgDependente");
 			String orgaoExpeditor = request.getParameter("orgaoExpeditorDependente");
 			String cpf = request.getParameter("cpfDependente");
 			String dataNascimento = request.getParameter("dataNascimentoDependente");
+			
+			Dependente dependente = new Dependente();
 			
 			dependente.setNome(nome);
 			dependente.setDataNascimento(new Util().converterStringParaData(dataNascimento));
@@ -68,6 +70,7 @@ public class DependenteController extends HttpServlet {
 			request.getRequestDispatcher("/cadastro/dependente/index.jsp").forward(request, response);
 		}
 		if (logica.equals("deletarDependente")) {
+			Pessoa pessoa = new Pessoa();
 			Long codigo = Long.parseLong(request.getParameter("codigoDependente"));
 			Long codigoPessoa = Long.parseLong(request.getParameter("codigoPessoa"));
 			dependenteDao.deletar(codigo);
@@ -78,8 +81,10 @@ public class DependenteController extends HttpServlet {
 			request.getRequestDispatcher(("/visualizar/pessoa/pessoaCompleta/index.jsp")).forward(request, response);	
 		}
 		if (logica.equals("visualizarDetalhesDependente")) {	
+			Pessoa pessoa = new Pessoa();
+			Dependente dependente = new Dependente();	
 			Long codigo = Long.parseLong(request.getParameter("codigoDependente"));
-			 Long codigoPessoa = Long.parseLong(request.getParameter("codigoPessoa"));
+			Long codigoPessoa = Long.parseLong(request.getParameter("codigoPessoa"));
 			pessoa = pessoaDao.buscaPessoa(codigoPessoa);
 			dependente = dependenteDao.buscaDependente(codigo);
 			List<Dependente> listaDeDependentes = dependenteDao.listarDependenteDePessoa(pessoa); 
@@ -89,16 +94,16 @@ public class DependenteController extends HttpServlet {
 			request.getRequestDispatcher("/visualizar/dependente/index.jsp").forward(request, response);
 		}
 		if (logica.equals("editar")) {
+			Pessoa pessoa = new Pessoa();
 			Long codigo = Long.parseLong(request.getParameter("codigoDependente"));
 			Long codigoPessoa = Long.parseLong(request.getParameter("codigoPessoa"));
-			 
 			pessoa = pessoaDao.buscaPessoa(codigoPessoa);
 			String nome = request.getParameter("nomeDependente");
 			String rg = request.getParameter("rgDependente");
 			String orgaoExpeditor = request.getParameter("orgaoExpeditorDependente");
 			String cpf = request.getParameter("cpfDependente");
 			String dataNascimento = request.getParameter("dataNascimentoDependente");
-			
+			Dependente dependente = new Dependente();
 			dependente.setCodigo(codigo);
 			dependente.setNome(nome);
 			dependente.setDataNascimento(new Util().converterStringParaData(dataNascimento));
