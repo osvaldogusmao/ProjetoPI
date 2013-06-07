@@ -32,7 +32,10 @@ public class EmpresaDao {
 		return manager.createQuery("from Empresa").getResultList();
 	}
 	
-	public void recuperarEstancia(){
-		
+	public Empresa recuperarEstancia(Integer codigo){
+		manager.getTransaction().begin();
+		Empresa empresa = manager.find(Empresa.class, codigo);
+		manager.getTransaction().commit();
+		return empresa;
 	}
 }
