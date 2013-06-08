@@ -119,11 +119,13 @@ public class ApontamentoController extends HttpServlet {
 		apontamento.setEmpresa(empresa);
 		apontamento.setFuncionarioEmpresa(funcionarioEmpresa);
 
-		if(apontamentoDao.salva(apontamento).getId() > 0){
+		apontamento = apontamentoDao.salva(apontamento); 
+		
+		if(apontamento.getId() > 0){
 			request.setAttribute("msg", "Registro incluido com sucesso!");
 			request.setAttribute("titulo", "OK!");
 			request.setAttribute("tipoAlerta", "success");
-			lista();
+			
 		}else{
 			request.setAttribute("msg", "Erro ao salvar registro!");
 			request.setAttribute("titulo", "Atenção!");
