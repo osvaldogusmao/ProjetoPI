@@ -11,28 +11,31 @@ import br.com.unifeob.app.entidades.Pessoa;
 
 @RequestScoped
 public class EmpresaDao {
-	
+
 	@Inject
 	private EntityManager manager;
-	
-	public void salvar(Empresa empresa){
+
+	public void salvar(Empresa empresa) {
 		manager.getTransaction().begin();
 		manager.merge(empresa);
-		manager.getTransaction().commit();	
+		manager.getTransaction().commit();
 	}
-	
-	public void deletar(Integer codigo){
+
+	public void deletar(Integer codigo) {
 		manager.getTransaction().begin();
-        Empresa empresa = manager.find(Empresa.class, codigo);
-        manager.remove(empresa);
-        manager.getTransaction().commit();
+		Empresa empresa = manager.find(Empresa.class, codigo);
+		manager.remove(empresa);
+		manager.getTransaction().commit();
 	}
-	
-	public List<Empresa> listarEmpresas(){
+
+	public List<Empresa> listarEmpresas() {
 		return manager.createQuery("from Empresa").getResultList();
 	}
-	
-	public Empresa recuperarEstancia(Integer id){
-		return manager.find(Empresa.class, id);
+
+	public Empresa recuperarEstancia(Integer codigo) {
+		manager.getTransaction().begin();
+		Empresa empresa = manager.find(Empresa.class, codigo);
+		manager.getTransaction().commit();
+		return empresa;
 	}
 }
