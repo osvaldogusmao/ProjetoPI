@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.ApontamentoDao;
 import br.com.unifeob.app.dao.EmpresaDao;
-import br.com.unifeob.app.dao.FuncionarioEmpresaDao;
+import br.com.unifeob.app.dao.FuncionarioEmpresaDAO;
 import br.com.unifeob.app.dao.VerbaDao;
 import br.com.unifeob.app.entidades.Apontamento;
 import br.com.unifeob.app.entidades.Empresa;
@@ -50,7 +50,7 @@ public class ApontamentoController extends HttpServlet {
 	private EmpresaDao empresaDao;
 
 	@Inject
-	private FuncionarioEmpresaDao funcionarioEmpresaDao;
+	private FuncionarioEmpresaDAO funcionarioEmpresaDao;
 
 	/**
 	 * Variaveis da classe

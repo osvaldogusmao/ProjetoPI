@@ -9,42 +9,39 @@ import javax.persistence.EntityManager;
 import br.com.unifeob.app.entidades.FuncionarioEmpresa;
 
 @RequestScoped
-public class FuncionarioEmpresaDao {
-	
+public class FuncionarioEmpresaDAO {
+
 	@Inject
 	private EntityManager manager;
 
-	
-	public void salvar(FuncionarioEmpresa funcionarioEmpresa){
+	public void salvar(FuncionarioEmpresa funcionarioEmpresa) {
 		manager.getTransaction().begin();
 		manager.merge(funcionarioEmpresa);
 		manager.getTransaction().commit();
 	}
-	
-	public FuncionarioEmpresa recuperarId(Integer idFuncEmpresa){
+
+	public FuncionarioEmpresa recuperarId(Integer idFuncEmpresa) {
 		manager.getTransaction().begin();
 		FuncionarioEmpresa funcionarioEmpresa = manager.find(FuncionarioEmpresa.class, idFuncEmpresa);
 		manager.getTransaction().commit();
 		return funcionarioEmpresa;
 	}
 
-	public List<FuncionarioEmpresa> listar(){
+	public List<FuncionarioEmpresa> listar() {
 		return manager.createQuery("from FuncionarioEmpresa").getResultList();
 	}
-	
-	public void alterar(FuncionarioEmpresa funcionarioEmpresa){
+
+	public void alterar(FuncionarioEmpresa funcionarioEmpresa) {
 		manager.getTransaction().begin();
 		manager.merge(funcionarioEmpresa);
 		manager.getTransaction().commit();
 	}
-	
-	public void apagar(Integer idFuncEmpresa){
+
+	public void apagar(Integer idFuncEmpresa) {
 		manager.getTransaction().begin();
 		FuncionarioEmpresa funcionarioEmpresa = recuperarId(idFuncEmpresa);
 		manager.remove(funcionarioEmpresa);
 		manager.getTransaction().commit();
 	}
-	
-	
 
 }
