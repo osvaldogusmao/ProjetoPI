@@ -1,1 +1,4 @@
-['Osvado', 'Karina']
+[
+	{"id":"11","nome":"José Osvaldo", "salario" : 1234.55},
+	{"id":"12","nome":"Karina" , "salario" : 2234.55}
+]

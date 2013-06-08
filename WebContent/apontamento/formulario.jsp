@@ -4,78 +4,88 @@
 
 <c:import url="/layout/header.jsp"></c:import>
 	
-	<fielset>
-		<legend>Apontamentos</legend>
-		<blockquote>
-			<p>Empresa</p>
-		</blockquote>
-		<div class="controls controls-row">
-			<label class="label-span1">Código</label>
-			<label class="label-span3">Descrição</label>
-		</div>
+	<form method="post" action="${pageContext.request.contextPath }/apontamento?salva" id="frmNovoApontamento">	
+		<fieldset>
+			<legend>Apontamentos</legend>
+			<label>Referência</label>
+			<input type="text" name="apontamento_referencia" id="apontamento_referencia" data-mask="99/9999" class="span2">
+			<blockquote>
+				<p>Empresa</p>
+			</blockquote>
+			<div class="controls controls-row">
+				<label class="label-span1">Código</label>
+				<label class="label-span3">Descrição</label>
+			</div>
+			
+			<div class="controls controls-row">
+				<input type="hidden" name="empresa_id" id="empresa_id">
+				<span id="empresa_id_span" class="uneditable-input span1"></span>
+				<span id="empresa_descricao" class="uneditable-input span4"></span>
+				&nbsp;
+				<a href="#modalPesquisaEmpresa" role="button" data-toggle="modal" class="btn btn-inverse"><i class="icon-search icon-white"></i></a>
+			</div>
+			
+			<blockquote>
+				<p>Funcionário</p>
+			</blockquote>
+			<div class="controls controls-row">
+				<label class="label-span1">Código</label>
+				<label class="label-span5">Descrição</label>
+				<label class="label-span2">Salário</label>
+			</div>
+			<div class="controls controls-row">
+				<input type="text" name="funcionario_id" id="funcionario_id" class="span1">
+				<input type="text" name="funcionario_nome" id="funcionario_nome" class="span5" placeholder="Digite parte do nome do funcionário">
+				<span id="funcionario_salario" class="uneditable-input span2"></span>
+			</div>
+			
+			<div class="controls controls-row">
+				<button type="button" class="btn btn-primary label-span2" id="btnSalvarApontamento">Salvar</button>
+			</div>
+		</fieldset>
+	</form>
+	
+		<br/>
 		
-		<div class="controls controls-row">
-			<span id="empresa_id" class="uneditable-input span1"></span>
-			<span id="empresa_descricao" class="uneditable-input span4"></span>
-			&nbsp;
-			<a href="#modalPesquisaEmpresa" role="button" data-toggle="modal" class="btn btn-inverse"><i class="icon-search icon-white"></i></a>
+		<div style="display: none;" id="dvCadastroVerba">
+			<blockquote>
+				<p>Verbas</p>
+			</blockquote>
+			<div class="controls controls-row">
+				<label class="label-span1">Código</label>
+				<label class="label-span4">Descrição</label>
+				<label class="label-span1" style="margin-left: 75px;">Qtd</label>
+			</div>
+			
+			<div class="controls controls-row">
+				<input type="hidden" id="verba_id" name="verba_id" >
+				<span id="verba_id_span" class="uneditable-input span1"></span>
+				<span id="verba_descricao" class="uneditable-input span4"></span>
+				<a href="#modalPesquisaVerba" role="button" class="btn btn-inverse span1" data-toggle="modal"><i class="icon-search  icon-white"></i></a>
+				<input type="text" id="apontamento_qtd" name="apontamento_qtd" class="span1">
+				&nbsp;&nbsp;
+				<button type="button" class="btn btn-success"><i class="icon-plus icon-white"></i></button>
+			</div>
+			
+			<hr />
+			
+			<i class="icon-"></i>
+			
+			<table class="table table-condensed table-bordered table-hover">
+				<thead>
+					<tr>
+						<th width="10%">Código</th>
+						<th width="60%">Descrição</th>
+						<th width="10%" style="text-align: center;">Quantidade</th>
+						<th width="10%" style="text-align: center;">Valor</th>
+						<th width="10%" style="text-align: center;">#</th>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>
 		</div>
-		
-		<blockquote>
-			<p>Funcionário</p>
-		</blockquote>
-		<div class="controls controls-row">
-			<label class="label-span1">Código</label>
-			<label class="label-span5">Descrição</label>
-			<label class="label-span2">Salário</label>
-		</div>
-		<div class="controls controls-row">
-			<input type="text" name="funcionario_id" id="funcionario_id" class="span1">
-			<input type="text" name="funcionario_nome" id="funcionario_nome" class="span5" placeholder="Digite parte do nome do funcionário">
-			<span id="funcionario_salario" class="uneditable-input span2"></span>
-		</div>
-
-		<blockquote>
-			<p>Verbas</p>
-		</blockquote>
-		<div class="controls controls-row">
-			<label class="label-span1">Código</label>
-			<label class="label-span4">Descrição</label>
-			<label class="label-span1" style="margin-left: 75px;">Qtd</label>
-		</div>
-		
-		<div class="controls controls-row">
-			<span id="verba_id" class="uneditable-input span1"></span>
-			<span id="verba_descricao" class="uneditable-input span4"></span>
-			<a href="#modalPesquisaVerba" role="button" class="btn btn-inverse span1" data-toggle="modal"><i class="icon-search  icon-white"></i></a>
-			<input type="text" id="apontamento_qtd" name="apontamento_qtd" class="span1">
-			&nbsp;&nbsp;
-			<button type="button" class="btn btn-success"><i class="icon-plus icon-white"></i></button>
-		</div>
-		
-		<hr />
-		
-		<i class="icon-"></i>
-		
-		<table class="table table-condensed table-bordered table-hover">
-			<thead>
-				<tr>
-					<th width="10%">Código</th>
-					<th width="60%">Descrição</th>
-					<th width="10%" style="text-align: center;">Quantidade</th>
-					<th width="10%" style="text-align: center;">Valor</th>
-					<th width="10%" style="text-align: center;">#</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-			</tbody>
-		</table>
-		
-		<div class="form-actions">
-			<button type="button" class="btn btn-primary pull-right">Salvar</button>
-		</div>
-	</fielset>
 	
 <!-- Modal Pesquisa Empresa -->
 <div id="modalPesquisaEmpresa" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -142,7 +152,7 @@
 					</tr>
 				</c:if>
 				<c:forEach items="${verbas }" var="verba">
-				<tr id="${verba.id}">
+				<tr id="${verba.id}" name="${verba.tipoValor }">
 					<td>${verba.id }</td>
 					<td>${verba.descricao }</td>
 					<td>${verba.tipoVerba }</td>
@@ -157,69 +167,7 @@
 	</div>
 </div>
 <!-- Fim Modal Pesquisa Verbas -->
-<script type="text/javascript">
-	$(document).ready(function(){
-		
-		/*
-		* Ações em table
-		*/
-		$('#tbVerbas tbody tr').click(function(){
-			$('#tbVerbas tbody tr').each(function(){
-				$(this).removeClass('table-selected');	
-			});
-			$(this).addClass('table-selected');
-		});
-		
-		$('#tbEmpresas tbody tr').click(function(){
-			$('#tbEmpresas tbody tr').each(function(){
-				$(this).removeClass('table-selected');
-			});
-			$(this).addClass('table-selected');
-		});
-		
-		/*
-		* Ações em button
-		*/
-		$('#btnSelecionaVerba').click(function(){
-			var idVerba = $('#tbVerbas tbody tr.table-selected').attr('id');
-			var descricaoVerba = $($('#tbVerbas tbody tr.table-selected td')[1]).html();
-			
-			$('#verba_id').html(idVerba);
-			$('#verba_descricao').html(descricaoVerba);
-			
-			$('#modalPesquisaVerba').modal('hide');
-		});
-		
-		$('#btnSelecionaEmpresa').click(function(){
-			var idEmpresa = $('#tbEmpresas tbody tr.table-selected').attr('id');
-			var descricaoEmpresa = $($('#tbEmpresas tbody tr.table-selected td')[1]).html();
-			
-			$('#empresa_id').html(idEmpresa);
-			$('#empresa_descricao').html(descricaoEmpresa);
-			
-			$('#modalPesquisaEmpresa').modal('hide');
-		});
-		
-		/*
-		* Ações em input:text
-		*/
-		$('#funcionario_nome').typeahead({
-			source : function(query, process){
-				data = $.getJSON('bootstrap/data.json');
-				process(data);
-			},
-			items : 4,
-			minLength : 3,
-			updater : function(selectedName){
-				return selectedName;
-			},
-			highlighter : function(selectName){
-				return selectedName;
-			}
-		});
-		
-	});
-</script>
+<script type="text/javascript" src="${pageContext.request.contextPath }/bootstrap/js/custom/apontamento.js"></script>
 
 
 <c:import url="/layout/footer.jsp"></c:import>

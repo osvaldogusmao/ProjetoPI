@@ -32,7 +32,7 @@ public class EmpresaDao {
 		return manager.createQuery("from Empresa").getResultList();
 	}
 	
-	public void recuperarEstancia(){
-		
+	public Empresa recuperarEstancia(Integer id){
+		return manager.find(Empresa.class, id);
 	}
 }

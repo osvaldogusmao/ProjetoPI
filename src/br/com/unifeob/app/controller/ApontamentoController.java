@@ -12,11 +12,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.unifeob.app.dao.ApontamentoDao;
 import br.com.unifeob.app.dao.EmpresaDao;
 import br.com.unifeob.app.dao.FuncionarioEmpresaDao;
 import br.com.unifeob.app.dao.VerbaDao;
+import br.com.unifeob.app.entidades.Apontamento;
 import br.com.unifeob.app.entidades.Empresa;
+import br.com.unifeob.app.entidades.FuncionarioEmpresa;
 import br.com.unifeob.app.entidades.Verba;
+import br.com.unifeob.app.util.Util;
 
 @WebServlet("/apontamento")
 public class ApontamentoController extends HttpServlet {
@@ -37,6 +41,9 @@ public class ApontamentoController extends HttpServlet {
 	 * @Inject
 	 * */
 	@Inject
+	private ApontamentoDao apontamentoDao;
+	
+	@Inject
 	private VerbaDao verbaDao;
 
 	@Inject
@@ -55,14 +62,14 @@ public class ApontamentoController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		this.request = req;
 		this.response = resp;
-		
+
 		Map<String, String[]> parametros = request.getParameterMap();
 
 		if (parametros.size() == 0) {
 			lista();
 		}
-		
-		if(parametros.containsKey("novo")){
+
+		if (parametros.containsKey("novo")) {
 			novo();
 		}
 	}
@@ -77,6 +84,10 @@ public class ApontamentoController extends HttpServlet {
 		if (parametros.size() == 0) {
 			lista();
 		}
+
+		if (parametros.containsKey("salva")) {
+			salva();
+		}
 	}
 
 	/**
@@ -90,13 +101,38 @@ public class ApontamentoController extends HttpServlet {
 	private void novo() {
 		List<Verba> verbas = verbaDao.lista();
 		List<Empresa> empresas = empresaDao.listarEmpresas();
-		
+
 		this.request.setAttribute("verbas", verbas);
 		this.request.setAttribute("empresas", empresas);
 
 		dispatcher(FORMULARIO);
 	}
-	
+
+	private void salva() {
+		Apontamento apontamento = new Apontamento();		
+		Empresa empresa = empresaDao.recuperarEstancia(Integer.parseInt(request.getParameter("empresa_id")));
+		FuncionarioEmpresa funcionarioEmpresa = funcionarioEmpresaDao.recuperarId(Integer.parseInt(request.getParameter("funcionario_id")));
+
+		apontamento.setReferencia(request.getParameter("apontamento_referencia"));
+		apontamento.setDataReferencia(Util.converterStringParaCalendar("01/"+ request.getParameter("apontamento_referencia")));
+
+		apontamento.setEmpresa(empresa);
+		apontamento.setFuncionarioEmpresa(funcionarioEmpresa);
+
+		if(apontamentoDao.salva(apontamento).getId() > 0){
+			request.setAttribute("msg", "Registro incluido com sucesso!");
+			request.setAttribute("titulo", "OK!");
+			request.setAttribute("tipoAlerta", "success");
+			lista();
+		}else{
+			request.setAttribute("msg", "Erro ao salvar registro!");
+			request.setAttribute("titulo", "Atenção!");
+			request.setAttribute("tipoAlerta", "error");
+		}
+		
+		
+	}
+
 	/**
 	 * Métodos responsavel em fazer o dispacher da página
 	 * 

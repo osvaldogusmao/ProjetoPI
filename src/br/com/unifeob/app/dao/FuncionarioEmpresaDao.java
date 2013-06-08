@@ -21,7 +21,7 @@ public class FuncionarioEmpresaDao {
 		manager.getTransaction().commit();
 	}
 	
-	public FuncionarioEmpresa recuperarId(Long idFuncEmpresa){
+	public FuncionarioEmpresa recuperarId(Integer idFuncEmpresa){
 		manager.getTransaction().begin();
 		FuncionarioEmpresa funcionarioEmpresa = manager.find(FuncionarioEmpresa.class, idFuncEmpresa);
 		manager.getTransaction().commit();
@@ -38,7 +38,7 @@ public class FuncionarioEmpresaDao {
 		manager.getTransaction().commit();
 	}
 	
-	public void apagar(Long idFuncEmpresa){
+	public void apagar(Integer idFuncEmpresa){
 		manager.getTransaction().begin();
 		FuncionarioEmpresa funcionarioEmpresa = recuperarId(idFuncEmpresa);
 		manager.remove(funcionarioEmpresa);

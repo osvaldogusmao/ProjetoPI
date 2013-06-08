@@ -8,6 +8,7 @@
 	  Verifique os dados e tente salva-lo novamente.
 	</div>
 	
+	<legend>Cadastro de Verbas</legend>
 	<form action="${pageContext.request.contextPath }/cadastro/verba?salva" method="post">
 	
 		<div class="controls controls-row">
@@ -30,6 +31,17 @@
 		</label>
 		<label class="radio">
 			<input type="radio" name="verba_tipoVerba" id="verba_tipoVerba" value='${tipoVerbas[1]}' <c:if test="${verba != null && verba.tipoVerba == tipoVerbas[1] }">checked</c:if> > ${tipoVerbas[1].descricao}
+		</label>
+		
+		<div class="controls controls-row">
+			<label class="label-span2">Tipo de Cálculo</label>
+		</div>
+		
+		<label class="radio">
+			<input type="radio" name="verba_tipoValor" id="verba_tipoValor" value='${tipoValores[0]}' <c:if test="${verba != null && verba.tipoValor == tipoValores[0] }">checked</c:if> > ${tipoValores[0].descricao}
+		</label>
+		<label class="radio">
+			<input type="radio" name="verba_tipoValor" id="verba_tipoValor" value='${tipoValores[1]}' <c:if test="${verba != null && verba.tipoValor == tipoValores[1] }">checked</c:if> > ${tipoValores[1].descricao}
 		</label> 
 	
 		<div class="controls controls-row">

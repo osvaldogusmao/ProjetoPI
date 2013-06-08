@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.VerbaDao;
 import br.com.unifeob.app.entidades.Verba;
+import br.com.unifeob.app.enumator.TipoValorEnum;
 import br.com.unifeob.app.enumator.TipoVerbaEnum;
 
 @WebServlet("/cadastro/verba")
@@ -112,7 +113,9 @@ public class CadastroVerbasController extends HttpServlet {
 	 * */
 	private void novo() {
 		List<TipoVerbaEnum> tipoVerbaEnums = Arrays.asList(TipoVerbaEnum.values());
+		List<TipoValorEnum> tipoValorEnums = Arrays.asList(TipoValorEnum.values());
 		request.setAttribute("tipoVerbas", tipoVerbaEnums);
+		request.setAttribute("tipoValores", tipoValorEnums);
 
 		dispatcher(FORMULARIO);
 	}
@@ -126,6 +129,7 @@ public class CadastroVerbasController extends HttpServlet {
 		Verba verba = new Verba();
 		verba.setDescricao(request.getParameter("verba_descricao"));
 		verba.setTipoVerba(TipoVerbaEnum.valueOf(request.getParameter("verba_tipoVerba")));
+		verba.setTipoValor(TipoValorEnum.valueOf(request.getParameter("verba_tipoValor")));
 		verba.setIncideINSS(new Boolean(request.getParameter("verba_incideINSS")));
 		verba.setIncideIRRF(new Boolean(request.getParameter("verba_incideIRRF")));
 
@@ -171,7 +175,9 @@ public class CadastroVerbasController extends HttpServlet {
 	private void edita(Integer id) {
 		
 		List<TipoVerbaEnum> tipoVerbaEnums = Arrays.asList(TipoVerbaEnum.values());
+		List<TipoValorEnum> tipoValorEnums = Arrays.asList(TipoValorEnum.values());
 		request.setAttribute("tipoVerbas", tipoVerbaEnums);
+		request.setAttribute("tipoValores", tipoValorEnums);
 		
 		if (id > 0) {
 			Verba verba = verbaDao.carrega(id);
