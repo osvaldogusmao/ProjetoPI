@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.unifeob.app.entidades.INSS;
+import br.com.unifeob.app.entidades.PorcentagemDeducao;
 
 @RequestScoped
 public class INSSDao {
@@ -51,19 +52,30 @@ public class INSSDao {
 		return inss;
 	}
 	
-	public Float recuperarPorcentagem(Integer anoReferente, Float valor){
+	public PorcentagemDeducao recuperarPorcentagem(Integer anoReferente, Float valor){
 		INSS inss = recuperarINSSPorAno(anoReferente);
 		
+		PorcentagemDeducao porcentagemDeducao = new PorcentagemDeducao();
+		
 		if(valor <= inss.getValorLimiteFaixaUm() && valor >= inss.getValorFaixaUm()){
-			return inss.getPercentualFaixaUm();
+			porcentagemDeducao.setPorcentagem(inss.getPercentualFaixaUm());
+			return porcentagemDeducao;
+		
 		}else if((valor <= inss.getValorLimiteFaixaDois()) && (valor >= inss.getValorFaixaDois())){
-			return inss.getPercentualFaixaDois();
+			porcentagemDeducao.setPorcentagem(inss.getPercentualFaixaDois());
+			return porcentagemDeducao;
+		
 		}else if(valor >= inss.getValorFaixaTres() && valor <=inss.getValorLimiteFaixaTres()){
-			return inss.getPercentualFaixaTres();
+			porcentagemDeducao.setPorcentagem(inss.getPercentualFaixaTres());
+			return porcentagemDeducao;
+		
 		}else if(valor >= inss.getValorFaixaTres() && valor >=inss.getValorLimiteFaixaTres()){
-			return inss.getPercentualFaixaTres();
+			porcentagemDeducao.setDeducao(inss.getDeducao());
+			return porcentagemDeducao;
+			
 		}else{
-			return 0f;
+			porcentagemDeducao.setPorcentagem(inss.getPercentualFaixaUm());
+			return porcentagemDeducao;
 		}
 	}
 	

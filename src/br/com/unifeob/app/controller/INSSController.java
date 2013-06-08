@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.INSSDao;
 import br.com.unifeob.app.entidades.INSS;
+import br.com.unifeob.app.entidades.PorcentagemDeducao;
 
 @WebServlet("/INSSController")
 public class INSSController extends HttpServlet {
