@@ -44,6 +44,29 @@ public class INSSDao {
 		manager.getTransaction().commit();
 	}
 	
+	public INSS recuperarINSSPorAno(Integer anoReferente){
+		manager.getTransaction().begin();
+		INSS inss = (INSS) manager.createQuery("from INSS where anoReferente = "+anoReferente).getSingleResult();
+		manager.getTransaction().commit();
+		return inss;
+	}
+	
+	public Float recuperarPorcentagem(Integer anoReferente, Float valor){
+		INSS inss = recuperarINSSPorAno(anoReferente);
+		
+		if(valor <= inss.getValorLimiteFaixaUm() && valor >= inss.getValorFaixaUm()){
+			return inss.getPercentualFaixaUm();
+		}else if((valor <= inss.getValorLimiteFaixaDois()) && (valor >= inss.getValorFaixaDois())){
+			return inss.getPercentualFaixaDois();
+		}else if(valor >= inss.getValorFaixaTres() && valor <=inss.getValorLimiteFaixaTres()){
+			return inss.getPercentualFaixaTres();
+		}else if(valor >= inss.getValorFaixaTres() && valor >=inss.getValorLimiteFaixaTres()){
+			return inss.getPercentualFaixaTres();
+		}else{
+			return 0f;
+		}
+	}
+	
 	
 
 }

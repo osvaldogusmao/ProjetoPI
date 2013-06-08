@@ -34,7 +34,6 @@ public class INSSController extends HttpServlet {
 		if("listar".equals(logica)){
 			
 			List<INSS> lista = dao.listar();
-			
 			request.setAttribute("lista", lista);
 			RequestDispatcher dp = request.getRequestDispatcher("/visualizar/inss/index.jsp");
 			dp.forward(request, response);
