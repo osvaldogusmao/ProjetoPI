@@ -65,6 +65,9 @@ public class INSSController extends HttpServlet {
 			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
 			
+			inss.setValorMaximo(Float.parseFloat(request.getParameter("valorMaximo")));
+			inss.setDeducao(Float.parseFloat(request.getParameter("deducao")));
+			
 			dao.salvar(inss);
 			
 			request.setAttribute("sucesso", "INSS cadastrado com sucesso!");
@@ -130,6 +133,9 @@ public class INSSController extends HttpServlet {
 			inss.setValorFaixaTres(Float.parseFloat(request.getParameter("valorFaixaTres")));
 			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
+			
+			inss.setValorMaximo(Float.parseFloat(request.getParameter("valorMaximo")));
+			inss.setDeducao(Float.parseFloat(request.getParameter("deducao")));
 			
 			dao.alterar(inss);
 			

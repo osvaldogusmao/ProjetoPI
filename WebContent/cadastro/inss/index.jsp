@@ -52,6 +52,11 @@
 			<td><input type="text" required="" name="valorLimiteFaixaTres"/></td>
 			<td><input type="text" required="" name="percentualFaixaTres"/></td>
 		</tr>
+		<tr>
+			<td><input type="text" required="" name="valorMaximo"/></td>
+			
+			<td style="padding-left: 60px"  colspan="2"> Valor que será deduzido: <input type="text" required="" name="deducao"/></td>
+		</tr>
 	</table>
 	
 	<input type="hidden" name="logica" value="salvar"/>
