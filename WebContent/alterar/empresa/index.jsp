@@ -6,9 +6,19 @@
 <script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/MascaraValidacao.js"></script> 
 	
 	<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
+		
 		<h1 align="center">Alteração de Cadastro de Empresas</h1>
+		
 		<fieldset>
 		<legend>Dados da Empresa</legend>
+		
+			<div class="controls controls-row">
+				<label class="span1"for="cod"> Id: </label> 
+			</div>
+			
+			<div class="controls controls-row">
+				<input class="span1" type="text" name="id" id="cod" value="${empresa.id}" readonly="readonly" />
+			</div>
 		
 			<div class="controls controls-row">
 				<label class="span12"for="rs"> Razão Social: </label> 
@@ -67,7 +77,7 @@
 				<input class="span2" type="text" name="bairro" id="bai" value="${empresa.bairro}">
 				<input class="span2" type="text" name="cep" id="cep" value="${empresa.cep}" OnKeyPress="MascaraCep(cep)" maxlength="10">
 				<input class="span3" type="text" name="uf" id="uf" value="${empresa.uf}">
-				<input class="span5" type="text" name="uf" id="cid" value="${empresa.cidade}">	
+				<input class="span5" type="text" name="cidade" id="cid" value="${empresa.cidade}">	
 			</div>
 		</fieldset>
 		
@@ -86,22 +96,25 @@
 				<input class="span4" type="text" name="telefone2" onKeyPress="MascaraTelefone(telefone2);" maxlength="14" value="${empresa.telefone2}">
 				<input class="span4" type="text" name="telefone3" onKeyPress="MascaraTelefone(telefone3);" maxlength="14" value="${empresa.telefone3}">				
 			</div>
-	
 			
-			<label>e-mail:
-			<input type="text" name="email" />
-			<input class="span2" type="text" name="email" id="mail" value="" OnKeyPress="ValidarEmail(email)" maxlength="10">
-			</label>
+			<div class="controls controls-row">
+				<label class="span6" for="mail">E-mail:</label>
+				<label class="span6" for="site">Site:</label>
+			</div>
 			
-			<label>site:
-			<input type="text" name="site" />
-			</label>
+			<div>
+				<input class="span6" type="text" name="email" value="${empresa.email}">
+				<input class="span6" type="text" name="email" value="${empresa.site}">
+				
+			</div>
 			
 		</fieldset>
 		
-		<input type="hidden" name="logica" value="salvar"/>
+		<input type="hidden" name="logica" value="atualizar"/>
 		<input type="submit" value="Salvar" class="btn btn-primary"></input>
-	</form>   
+	</form>  
+	
+	 
 	<a href="/ProjetoPI/paginaInicial/index.jsp"><input type="submit" value="Voltar" class="btn"></a>          
 
 		<script language="javascript">
@@ -112,19 +125,7 @@
 				cidade: document.getElementById('cidade')
 				});
 			};
-			
-			
-			/* Formatação para qualquer mascara */
-			
-			function formatar(src, mask){
-			  var i = src.value.length;
-			  var saida = mask.substring(0,1);
-			  var texto = mask.substring(i);
-			if (texto.substring(0,1) != saida){
-			    src.value += texto.substring(0,1);
-			  };
-			};
-			
+					
 		</script>
 		
 

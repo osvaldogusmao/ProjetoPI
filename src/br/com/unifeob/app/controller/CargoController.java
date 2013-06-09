@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 
 import br.com.unifeob.app.dao.CargoDao;
 import br.com.unifeob.app.entidades.Cargo;
+import br.com.unifeob.app.entidades.Empresa;
 import br.com.unifeob.app.entidades.INSS;
 
 @WebServlet("/CargoController")
@@ -68,5 +69,37 @@ public class CargoController extends HttpServlet {
             RequestDispatcher dispacher = request.getRequestDispatcher("/sucesso/index.jsp");
             dispacher.forward(request, response);
 		}
+		
+		if(logica.equals("alterar")){
+			Cargo cargo = dao.recuperarEstancia(Long.parseLong(request.getParameter("codigo")));
+			request.setAttribute("cargo", cargo);
+            RequestDispatcher dispacher = request.getRequestDispatcher("alterar/cargo/index.jsp");
+            dispacher.forward(request, response);
+		}
+		
+		if(logica.equals("deletar")){
+			dao.deletar(Long.parseLong(request.getParameter("codigo")));
+			
+			List<Cargo> listaCargos = dao.listar();
+			request.setAttribute("lista", listaCargos);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("visualizar/cargo/index.jsp");
+			dispatcher.forward(request, response);
+		}
+		
+		if(logica.equals("atualizar")){
+        	Cargo cargo = new Cargo();
+        	cargo.setId(Long.parseLong(request.getParameter("id")));
+        	cargo.setNome(request.getParameter("descricao"));
+        	cargo.setInsalubridade(Float.parseFloat(request.getParameter("txtinsalibridade")));
+        	cargo.setPericulosidade(Float.parseFloat(request.getParameter("txtpericulosidade")));
+        	dao.altera(cargo);
+        	
+        	List<Cargo> lista = dao.listar();
+        	
+        	request.setAttribute("lista", lista);
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/cargo/index.jsp");
+        	dispatcher.forward(request, response);
+        }
+
 	}
 }
