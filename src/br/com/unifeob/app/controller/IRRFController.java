@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.IRRFDao;
 import br.com.unifeob.app.entidades.IRRF;
+import br.com.unifeob.app.entidades.PorcentagemDeducao;
 
 
 @WebServlet("/IRRFController")
@@ -35,7 +36,6 @@ public class IRRFController extends HttpServlet {
 		if("listar".equals(logica)){
 			
 			List<IRRF> lista = dao.listar();
-			
 			request.setAttribute("lista", lista);
 			RequestDispatcher rd = request.getRequestDispatcher("/visualizar/irrf/index.jsp");
 			rd.forward(request, response);

@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import br.com.unifeob.app.enumator.TipoValorEnum;
 import br.com.unifeob.app.enumator.TipoVerbaEnum;
 
 @Entity
@@ -13,6 +14,7 @@ public class Verba {
 	private Integer id;
 	private String descricao;
 	private TipoVerbaEnum tipoVerba;
+	private TipoValorEnum tipoValor;
 	private Boolean incideINSS;
 	private Boolean incideIRRF;
 
@@ -40,6 +42,14 @@ public class Verba {
 
 	public void setTipoVerba(TipoVerbaEnum tipoVerba) {
 		this.tipoVerba = tipoVerba;
+	}
+
+	public void setTipoValor(TipoValorEnum tipoValor) {
+		this.tipoValor = tipoValor;
+	}
+
+	public TipoValorEnum getTipoValor() {
+		return tipoValor;
 	}
 
 	public Boolean getIncideINSS() {

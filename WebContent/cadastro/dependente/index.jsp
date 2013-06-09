@@ -9,17 +9,17 @@
 			<fieldset>
 				<legend>Dados Pessoais</legend>
 			<div class="controls controls-row">
-				<label class="span4"> Nome da Pessoa: </label>
+				<label class="label-span4"> Nome da Pessoa: </label>
 			</div>
 			<div class="controls controls-row">
 						<input class="span4" type="text" name="nomeDaPessoa" value="${pessoa.nome}" readonly="true" />
 						<input type="hidden" name="cpfPessoa" value="${pessoa.cpf}" />
 			</div>
 			<div class="controls controls-row">
-				<label class="span4" for="nomeDependente" >Nome do Dependente:</label>
-				<label class="span2" for="rg">RG:</label> 
-				<label class="span2" for="orgaoExpeditor">Orgão Expeditor:</label>
-				<label class="span2" for="cpf">CPF:</label>  
+				<label class="label-span4" for="nomeDependente" >Nome do Dependente:</label>
+				<label class="label-span2" for="rg">RG:</label> 
+				<label class="label-span2" for="orgaoExpeditor">Orgão Expeditor:</label>
+				<label class="label-span2" for="cpf">CPF:</label>  
 			</div>
 			<div class="controls controls-row">	
 				<input class="span4" type="text" name="nomeDependente" id="nomeDependente" />
@@ -44,7 +44,7 @@
 				<input class="span2" type="text" name="cpfDependente" id="cpf" />
 			</div>
 			<div class="controls controls-row">
-				<label class="span2" for="dataNascimento">Data de Nascimento:</label>
+				<label class="label-span2" for="dataNascimento">Data de Nascimento:</label>
 			</div>
 			<div class="controls controls-row">
 				<input class="span2" type="text" name="dataNascimentoDependente" id="dataNascimento" />

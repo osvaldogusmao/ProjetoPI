@@ -12,6 +12,7 @@
     <class>br.com.unifeob.app.entidades.Verba</class>
     <class>br.com.unifeob.app.entidades.MesVigente</class>
     <class>br.com.unifeob.app.entidades.FuncionarioEmpresa</class>
+    <class>br.com.unifeob.app.entidades.Apontamento</class>
 
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>

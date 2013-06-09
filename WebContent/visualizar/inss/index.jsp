@@ -42,6 +42,10 @@
 					<td>${inss.percentualFaixaTres}</td>
 				</tr>
 				<tr>
+					<td>${inss.valorMaximo}</td>
+					<td colspan="2">Valor que será deduzido: ${inss.deducao}</td>
+				</tr>
+				<tr>
 					<td></td>
 					
 					<td>

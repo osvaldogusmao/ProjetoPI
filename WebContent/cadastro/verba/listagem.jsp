@@ -1,11 +1,15 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:import url="/layout/header.jsp"></c:import>
 	
+	<legend>Verbas cadastradas</legend>
 	<table class="table table-condensed table-hover table-bordered">
 	<thead>
 		<tr>
 			<th>Descrição</th>
 			<th>Tipo de verba</th>
+			<th>Tipo de Cálculo</th>
+			<th>INSS</th>
+			<th>IRRF</th>
 			<th style="width: 100px; text-align: center;">Ação</th>
 		</tr>
 	</thead>
@@ -14,6 +18,13 @@
 			<tr>
 				<td>${verba.descricao }</td>
 				<td>${verba.tipoVerba.descricao }</td>
+				<td>${verba.tipoValor.descricao }</td>
+				<td>
+					<c:if test="${verba.incideINSS}">Sim</c:if><c:if test="${!verba.incideINSS}">Não</c:if>
+				</td>
+				<td>
+					<c:if test="${verba.incideIRRF}">Sim</c:if><c:if test="${!verba.incideIRRF}">Não</c:if>
+				</td>
 				<td id="${verba.id}">
 					<a href="${pageContext.request.contextPath }/cadastro/verba?edita&id=${verba.id}" class="btn btn-link"><i class="icon-edit"></i></a>
 					<a href="#modalDeletaRegistro" class="delete btn btn-link" role="button" data-toggle="modal"><i class="icon-remove"></i></a>

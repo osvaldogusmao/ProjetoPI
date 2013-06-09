@@ -1786,7 +1786,7 @@
 
   , replaceSelect: function () {
       this.$target = this.$element
-      this.$element = $('<input type="text" />')
+      this.$element = $('<input type="text" >')
       
       this.source = {}
       this.strict = true
@@ -2197,7 +2197,7 @@
   $.fn.typeahead.defaults = {
     source: []
   , items: 8
-  , menu: '<ul class="typeahead dropdown-menu"></ul>'
+  , menu: '<ul class="typeahead dropdown-menu" style="margin-right : 20px"></ul>'
   , item: '<li><a href="#"></a></li>'
   , ajaxdelay: 400
   , minLength: 1

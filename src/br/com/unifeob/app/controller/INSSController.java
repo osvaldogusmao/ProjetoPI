@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.unifeob.app.dao.INSSDao;
 import br.com.unifeob.app.entidades.INSS;
+import br.com.unifeob.app.entidades.PorcentagemDeducao;
 
 @WebServlet("/INSSController")
 public class INSSController extends HttpServlet {
@@ -34,7 +35,6 @@ public class INSSController extends HttpServlet {
 		if("listar".equals(logica)){
 			
 			List<INSS> lista = dao.listar();
-			
 			request.setAttribute("lista", lista);
 			RequestDispatcher dp = request.getRequestDispatcher("/visualizar/inss/index.jsp");
 			dp.forward(request, response);
@@ -65,6 +65,9 @@ public class INSSController extends HttpServlet {
 			inss.setValorFaixaTres(Float.parseFloat(request.getParameter("valorFaixaTres")));
 			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
+			
+			inss.setValorMaximo(Float.parseFloat(request.getParameter("valorMaximo")));
+			inss.setDeducao(Float.parseFloat(request.getParameter("deducao")));
 			
 			dao.salvar(inss);
 			
@@ -131,6 +134,9 @@ public class INSSController extends HttpServlet {
 			inss.setValorFaixaTres(Float.parseFloat(request.getParameter("valorFaixaTres")));
 			inss.setValorLimiteFaixaTres(Float.parseFloat(request.getParameter("valorLimiteFaixaTres")));
 			inss.setPercentualFaixaTres(Float.parseFloat(request.getParameter("percentualFaixaTres")));
+			
+			inss.setValorMaximo(Float.parseFloat(request.getParameter("valorMaximo")));
+			inss.setDeducao(Float.parseFloat(request.getParameter("deducao")));
 			
 			dao.alterar(inss);
 			

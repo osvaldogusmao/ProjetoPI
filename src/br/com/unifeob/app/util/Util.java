@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 public class Util {
@@ -34,6 +35,17 @@ public class Util {
 		Date date = null;
 		try {
 			date = dateFormat.parse(data);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+	
+	public static Calendar  converterStringParaCalendar(String data){		
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Calendar date = Calendar.getInstance();
+		try {
+			date.setTime(dateFormat.parse(data));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

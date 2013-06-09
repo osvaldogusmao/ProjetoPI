@@ -28,6 +28,9 @@ public class INSS {
 	private Float valorLimiteFaixaTres;
 	private Float percentualFaixaTres;
 	
+	private Float valorMaximo;
+	private Float deducao;
+	
 	public Long getId() {
 		return id;
 	}
@@ -94,5 +97,19 @@ public class INSS {
 	public void setValorFaixaTres(Float valorFaixaTres) {
 		this.valorFaixaTres = valorFaixaTres;
 	}
+	public Float getValorMaximo() {
+		return valorMaximo;
+	}
+	public void setValorMaximo(Float valorMaximo) {
+		this.valorMaximo = valorMaximo;
+	}
+	public Float getDeducao() {
+		return deducao;
+	}
+	public void setDeducao(Float deducao) {
+		this.deducao = deducao;
+	}
 
+	
+	
 }

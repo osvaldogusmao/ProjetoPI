@@ -40,6 +40,10 @@
 			<td><input type="text" required="" name="valorLimiteFaixaTres" value="${inss.valorLimiteFaixaTres}"/></td>
 			<td><input type="text" required="" name="percentualFaixaTres" value="${inss.percentualFaixaTres}"/></td>
 		</tr>
+		<tr>
+			<td><input type="text" required="" name="valorMaximo" value="${inss.valorMaximo}"/></td>
+			<td>Valor que será deduzido: <input type="text" required="" name="deducao" value="${inss.deducao}"/></td>
+		</tr>
 	</table>
 	
 	<input type="hidden" name="anoreferencia" value="${inss.anoRereferente}">
