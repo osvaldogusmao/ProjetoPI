@@ -19,10 +19,15 @@
 			<div class="controls controls-row">
 				<input class="span1" type="text" name="id" id="cod" value="${cargo.id}" readonly="readonly" />
 			</div>
-
 			
-			<label>Descrição:</label>
-			<input type="text" name="descricao" size="50" value="${cargo.nome}">
+			<div class="controls controls-row">
+				<label class="span" for="des">Descrição:</label>
+			</div>
+			
+			<div class="controls controls-row">
+				<input class="span3" type="text" name="descricao" size="50" value="${cargo.nome}">
+			</div>
+			
 			
 			<label>Insalubridade:</label>
 			<label id="porcinsalu">Porcentagem:</label>
