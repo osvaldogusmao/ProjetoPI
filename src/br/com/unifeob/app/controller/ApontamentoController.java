@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONObject;
+import net.sf.json.JSONSerializer;
+
 import br.com.unifeob.app.dao.ApontamentoDao;
 import br.com.unifeob.app.dao.EmpresaDao;
 import br.com.unifeob.app.dao.FuncionarioEmpresaDAO;
@@ -42,7 +45,7 @@ public class ApontamentoController extends HttpServlet {
 	 * */
 	@Inject
 	private ApontamentoDao apontamentoDao;
-	
+
 	@Inject
 	private VerbaDao verbaDao;
 
@@ -108,31 +111,31 @@ public class ApontamentoController extends HttpServlet {
 		dispatcher(FORMULARIO);
 	}
 
-	private void salva() {
-		Apontamento apontamento = new Apontamento();		
+	private void salva() throws IOException {
+		Apontamento apontamento = new Apontamento();
 		Empresa empresa = empresaDao.recuperarEstancia(Integer.parseInt(request.getParameter("empresa_id")));
-		FuncionarioEmpresa funcionarioEmpresa = funcionarioEmpresaDao.recuperarId(Integer.parseInt(request.getParameter("funcionario_id")));
+		FuncionarioEmpresa funcionarioEmpresa = funcionarioEmpresaDao.recuperarId(Integer.parseInt(request
+				.getParameter("funcionario_id")));
 
 		apontamento.setReferencia(request.getParameter("apontamento_referencia"));
-		apontamento.setDataReferencia(Util.converterStringParaCalendar("01/"+ request.getParameter("apontamento_referencia")));
+		apontamento.setDataReferencia(Util.converterStringParaCalendar("01/"
+				+ request.getParameter("apontamento_referencia")));
 
 		apontamento.setEmpresa(empresa);
 		apontamento.setFuncionarioEmpresa(funcionarioEmpresa);
 
-		apontamento = apontamentoDao.salva(apontamento); 
-		
-		if(apontamento.getId() > 0){
-			request.setAttribute("msg", "Registro incluido com sucesso!");
-			request.setAttribute("titulo", "OK!");
-			request.setAttribute("tipoAlerta", "success");
-			
-		}else{
+		apontamento = apontamentoDao.salva(apontamento);
+
+		if (apontamento.getId() > 0) {
+			JSONObject jsonObject = (JSONObject) JSONSerializer.toJSON(apontamento);
+			response.setContentType("application/json");
+			response.getWriter().write(jsonObject.toString());
+		} else {
 			request.setAttribute("msg", "Erro ao salvar registro!");
 			request.setAttribute("titulo", "Atenção!");
 			request.setAttribute("tipoAlerta", "error");
 		}
-		
-		
+
 	}
 
 	/**

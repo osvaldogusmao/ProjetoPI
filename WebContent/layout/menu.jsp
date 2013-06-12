@@ -66,7 +66,7 @@
 					</a>
 					<ul class="dropdown-menu">
 						<li>
-							<a href="">Fazer Lançamento</a>
+							<a href="${pageContext.request.contextPath }/apontamento?novo">Apontamento</a>
 						</li>
 					</ul>
 				</li>
