@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<title>Cadastro de Mes Vigente</title>
-</head>
+  pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:import url="/layout/header.jsp"></c:import>
+<script type="text/javascript" src="/ProjetoPI/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/MascaraValidacao.js"></script> 
 
-
-<body>
-<%@ page  language="java" import="java.util.*,java.text.*"%>
+  <form method="post"
+    action="${pageContext.request.contextPath}/MesVigenteController">
+    <fieldset>
+          
+      <legend >Cadastro de Mês Vigente</legend>
+      
+      <div class="controls controls-row">
+        
+      <%@ page  language="java" import="java.util.*,java.text.*"%>
 <%!
 public int nullIntconv(String inv)
 {   
@@ -173,9 +176,15 @@ function goTo()
     <td>&nbsp;</td>
   </tr>
 </table>
-<input type="submit" name="selecionar" value="Selecionar este mês"><p>
-<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
+
 </div>
-</form>
-</body>
-</html>
+      
+    </fieldset>
+      <a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+      <input type="hidden" name="logica" value="selecionar" /> 
+      <input type="submit" value="Selecionar Mês" class="btn btn-primary">
+  </form>
+  
+      
+  
+<c:import url="/layout/footer.jsp"></c:import>

@@ -17,7 +17,7 @@ import net.sf.json.JSONSerializer;
 
 import br.com.unifeob.app.dao.ApontamentoDao;
 import br.com.unifeob.app.dao.EmpresaDao;
-import br.com.unifeob.app.dao.FuncionarioEmpresaDAO;
+import br.com.unifeob.app.dao.FuncionarioEmpresaDao;
 import br.com.unifeob.app.dao.VerbaDao;
 import br.com.unifeob.app.entidades.Apontamento;
 import br.com.unifeob.app.entidades.Empresa;
@@ -53,7 +53,7 @@ public class ApontamentoController extends HttpServlet {
 	private EmpresaDao empresaDao;
 
 	@Inject
-	private FuncionarioEmpresaDAO funcionarioEmpresaDao;
+	private FuncionarioEmpresaDao funcionarioEmpresaDao;
 
 	/**
 	 * Variaveis da classe
@@ -94,7 +94,7 @@ public class ApontamentoController extends HttpServlet {
 	}
 
 	/**
-	 * Métodos privados
+	 * M≈Ωtodos privados
 	 * */
 
 	private void lista() {
@@ -132,14 +132,14 @@ public class ApontamentoController extends HttpServlet {
 			response.getWriter().write(jsonObject.toString());
 		} else {
 			request.setAttribute("msg", "Erro ao salvar registro!");
-			request.setAttribute("titulo", "Atenção!");
+			request.setAttribute("titulo", "AtenÔøΩ‚Äπo!");
 			request.setAttribute("tipoAlerta", "error");
 		}
 
 	}
 
 	/**
-	 * Métodos responsavel em fazer o dispacher da página
+	 * M≈Ωtodos responsavel em fazer o dispacher da p‚Ä°gina
 	 * 
 	 * */
 	private void dispatcher(String dispather) {

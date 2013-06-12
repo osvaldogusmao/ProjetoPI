@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.unifeob.app.entidades.Empresa;
+import br.com.unifeob.app.entidades.INSS;
 import br.com.unifeob.app.entidades.Pessoa;
 
 @RequestScoped
@@ -37,5 +38,11 @@ public class EmpresaDao {
 		Empresa empresa = manager.find(Empresa.class, codigo);
 		manager.getTransaction().commit();
 		return empresa;
+	}
+	
+	public void alterar(Empresa empresa){
+		manager.getTransaction().begin();
+		manager.merge(empresa);
+		manager.getTransaction().commit();
 	}
 }

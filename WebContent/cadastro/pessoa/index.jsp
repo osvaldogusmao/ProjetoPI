@@ -3,6 +3,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:import url="/layout/header.jsp"></c:import>
 <script type="text/javascript" src="/ProjetoPI/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/MascaraValidacao.js"></script> 
 
 	<form method="post"
 		action="${pageContext.request.contextPath}/PessoaController">
@@ -126,7 +127,7 @@
 			<div class="controls controls-row">	
 				<select class="span3" name="uf"  id="estado"></select>
 				<select class="span3" name="cidade"  id="cidade"></select>	
-				<input class="span3" type="text" name="cep" id="cep"/>
+				<input class="span3" type="text" name="cep" id="cep" OnKeyPress="MascaraCep(cep)" maxlength="10"/>
 			</div>
 		</fieldset>
 			<a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
@@ -136,11 +137,23 @@
 	
 			<script>
 		
-		window.onload = function() {
+			window.onload = function() {
 			new dgCidadesEstados({
 				estado: document.getElementById('estado'),
 				cidade: document.getElementById('cidade')
 				});
+			
+
+			/* Formatação para qualquer mascara */
+
+			function formatar(src, mask){
+			  var i = src.value.length;
+			  var saida = mask.substring(0,1);
+			  var texto = mask.substring(i);
+			if (texto.substring(0,1) != saida){
+			    src.value += texto.substring(0,1);
+			  };
+			};
 			};
 		</script>
 	

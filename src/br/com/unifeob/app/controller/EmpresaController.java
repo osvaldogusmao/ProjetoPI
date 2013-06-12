@@ -86,7 +86,36 @@ public class EmpresaController extends HttpServlet {
         if(logica.equals("alterar")){
         	Empresa empresa = dao.recuperarEstancia(Integer.parseInt(request.getParameter("codigo")));
         	request.setAttribute("empresa", empresa);
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("/alterar/empresa/index.jsp");
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("visualizar/empresa/index.jsp");
+        	dispatcher.forward(request, response);
+        }
+        
+        if(logica.equals("atualizar")){
+        	Empresa empresa = new Empresa();
+        	empresa.setId(Integer.parseInt(request.getParameter("id")));
+        	empresa.setRazaoSocial(request.getParameter("razaosocial"));
+        	empresa.setNomeFantasia(request.getParameter("nomefantasia"));
+        	empresa.setCnpj(request.getParameter("cnpj"));
+        	empresa.setInscricaoEstadual(request.getParameter("inscricaoestadual"));
+        	empresa.setInscricaoMuncipal(request.getParameter("inscricaomunicipal"));
+        	empresa.setLogradouro(request.getParameter("logradouro"));
+        	empresa.setNumero(Integer.parseInt(request.getParameter("numero")));
+        	empresa.setComplemento(request.getParameter("complemento"));
+        	empresa.setBairro(request.getParameter("bairro"));
+        	empresa.setCep(request.getParameter("cep"));
+        	empresa.setUf(request.getParameter("uf"));
+        	empresa.setCidade(request.getParameter("cidade"));
+        	empresa.setTelefone1(request.getParameter("telefone1"));
+        	empresa.setTelefone2(request.getParameter("telefone2"));
+        	empresa.setTelefone3(request.getParameter("telefone3"));
+        	empresa.setEmail(request.getParameter("email"));
+        	empresa.setSite(request.getParameter("site"));
+        	dao.alterar(empresa);
+        	
+        	List<Empresa> lista = dao.listarEmpresas();
+        	
+        	request.setAttribute("lista", lista);
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("/visualizar/empresa/index.jsp");
         	dispatcher.forward(request, response);
         }
 	}

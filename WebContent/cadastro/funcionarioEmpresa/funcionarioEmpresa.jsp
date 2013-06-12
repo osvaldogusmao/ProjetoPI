@@ -1,56 +1,52 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="/ProjetoPI/bootstrap/css/bootstrap.css"/>
-<title>Cadastro de Funcionario Empresa e Cargo</title>
-</head>
-<body>
-<fieldset>
-<legend align="center"><h1>Cadastro de Funcionario Empresa e Cargo</h1></legend>
-<br>
-<div align="center">
-<label>Funcionario:</label>
-<select size="1" name="Combo">
-<option selected value="Selecione">Selecione</option>
-<option value="Funcionario2">Ivan Simionato</option>
-<option value="Funcionario">Larissa Machado</option>
-<option value="Funcionario2">Osvaldo Gusmão</option>
-<option value="Funcionario2">Rafael Padua</option>
-<option value="Funcionario2">Vanessa Rossi</option>
-</select>
+  pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:import url="/layout/header.jsp"></c:import>
+<script type="text/javascript" src="/ProjetoPI/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/MascaraValidacao.js"></script> 
 
-<label>Empresa:</label>
-<select size="1" name="Combo2">
-<option selected value="Selecione">Selecione</option>
-<option value="Empresa">Unifeob</option>
-<option value="Empresa2">Microsoft</option>
-</select>
-
-<label>Cargo:</label>
-<select size="1" name="Combo3">
-<option selected value="Selecione">Selecione</option>
-<option value="Cargo">Analista de Sistemas</option>
-<option value="Cargo2">Programador</option>
-<option value="Cargo2">Gerente de Infraestrutura</option>
-<option value="Cargo2">Arquiteto de BI</option>
-<option value="Cargo2">Coordenador de Projetos</option>
-</select>
-<br>
-</div>
-&nbsp;
-&nbsp;
-</fieldset>
-<p>
-<div align="center">
-<input type="submit" name="inserir" value="Inserir">
+  <form method="post"
+    action="${pageContext.request.contextPath}/PessoaController">
+    <fieldset>
+          
+      <legend >Cadastro de Funcionario Empresa e Cargo</legend>
+      
+      
+      <div class="controls controls-row">
+        <input class="span2" type="text" name="Funcionario" id="Funcionario"/>
+        <select class="span2" name="funcionario" id="funcionario">
+          <option value=" ">Selecione</option>
+          <option value="Funcionario1">Ivan Simionato</option>
+          <option value="Funcionario2">Larissa Machado</option>
+          <option value="Funcionario3">Osvaldo Gusmão</option>
+          <option value="Funcionario4">Rafael Padua/option>
+          <option value="Funcionario5">Vanessa Rossi</option>
+        </select>   
+        <input class="span2" type="text" name="Empresa" id="Empresa"/>
+        <select class="span2" name="empresa" id="empresa">
+          <option value=" ">Selecione</option>
+          <option value="Empresa1">Unifeob</option>
+          <option</option>
+          
+        </select>  
+        <input class="span2" type="text" name="Cargo" id="Cargo"/>
+        <select class="span2" name="cargo" id="cargo">
+        <option selected value="Selecione">Selecione</option>
+        <option value="Cargo">Analista de Sistemas</option>
+        <option value="Cargo2">Programador</option>
+        <option value="Cargo3">Gerente de Infraestrutura</option>
+        <option value="Cargo4">Arquiteto de BI</option>
+        <option value="Cargo5">Coordenador de Projetos</option>
+        </select>  
+      </div>  
+      <div class="controls controls-row">
+        <input type="submit" name="inserir" value="Inserir">
 <input type="submit" name="alterar" value="Alterar">
 <input type="submit" name="deletar" value="Deletar">
 <input type="submit" name="visualizar" value="Visualizar">
-<p>
-<table align="center" width="600px" height="100px" border="1">
+      </div>
+      <div class="controls controls-row">
+       <table align="center" width="600px" height="100px" border="1">
 <thead>
 <th width="320px">Funcionario</th>
 <th>Empresa</th>
@@ -92,9 +88,13 @@
 
 
 </table>
-<a href="/ProjetoPI/paginaInicial/">Voltar a pagina inicial </a>
-</div>
+      </div>
 
+    </fieldset>
+      <a href="${pageContext.request.contextPath }/paginaInicial/index.jsp" class="btn pull-right">Voltar</a>
+      
+  </form>
+  
 
-</body>
-</html>
+  
+<c:import url="/layout/footer.jsp"></c:import>

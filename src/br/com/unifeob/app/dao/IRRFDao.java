@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.unifeob.app.entidades.IRRF;
+import br.com.unifeob.app.entidades.PorcentagemDeducao;
 
 @RequestScoped
 public class IRRFDao {
@@ -42,6 +43,42 @@ public class IRRFDao {
 		manager.getTransaction().begin();
 		manager.remove(irrf);
 		manager.getTransaction().commit();
+	}
+	
+	public IRRF recuperarIRRFPorAno(Integer anoReferente){
+		manager.getTransaction().begin();
+		IRRF irrf = (IRRF) manager.createQuery("from IRRF where anoReferente=" +anoReferente).getSingleResult();
+		manager.getTransaction().commit();
+		return irrf;
+	}
+	
+	public PorcentagemDeducao recuperarPorcentagem(Integer anoReferente, Float valor){
+		IRRF irrf = recuperarIRRFPorAno(anoReferente);
+		PorcentagemDeducao porcentagemDeducao = new PorcentagemDeducao();
+		
+		if(valor >= irrf.getValorFaixaUm() && valor <= irrf.getValorLimiteFaixaUm()){
+			porcentagemDeducao.setDeducao(irrf.getDeducaoFaixaUm());
+			porcentagemDeducao.setPorcentagem(irrf.getPercentualFaixaUm());
+			return porcentagemDeducao;
+			
+		}else if(valor >= irrf.getValorFaixaDois() && valor <= irrf.getValorLimiteFaixaDois()){
+			porcentagemDeducao.setDeducao(irrf.getDeducaoFaixaDois());
+			porcentagemDeducao.setPorcentagem(irrf.getPercentualFaixaDois());
+			return porcentagemDeducao;
+			
+		}else if(valor >= irrf.getValorFaixaTres() && valor <= irrf.getValorLimiteFaixaTres()){
+			porcentagemDeducao.setDeducao(irrf.getDeducaoFaixaTres());
+			porcentagemDeducao.setPorcentagem(irrf.getPercentualFaixaTres());
+			return porcentagemDeducao;
+			
+		}else if (valor >= irrf.getValorLimiteFaixaQuatro()){
+			porcentagemDeducao.setDeducao(irrf.getDeducaoFaixaQuatro());
+			porcentagemDeducao.setPorcentagem(irrf.getPercentualFaixaQuatro());
+			return porcentagemDeducao;
+		}else{
+			return porcentagemDeducao;
+		}
+		
 	}
 	
 

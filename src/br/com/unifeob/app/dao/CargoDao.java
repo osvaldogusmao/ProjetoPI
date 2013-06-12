@@ -20,7 +20,27 @@ public class CargoDao {
 		manager.getTransaction().commit();	
 	}
 	
+	public void deletar(Long codigo){
+		manager.getTransaction().begin();
+		Cargo cargo = manager.find(Cargo.class, codigo);
+		manager.remove(cargo);
+		manager.getTransaction().commit();
+	}
+	
 	public List<Cargo> listar(){
 		return manager.createQuery("from Cargo").getResultList();
+	}
+	
+	public Cargo recuperarEstancia(Long codigo){
+		manager.getTransaction().begin();
+		Cargo cargo = manager.find(Cargo.class, codigo);
+		manager.getTransaction().commit();
+		return cargo;
+	}
+
+	public void altera(Cargo cargo) {
+		manager.getTransaction().begin();
+		manager.merge(cargo);
+		manager.getTransaction().commit();
 	}
 }
