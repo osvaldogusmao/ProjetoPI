@@ -8,7 +8,7 @@
 		<fieldset>
 			<legend>Apontamentos</legend>
 			<label>Referência</label>
-			<input type="text" name="apontamento_referencia" id="apontamento_referencia" data-mask="99/9999" class="span2">
+			<input type="text" name="apontamento_referencia" id="apontamento_referencia" class="span2" >
 			<blockquote>
 				<p>Empresa</p>
 			</blockquote>
@@ -167,7 +167,7 @@
 	</div>
 </div>
 <!-- Fim Modal Pesquisa Verbas -->
+<script type="text/javascript" src="${pageContext.request.contextPath }/bootstrap/js/bootstrap-inputmask.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath }/bootstrap/js/custom/apontamento.js"></script>
-
 
 <c:import url="/layout/footer.jsp"></c:import>

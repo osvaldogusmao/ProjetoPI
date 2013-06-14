@@ -99,12 +99,12 @@
 			
 			<div class="controls controls-row">
 				<label class="span6" for="mail">E-mail:</label>
-				<label class="span6" for="site">Site:</label>
+				<label class="span5" for="site">Site:</label>
 			</div>
 			
 			<div>
 				<input class="span6" type="text" name="email" value="${empresa.email}">
-				<input class="span6" type="text" name="email" value="${empresa.site}">
+				<input class="span6" type="text" name="site" value="${empresa.site}">
 				
 			</div>
 			

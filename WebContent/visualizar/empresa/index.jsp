@@ -38,7 +38,7 @@ pageEncoding="UTF-8"%>
 			<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
 			<input type="hidden" name="logica" value="deletar">
 			<input type="hidden" name="codigo" value="${empresa.id}">
-			<input type="submit" value="Deletar">
+			<input type="submit" value="Deletar" class="btn btn-danger">
 			</form>
 			</td>
 			</tr>

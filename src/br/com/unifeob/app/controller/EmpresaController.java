@@ -86,7 +86,7 @@ public class EmpresaController extends HttpServlet {
         if(logica.equals("alterar")){
         	Empresa empresa = dao.recuperarEstancia(Integer.parseInt(request.getParameter("codigo")));
         	request.setAttribute("empresa", empresa);
-        	RequestDispatcher dispatcher = request.getRequestDispatcher("visualizar/empresa/index.jsp");
+        	RequestDispatcher dispatcher = request.getRequestDispatcher("alterar/empresa/index.jsp");
         	dispatcher.forward(request, response);
         }
         
