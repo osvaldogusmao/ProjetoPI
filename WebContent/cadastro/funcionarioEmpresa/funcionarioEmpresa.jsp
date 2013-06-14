@@ -26,7 +26,7 @@
         <select class="span2" name="empresa" id="empresa">
           <option value=" ">Selecione</option>
           <option value="Empresa1">Unifeob</option>
-          <option</option>
+          <option></option>
           
         </select>  
         <input class="span2" type="text" name="Cargo" id="Cargo"/>

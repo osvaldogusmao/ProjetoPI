@@ -39,6 +39,14 @@ function MascaraCPF(cpf){
 	return formataCampo(cpf, '000.000.000-00', event);
 }
 
+//adiciona mascara ao rg
+function MascaraRG(rg){
+	if(mascaraInteiro(rg)==false){
+		event.returnValue = false;
+	}	
+	return formataCampo(rg, '00.000.000-0', event);
+}
+
 // não permite digital String onde é numero
 function SomenteNumeros(numero) {
 	if(mascaraInteiro(numero)==false){

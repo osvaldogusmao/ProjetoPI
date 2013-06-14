@@ -18,7 +18,7 @@
 			
 			<div class="controls controls-row">
 				<input class="span7" type="text" name="nomePessoa" id="nome" />
-				<input class="span2" type="text" name="cpfPessoa" id="cpf">
+				<input class="span2" type="text" name="cpfPessoa" id="cpf" OnKeyPress=" MascaraCPF(cpfPessoa)" maxlength="14">
 			</div>
 			
 			<div class="controls controls-row">
@@ -26,7 +26,7 @@
 				<label class="label-span2" for="orgaoExpeditor"> Orgão Expeditor:</label> 
 			</div>
 			<div class="controls controls-row">
-				<input class="span2" type="text" name="rgPessoa" id="rg"/>
+				<input class="span2" type="text" name="rgPessoa" id="rg" OnKeyPress="MascaraRG(rgPessoa)" maxlength="12"/>
 				<select class="span2" name="orgaoExpeditorPessoa" id="orgaoExpeditor">
 					<option value=" ">Selecione</option>
 					<option value="IFP">IFP</option>
@@ -49,7 +49,7 @@
 				<label class="label-span2" for="dataNascimento">Data de Nascimento:</label>	
 			</div>
 			<div class="controls controls-row">
-				<input class="span2" type="text" name="dataNascimentoPessoa" id="dataNascimento"/>
+				<input class="span2" type="text" name="dataNascimentoPessoa" id="dataNascimento" OnKeyPress=" MascaraData(dataNascimento)"  maxlength="10"/>
 			</div>
 			<div class="controls controls-row">
 				<label class="label-span2" for="estadoCivil">Estado Civil:</label> 
@@ -70,12 +70,13 @@
 			<div class="controls controls-row">
 				<select class="span2" name="cnhPessoa" id="cnh">
 						<option value=" ">Selecione</option>
-						<option value="">Não Possui</option>
-						<option value="categoria A">Categoria A</option>
-						<option value="categoria B">Categoria B</option>
-						<option value="categoria C">Categoria C</option>
-						<option value="categoria D">Categoria D</option>
-						<option value="categoria E">Categoria E</option>
+						<option value="Não Possui">Não Possui</option>
+						<option value="Categoria AB">Categoria AB</option>
+						<option value="Categoria A">Categoria A</option>
+						<option value="Categoria B">Categoria B</option>
+						<option value="Categoria C">Categoria C</option>
+						<option value="Categoria D">Categoria D</option>
+						<option value="Categoria E">Categoria E</option>
 				</select>
 			</div>	
 			<div class="controls controls-row">		
@@ -84,12 +85,12 @@
 			<div>
 						<select class="span2" name="deficienteFisicoPessoa" id="deficiencia">
 						<option value=" ">Selecione</option>
-						<option value="">Não tem</option>
-						<option value="fisica">Fisica</option>
-						<option value="auditiva">Auditiva</option>
-						<option value="visual">Visual</option>
-						<option value="mental">Mental</option>
-						<option value="multipla">Multipla</option>
+						<option value="Nao possui">Não possui</option>
+						<option value="Fisica">Fisica</option>
+						<option value="Auditiva">Auditiva</option>
+						<option value="Visual">Visual</option>
+						<option value="Mental">Mental</option>
+						<option value="Multipla">Multipla</option>
 				</select>
 			</div>
 			<div class="controls controls-row">

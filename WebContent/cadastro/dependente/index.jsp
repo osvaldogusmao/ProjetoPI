@@ -13,7 +13,7 @@
 			</div>
 			<div class="controls controls-row">
 						<input class="span4" type="text" name="nomeDaPessoa" value="${pessoa.nome}" readonly="true" />
-						<input type="hidden" name="cpfPessoa" value="${pessoa.cpf}" />
+						<input type="hidden" name="cpfPessoa" value="${pessoa.cpf}"/>
 			</div>
 			<div class="controls controls-row">
 				<label class="label-span4" for="nomeDependente" >Nome do Dependente:</label>
@@ -23,7 +23,7 @@
 			</div>
 			<div class="controls controls-row">	
 				<input class="span4" type="text" name="nomeDependente" id="nomeDependente" />
-				<input class="span2" type="text" name="rgDependente" id="rg"/>
+				<input class="span2" type="text" name="rgDependente" id="rg" OnKeyPress="MascaraRG(rgDependente)"/>
 				<select class="span2" name="orgaoExpeditorDependente" form="orgaoExpeditor">
 					<option value=" ">Selecione</option>
 					<option value="IFP">IFP</option>
@@ -41,7 +41,7 @@
 					<option value="CRO">CRO</option>
 					<option value="CRF">CRF</option>
 				</select> 
-				<input class="span2" type="text" name="cpfDependente" id="cpf" />
+				<input class="span2" type="text" name="cpfDependente" id="cpf" OnKeyPress="MascaraCPF(cpfDependente)" />
 			</div>
 			<div class="controls controls-row">
 				<label class="label-span2" for="dataNascimento">Data de Nascimento:</label>
