@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
-
 import br.com.unifeob.app.dao.ApontamentoDao;
 import br.com.unifeob.app.dao.EmpresaDao;
 import br.com.unifeob.app.dao.FuncionarioEmpresaDao;
@@ -114,8 +113,7 @@ public class ApontamentoController extends HttpServlet {
 	private void salva() throws IOException {
 		Apontamento apontamento = new Apontamento();
 		Empresa empresa = empresaDao.recuperarEstancia(Integer.parseInt(request.getParameter("empresa_id")));
-		FuncionarioEmpresa funcionarioEmpresa = funcionarioEmpresaDao.recuperarId(Integer.parseInt(request
-				.getParameter("funcionario_id")));
+		FuncionarioEmpresa funcionarioEmpresa = funcionarioEmpresaDao.recuperarId(Integer.parseInt(request.getParameter("funcionario_id")));
 
 		apontamento.setReferencia(request.getParameter("apontamento_referencia"));
 		apontamento.setDataReferencia(Util.converterStringParaCalendar("01/"

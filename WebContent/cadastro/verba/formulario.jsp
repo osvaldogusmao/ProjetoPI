@@ -37,12 +37,16 @@
 			<label class="label-span2">Tipo de Cálculo</label>
 		</div>
 		
-		<label class="radio">
-			<input type="radio" name="verba_tipoValor" id="verba_tipoValor" value='${tipoValores[0]}' <c:if test="${verba != null && verba.tipoValor == tipoValores[0] }">checked</c:if> > ${tipoValores[0].descricao}
-		</label>
-		<label class="radio">
-			<input type="radio" name="verba_tipoValor" id="verba_tipoValor" value='${tipoValores[1]}' <c:if test="${verba != null && verba.tipoValor == tipoValores[1] }">checked</c:if> > ${tipoValores[1].descricao}
-		</label> 
+		<div class="controls controls-row">
+			<label class="radio label-span1">
+				<input type="radio" name="verba_tipoValor" id="verba_tipoValor_0" value='${tipoValores[0]}' <c:if test="${verba != null && verba.tipoValor == tipoValores[0] }">checked</c:if> > ${tipoValores[0].descricao}
+			</label>
+			<input type="text" name="verba_valorPercentual" id="verba_valorPercentual" class="span2" value='<c:if test="${verba != null }">${verba.valorPercentualFormatado}</c:if>' placeholder="Quantos %" <c:if test="${verba == null || verba.tipoValor != tipoValores[0] }">style="display: none;"</c:if>>
+			<br/><br/>
+			<label class="radio">
+				<input type="radio" name="verba_tipoValor" id="verba_tipoValor_1" value='${tipoValores[1]}' <c:if test="${verba != null && verba.tipoValor == tipoValores[1] }">checked</c:if> > ${tipoValores[1].descricao}
+			</label>
+		</div> 
 	
 		<div class="controls controls-row">
 			<label class="label-span2">Incide em :</label>
@@ -61,5 +65,16 @@
 		</div>
 
 	</form>
+	
+	<script>
+		$('#verba_tipoValor_0').click(function(){
+			$('#verba_valorPercentual').fadeIn('fast');	
+		});
+		
+		$('#verba_tipoValor_1').click(function(){
+			$('#verba_valorPercentual').fadeOut('fast');	
+		});
+
+	</script>
 
 <c:import url="/layout/footer.jsp"></c:import>

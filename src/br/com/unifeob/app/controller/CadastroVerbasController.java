@@ -129,6 +129,7 @@ public class CadastroVerbasController extends HttpServlet {
 		Verba verba = new Verba();
 		verba.setDescricao(request.getParameter("verba_descricao"));
 		verba.setTipoVerba(TipoVerbaEnum.valueOf(request.getParameter("verba_tipoVerba")));
+		verba.setValorPercentual(Float.parseFloat(request.getParameter("verba_valorPercentual").replace(",", ".")));
 		verba.setTipoValor(TipoValorEnum.valueOf(request.getParameter("verba_tipoValor")));
 		verba.setIncideINSS(new Boolean(request.getParameter("verba_incideINSS")));
 		verba.setIncideIRRF(new Boolean(request.getParameter("verba_incideIRRF")));
@@ -151,6 +152,7 @@ public class CadastroVerbasController extends HttpServlet {
 		Verba verba = verbaDao.carrega(Integer.parseInt(request.getParameter("verba_id")));
 		verba.setDescricao(request.getParameter("verba_descricao"));
 		verba.setTipoVerba(TipoVerbaEnum.valueOf(request.getParameter("verba_tipoVerba")));
+		verba.setValorPercentual(Float.parseFloat(request.getParameter("verba_valorPercentual").replace(",", ".")));
 		verba.setIncideINSS(new Boolean(request.getParameter("verba_incideINSS")));
 		verba.setIncideIRRF(new Boolean(request.getParameter("verba_incideIRRF")));
 

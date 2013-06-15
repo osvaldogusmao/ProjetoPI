@@ -67,6 +67,39 @@ $(document).ready(function() {
 		});
 
 	});
+	
+	$('#btnAdicionaVerba').click(function(){
+		var form = $('#frmNovaVerbaApontamento').serialize();
+		
+		$.ajax({
+			url : '/projetopi/apontamento?adicionaVerba',
+			type : 'POST',
+			data : form,
+			dataType : 'json',
+			success : function(data, textStatus, jqXHR){
+				if(textStatus === 'success'){
+					var codigo = $('#verba_id_span').html();
+					var descricao = $('#verba_descricao').html();
+					var qtd = $('#apontamento_qtd').val();
+					
+					var html = "<tr>" +
+									"<td> " + codigo + "</td>" +
+									"<td> " + descricao + "</td> " +
+									"<td> " + qtd + "</td> " +
+									"<td style='text-align: center;'> " +
+										"<a href='#deleta' class='deleta' ><i class='icon-remove'></i></a> " +
+									"</td> " +
+								"</tr>";
+
+					$('#tbVerbas > tbody:last').append(html);
+				}
+			},
+			error : function(jqXHR, textStatus, errorThrow){
+				alert("Erro ao adicionar uma Verba");
+			}
+		});
+				
+	});
 
 	/*
 	 * Ações em input:text

@@ -8,7 +8,7 @@
 		<fieldset>
 			<legend>Apontamentos</legend>
 			<label>Referência</label>
-			<input type="text" name="apontamento_referencia" id="apontamento_referencia" class="span2" >
+			<input type="text" name="apontamento_referencia" id="apontamento_referencia" class="span2" data-mask="99/9999">
 			<blockquote>
 				<p>Empresa</p>
 			</blockquote>
@@ -46,38 +46,38 @@
 	</form>
 	
 		<br/>
-		
-		<div style="display: none;" id="dvCadastroVerba">
-			<blockquote>
-				<p>Verbas</p>
-			</blockquote>
-			<div class="controls controls-row">
-				<label class="label-span1">Código</label>
-				<label class="label-span4">Descrição</label>
-				<label class="label-span1" style="margin-left: 75px;">Qtd</label>
-			</div>
-			
-			<div class="controls controls-row">
-				<input type="hidden" id="verba_id" name="verba_id" >
-				<span id="verba_id_span" class="uneditable-input span1"></span>
-				<span id="verba_descricao" class="uneditable-input span4"></span>
-				<a href="#modalPesquisaVerba" role="button" class="btn btn-inverse span1" data-toggle="modal"><i class="icon-search  icon-white"></i></a>
-				<input type="text" id="apontamento_qtd" name="apontamento_qtd" class="span1">
-				&nbsp;&nbsp;
-				<button type="button" class="btn btn-success"><i class="icon-plus icon-white"></i></button>
-			</div>
-			
+		<!--  style="display: none;"  -->
+		<div  id="dvCadastroVerba">
+			<form method="post" action="${pageContext.request.contextPath }/apontamento?adicionaVerba" id=frmNovaVerbaApontamento">
+				<blockquote>
+					<p>Verbas</p>
+				</blockquote>
+				<div class="controls controls-row">
+					<label class="label-span1">Código</label>
+					<label class="label-span4">Descrição</label>
+					<label class="label-span1" style="margin-left: 75px;">Qtd</label>
+				</div>
+				
+				<div class="controls controls-row">
+					<input type="hidden" id="verba_id" name="verba_id" >
+					<span id="verba_id_span" class="uneditable-input span1"></span>
+					<span id="verba_descricao" class="uneditable-input span4"></span>
+					<a href="#modalPesquisaVerba" role="button" class="btn btn-inverse span1" data-toggle="modal"><i class="icon-search  icon-white"></i></a>
+					<input type="text" id="apontamento_qtd" name="apontamento_qtd" class="span1">
+					&nbsp;&nbsp;
+					<button type="button" class="btn btn-success" id="btnAdicionaVerba"><i class="icon-plus icon-white"></i></button>
+				</div>
+			</form>
 			<hr />
 			
 			<i class="icon-"></i>
 			
-			<table class="table table-condensed table-bordered table-hover">
+			<table class="table table-condensed table-bordered table-hover" id="tbVerbas">
 				<thead>
 					<tr>
 						<th width="10%">Código</th>
 						<th width="60%">Descrição</th>
 						<th width="10%" style="text-align: center;">Quantidade</th>
-						<th width="10%" style="text-align: center;">Valor</th>
 						<th width="10%" style="text-align: center;">#</th>
 					</tr>
 				</thead>
