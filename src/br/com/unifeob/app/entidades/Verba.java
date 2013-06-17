@@ -55,11 +55,14 @@ public class Verba {
 	public void setValorPercentual(Float valorPercentual) {
 		this.valorPercentual = valorPercentual;
 	}
-	
+
 	@Transient
-	public String getValorPercentualFormatado(){
-		NumberFormat format = NumberFormat.getInstance();
-		return format.format(valorPercentual);
+	public String getValorPercentualFormatado() {
+		if (valorPercentual != null) {
+			NumberFormat format = NumberFormat.getInstance();
+			return format.format(valorPercentual);
+		}
+		return "";
 	}
 
 	public void setTipoValor(TipoValorEnum tipoValor) {
