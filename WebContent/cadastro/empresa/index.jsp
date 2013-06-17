@@ -3,6 +3,8 @@
 
 <c:import url="/layout/header.jsp"></c:import>
 <script type="text/javascript" src="/ProjetoPI/bootstrap/js/cidades-estados-1.2-utf8.js"></script>
+<script language="JavaScript" type="text/javascript" src="/ProjetoPI/bootstrap/js/MascaraValidacao.js"></script> 
+
 	<form action="${pageContext.request.contextPath}/EmpresaController" method="post">
 		<h1 align="center">Cadastro de Empresas</h1>
 		<fieldset>
@@ -31,7 +33,7 @@
 			</div>
 		
 			<div class="controls controls-row">
-				<input class="span4" type="text" name="cnpj" id="cnpj"/>
+				<input class="span4" type="text" name="cnpj" id="cnpj" OnKeyPress="MascaraCNPJ(cnpj);" maxlength="18" onblur="ValidarCNPJ(cnpj)"/>
 				<input class="span4" type="text" name="inscricaoestadual" id="ie" />
 				<input class="span4" type="text" name="inscricaomunicipal" id="im"/>
 			</div>
@@ -49,7 +51,7 @@
 			
 			<div class="controls controls-row">
 				<input class="span7" type="text" name="logradouro" id="log" />
-				<input class="span2" type="text" name="numero" id="num">
+				<input class="span2" type="text" name="numero" id="num" onkeypress="SomenteNumeros();">
 				<input class="span3" type="text" name="complemento" id="com">
 			</div>
 			
@@ -63,7 +65,7 @@
 			
 			<div class="controls controls-row">
 				<input class="span2" type="text" name="bairro" id="bai">
-				<input class="span2" type="text" name="cep" id="cep">
+				<input class="span2" type="text" name="cep" id="cep" OnKeyPress="MascaraCep(cep)" maxlength="10">
 				<select class="span3" name="uf"  id="estado"></select>
 				<select class="span5" name="cidade"  id="cidade"></select>	
 			</div>
@@ -72,27 +74,34 @@
 		
 		<fieldset>
 			<legend>Contato</legend>
-			<label>Telefone 1:
-			<input type="text" name="telefone1" />
-			</label>
 			
-			<label>Telefone 2:
-			<input type="text" name="telefone2" />
-			</label>
+			<div class="controls controls-row">
+				<label class="span4" for="tel1">Telefone 1:</label>
+				<label class="span4" for="tel2">Telefone 2:</label>
+				<label class="span3" for="tel3">Telefone 3:</label>
 			
-			<label>Telefone 3:
-			<input type="text" name="telefone3" />
-			</label>
+			</div>
 			
-			<label>e-mail:
-			<input type="text" name="email" />
-			</label>
+			<div>
+				<input class="span4" type="text" name="telefone1" onKeyPress="MascaraTelefone(telefone1);" maxlength="14">
+				<input class="span4" type="text" name="telefone2" onKeyPress="MascaraTelefone(telefone2);" maxlength="14">
+				<input class="span4" type="text" name="telefone3" onKeyPress="MascaraTelefone(telefone3);" maxlength="14">				
+			</div>
 			
-			<label>site:
-			<input type="text" name="site" />
-			</label>
+			<div class="controls controls-row">
+				<label class="span6" for="mail">E-mail:</label>
+				<label class="span6" for="site">Site:</label>
+			</div>
+			
+			<div>
+				<input class="span6" type="text" name="email">
+				<input class="span6" type="text" name="email">
+				
+			</div>
 			
 		</fieldset>
+		
+	
 		
 		<input type="hidden" name="logica" value="salvar"/>
 		<input type="submit" value="Salvar" class="btn btn-primary"/>

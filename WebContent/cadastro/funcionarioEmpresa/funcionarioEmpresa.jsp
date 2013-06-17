@@ -19,14 +19,19 @@
           <option value="Funcionario1">Ivan Simionato</option>
           <option value="Funcionario2">Larissa Machado</option>
           <option value="Funcionario3">Osvaldo Gusmão</option>
-          <option value="Funcionario4">Rafael Padua/option>
+          <option value="Funcionario4">Rafael Padua</option>
           <option value="Funcionario5">Vanessa Rossi</option>
         </select>   
         <input class="span2" type="text" name="Empresa" id="Empresa"/>
         <select class="span2" name="empresa" id="empresa">
           <option value=" ">Selecione</option>
           <option value="Empresa1">Unifeob</option>
+<<<<<<< HEAD
           <option>Teste</option>
+=======
+          <option></option>
+          
+>>>>>>> 8d78eca905d6a2024ce58ea471c0051f4f331e75
         </select>  
         <input class="span2" type="text" name="Cargo" id="Cargo"/>
         <select class="span2" name="cargo" id="cargo">

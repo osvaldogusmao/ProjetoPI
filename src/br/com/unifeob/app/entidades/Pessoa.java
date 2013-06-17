@@ -39,6 +39,7 @@ import javax.persistence.TemporalType;
 		private String uf;
 		private String cidade;
 		private String cep;
+		
 	
 		@OneToMany(cascade = CascadeType.ALL , targetEntity= Dependente.class ,mappedBy="pessoa")
 		private List<Dependente> dependentes ;
@@ -146,8 +147,13 @@ import javax.persistence.TemporalType;
 		public void setDependentes(List<Dependente> dependentes) {
 			this.dependentes = dependentes;
 		}
-
 		
+	/*	public String getdataFormatada(){
+		
+			
+			return
+		}
+		*/
 		
 		
 		

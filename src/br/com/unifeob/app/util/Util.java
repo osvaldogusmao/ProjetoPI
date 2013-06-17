@@ -52,10 +52,15 @@ public class Util {
 		return date;
 	}
 	
-	public static String converterDateParaString(Date date){
+	/*
+	public static String  converterDateParaString(Date date){		
+		String data;
+		
+		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		
 		
-		return null; 
+		
+		return data;
 	}
-	
+	*/
 }

@@ -21,22 +21,31 @@
 			</div>
 			
 			<div class="controls controls-row">
-				<label class="span" for="des">Descrição:</label>
+				<label class="span2" for="des">Descrição:</label>
 			</div>
 			
 			<div class="controls controls-row">
-				<input class="span3" type="text" name="descricao" size="50" value="${cargo.nome}">
+				<input class="span10" type="text" name="descricao" size="50" value="${cargo.nome}" id="des">
 			</div>
 			
-			
-			<label>Insalubridade:</label>
-			<label id="porcinsalu">Porcentagem:</label>
-			<input type="text" id="txtinsalu" name="txtinsalibridade" value="${cargo.insalubridade}"/>
-			 
-			<label>Periculosidade:</label>
-			<label id="porcperic">Porcentagem:</label>
-			<input type="text" id="txtperic" name="txtpericulosidade" value="${cargo.periculosidade}">
 			<br>
+			
+			<div class="controls controls-row">
+				<label class="span2" for="porinsalu">Insalubridade:</label>
+				<label  class="span2" id="porcinsalu">Porcentagem:</label>
+				<input class="span3" type="text" id="txtinsalu" name="txtinsalibridade" value="${cargo.insalubridade}"/>
+			</div>
+			
+			<br>
+			
+			<div class="controls controls-row">
+			<label class="span2" for="porperic" >Periculosidade:</label>
+			<label class="span2" id="porcperic">Porcentagem:</label>
+			<input class="span3" type="text" id="txtperic" name="txtpericulosidade" value="${cargo.periculosidade}">
+			</div>
+			
+			<br>
+			
 			<input type="hidden" name="logica" value="atualizar">
 			<input type="submit" value="Salvar" class="btn btn-primary">
 		</fieldset>

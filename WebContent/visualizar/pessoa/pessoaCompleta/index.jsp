@@ -15,7 +15,7 @@
 			
 			<div class="controls controls-row">
 				<input class="span7" type="text" name="nomePessoa" id="nome" value="${pessoa.nome}" />
-				<input class="span2" type="text" name="cpfPessoa" id="cpf" value="${pessoa.cpf }">
+				<input class="span2" type="text" name="cpfPessoa" id="cpf" value="${pessoa.cpf }" OnKeyPress=" MascaraCPF(cpfPessoa)" maxlength="14">
 			</div>
 			
 			<div class="controls controls-row">
@@ -23,7 +23,7 @@
 				<label class="label-span2" for="orgaoExpeditor"> Orgão Expeditor:</label> 
 			</div>
 			<div class="controls controls-row">
-				<input class="span2" type="text" name="rgPessoa" id="rg" value="${pessoa.rg }"/>
+				<input class="span2" type="text" name="rgPessoa" id="rg" value="${pessoa.rg }" OnKeyPress="MascaraRG(rgPessoa)" maxlength="13"/>
 				<select class="span2" name="orgaoExpeditorPessoa" id="orgaoExpeditor">
 					<option value="${pessoa.orgaoExpeditor}">${pessoa.orgaoExpeditor }</option>
 					<option value="IFP">IFP</option>
@@ -46,7 +46,7 @@
 				<label class="label-span2" for="dataNascimento">Data de Nascimento:</label>	
 			</div>
 			<div class="controls controls-row">
-				<input class="span2" type="text" name="dataNascimentoPessoa" id="dataNascimento" value="${pessoa.dataNascimento }"/>
+				<input class="span2" type="text" name="dataNascimentoPessoa" id="dataNascimento" value="${pessoa.dataNascimento}" OnKeyPress=" MascaraData(dataNascimento)" maxlength="10"/>
 			</div>
 			<div class="controls controls-row">
 				<label class="label-span2" for="estadoCivil">Estado Civil:</label> 
@@ -68,6 +68,7 @@
 				<select class="span2" name="cnhPessoa" id="cnh">
 						<option value="${pessoa.cnh }">${pessoa.cnh}</option>
 						<option value="">Não Possui</option>
+						<option value="categoria AB">Categoria AB</option>
 						<option value="categoria A">Categoria A</option>
 						<option value="categoria B">Categoria B</option>
 						<option value="categoria C">Categoria C</option>
@@ -117,18 +118,14 @@
 				<input class="span6" type="text" name="bairro" id="bairro" value="${pessoa.bairro}"/>
 			</div>
 			<div class="controls controls-row">	
-				<label class="label-span3" for="estado"> Estado:</label>	
-				<label class="label-span3" for="cidade"> Cidade:</label>
+				<label class="label-span4" for="estado"> Estado:</label>	
+				<label class="label-span4" for="cidade"> Cidade:</label>
 				<label class="label-span3" for="cep"> CEP:</label> 
 			</div>
 			<div class="controls controls-row">	
-				<select class="span3" name="uf"  id="estado">
-					<option value="${pessoa.uf}">${pessoa.uf}</option>
-				</select>
-				<select class="span3" name="cidade"  id="cidade">
-					<option value="${pessoa.cidade}">${pessoa.cidade}</option>
-				</select>	
-				<input class="span3" type="text" name="cep" id="cep" value="${pessoa.cep}"/>
+				<input class="span4" type="text" name="uf" id="estado" value="${pessoa.uf}" maxlength="2"/>
+				<input class="span4" type="text" name="cidade" id="cidade" value="${pessoa.cidade}"/>
+				<input class="span3" type="text" name="cep" id="cep" value="${pessoa.cep}" OnKeyPress="MascaraCep(cep)" maxlength="10"/>
 			</div>		
 		</fieldset>
 			<input type="hidden" name="logica" value="alterar" /> 
